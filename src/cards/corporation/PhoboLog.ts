@@ -13,7 +13,7 @@ export class PhoboLog extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.PHOBOLOG,
       tags: [Tags.SPACE, Tags.SPACE],
-	  initialActionText: 'Draw 2 space cards',
+      initialActionText: 'Draw 2 space cards',
       startingMegaCredits: 30,
 
       metadata: {

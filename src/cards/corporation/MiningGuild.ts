@@ -20,7 +20,7 @@ export class MiningGuild extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.MINING_GUILD,
       tags: [Tags.BUILDING, Tags.BUILDING],
-	  initialActionText: 'Place a special tile',
+      initialActionText: 'Place a special tile',
       startingMegaCredits: 36,
 
       metadata: {
@@ -35,7 +35,7 @@ export class MiningGuild extends Card implements CorporationCard {
               eb.startEffect.production((pb) => pb.steel(1));
             });
           });
-		  b.corpBox('effect', (ce) => {
+          b.corpBox('effect', (ce) => {
             ce.effect('Same for titanium.', (eb) => {
               eb.titanium(1).asterix();
               eb.startEffect.production((pb) => pb.titanium(1));
@@ -59,7 +59,7 @@ export class MiningGuild extends Card implements CorporationCard {
       cardOwner.game.defer(new GainProduction(cardOwner, Resources.STEEL));
     }
   }
-  
+
   public initialAction(player: Player) {
     return new SelectSpace('Select space for special tile', player.game.board.getAvailableSpacesOnLand(player).filter((space) => space.bonus.includes(SpaceBonus.STEEL)), (foundSpace: ISpace) => {
       player.game.addTile(player, foundSpace.spaceType, foundSpace, {tileType: TileType.MINING_RIGHTS});
