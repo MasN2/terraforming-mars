@@ -12,7 +12,6 @@ import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {GainProduction} from '../../deferredActions/GainProduction';
 import {CardRenderer} from '../render/CardRenderer';
-import {Units} from '../../Units';
 import {BoardType} from '../../boards/BoardType';
 
 export class MiningGuild extends Card implements CorporationCard {
@@ -62,14 +61,14 @@ export class MiningGuild extends Card implements CorporationCard {
   }
   
   public initialAction(player: Player) {
-    return new SelectSpace('Select space for special tile', player.game.board.getAvailableSpacesOnLand(player).filter((space) => space.bonus.includes(SpaceBonus.STEEL), (foundSpace: ISpace) => {
+    return new SelectSpace('Select space for special tile', player.game.board.getAvailableSpacesOnLand(player).filter((space) => space.bonus.includes(SpaceBonus.STEEL)), (foundSpace: ISpace) => {
       player.game.addTile(player, foundSpace.spaceType, foundSpace, {tileType: TileType.MINING_RIGHTS});
       foundSpace.adjacency = this.adjacencyBonus;
       return undefined;
-    }));
+    });
   }
 
-  public play(player: Player) {
+  public play() {
     return undefined;
   }
 }

@@ -27,7 +27,7 @@ export class EcoLine extends Card implements CorporationCard {
           b.production((pb) => pb.plants(3)).nbsp.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play a plant or microbe tag, including these, gain 2 MC or 1 plant.', (eb) => {
-              eb.plants(1).played.slash().microbe().played.startEffect.megacredits(2).slash().plants(1);
+              eb.plants(1).played.slash().microbes(1).played.startEffect.megacredits(2).slash().plants(1);
             });
           });
         }),
