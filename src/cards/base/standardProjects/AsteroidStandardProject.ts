@@ -11,12 +11,12 @@ export class AsteroidStandardProject extends StandardProjectCard {
   constructor() {
     super({
       name: CardName.ASTEROID_STANDARD_PROJECT,
-      cost: 14,
+      cost: 13,
       metadata: {
         cardNumber: 'SP9',
         renderData: CardRenderer.builder((b) =>
-          b.standardProject('Spend 14 M€ to raise temperature 1 step.', (eb) => {
-            eb.megacredits(14).startAction.temperature(1);
+          b.standardProject('Spend 13 M€ to raise temperature 1 step.', (eb) => {
+            eb.megacredits(13).startAction.temperature(1);
           }),
         ),
       },

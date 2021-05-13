@@ -16,18 +16,18 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
       cardType: CardType.CORPORATION,
       name: CardName.UNITED_NATIONS_MARS_INITIATIVE,
       tags: [Tags.EARTH],
-      startingMegaCredits: 40,
+      startingMegaCredits: 41,
 
       metadata: {
         cardNumber: 'R32',
-        description: 'You start with 40 M€.',
+        description: 'You start with 41 M€.',
         renderData: CardRenderer.builder((b) => {
           // TODO(chosta): find a not so hacky solutions to spacing
           b.br.br.br;
-          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(40);
+          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(41);
           b.corpBox('action', (ce) => {
-            ce.action('If your Terraform Rating was raised this generation, you may pay 3 M€ to raise it 1 step more.', (eb) => {
-              eb.megacredits(3).startAction.tr(1).asterix();
+            ce.action('If your Terraform Rating was raised this generation, you may raise it 1 step more.', (eb) => {
+              startAction.tr(1).asterix();
             });
           });
         }),
@@ -39,16 +39,14 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
   }
   public canAct(player: Player): boolean {
     const hasIncreasedTR = player.hasIncreasedTerraformRatingThisGeneration;
-    const actionCost = 3;
 
     if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS)) {
-      return hasIncreasedTR && player.canAfford(REDS_RULING_POLICY_COST + actionCost);
+      return hasIncreasedTR && player.canAfford(REDS_RULING_POLICY_COST);
     }
 
-    return hasIncreasedTR && player.canAfford(actionCost);
+    return hasIncreasedTR;
   }
   public action(player: Player) {
-    player.megaCredits -= 3;
     player.increaseTerraformRating();
     return undefined;
   }

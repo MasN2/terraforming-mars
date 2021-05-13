@@ -19,19 +19,25 @@ export class MiningGuild extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.MINING_GUILD,
       tags: [Tags.BUILDING, Tags.BUILDING],
-      startingMegaCredits: 30,
-      productionBox: Units.of({steel: 1}),
+	  initialActionText: 'Place a special tile',
+      startingMegaCredits: 36,
 
       metadata: {
         cardNumber: 'R24',
-        description: 'You start with 30 M€, 5 steel and 1 steel production.',
+        description: 'You start with 36 M€. As your first action in the game, place this tile on a location with a STEEL bonus.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(30).nbsp.steel(5).digit.nbsp.production((pb) => pb.steel(1));
+          b.megacredits(36).nbsp.tile(TileType.MINING_RIGHTS, true).asterix();
           b.corpBox('effect', (ce) => {
-            ce.effect('Each time you get any steel or titanium as a placement bonus on the map, increase your steel production 1 step.', (eb) => {
-              eb.steel(1).asterix().slash().titanium(1).asterix();
+            ce.effect('Each time you get any steel as a placement bonus on the map, increase your steel production 1 step.', (eb) => {
+              eb.steel(1).asterix();
               eb.startEffect.production((pb) => pb.steel(1));
+            });
+          });
+		  b.corpBox('effect', (ce) => {
+            ce.effect('Same for titanium.', (eb) => {
+              eb.titanium(1).asterix();
+              eb.startEffect.production((pb) => pb.titanium(1));
             });
           });
         }),
@@ -52,10 +58,16 @@ export class MiningGuild extends Card implements CorporationCard {
       cardOwner.game.defer(new GainProduction(cardOwner, Resources.STEEL));
     }
   }
+  
+  public initialAction(player: Player) {
+    return new SelectSpace('Select space for special tile', player.game.board.getAvailableSpacesOnLand(player).filter((space) => space.bonus.includes(SpaceBonus.STEEL), (space: ISpace) => {
+      player.game.addTile(player, foundSpace.spaceType, foundSpace, {tileType: TileType.MINING_RIGHTS});
+      foundSpace.adjacency = this.adjacencyBonus;
+      return undefined;
+    });
+  }
 
   public play(player: Player) {
-    player.steel = 5;
-    player.addProduction(Resources.STEEL, 1);
     return undefined;
   }
 }

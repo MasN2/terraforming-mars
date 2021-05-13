@@ -22,7 +22,7 @@ export class TollStation extends Card implements IProjectCard {
             pb.megacredits(1).slash().space().played.any.asterix();
           });
         }),
-        description: 'Increase your M€ production 1 step for each space tag your OPPONENTS have.',
+        description: 'Increase your M€ production 1 step for each space tag of the OPPONENT with the most space tags.',
       },
     });
   }
@@ -30,7 +30,7 @@ export class TollStation extends Card implements IProjectCard {
     const amount = player.game.getPlayers()
       .filter((aPlayer) => aPlayer !== player)
       .map((opponent) => opponent.getTagCount(Tags.SPACE, false, false))
-      .reduce((a, c) => a + c, 0);
+      .reduce((a, c) => Math.max(a, c), 0);
     player.addProduction(Resources.MEGACREDITS, amount, {log: true});
     return undefined;
   }

@@ -11,12 +11,12 @@ export class AquiferStandardProject extends StandardProjectCard {
   constructor() {
     super({
       name: CardName.AQUIFER_STANDARD_PROJECT,
-      cost: 18,
+      cost: 17,
       metadata: {
         cardNumber: 'SP2',
         renderData: CardRenderer.builder((b) =>
-          b.standardProject('Spend 18 M€ to place an ocean tile.', (eb) => {
-            eb.megacredits(18).startAction.oceans(1);
+          b.standardProject('Spend 17 M€ to place an ocean tile.', (eb) => {
+            eb.megacredits(17).startAction.oceans(1);
           })),
       },
     });

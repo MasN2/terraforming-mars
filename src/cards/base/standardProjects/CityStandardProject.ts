@@ -9,12 +9,12 @@ export class CityStandardProject extends StandardProjectCard {
   constructor() {
     super({
       name: CardName.CITY_STANDARD_PROJECT,
-      cost: 25,
+      cost: 24,
       metadata: {
         cardNumber: 'SP4',
         renderData: CardRenderer.builder((b) =>
-          b.standardProject('Spend 25 M€ to place a city tile and increase your M€ production 1 step.', (eb) => {
-            eb.megacredits(25).startAction.city().production((pb) => {
+          b.standardProject('Spend 24 M€ to place a city tile and increase your M€ production 1 step.', (eb) => {
+            eb.megacredits(24).startAction.city().production((pb) => {
               pb.megacredits(1);
             });
           }),

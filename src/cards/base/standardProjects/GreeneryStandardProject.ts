@@ -12,12 +12,12 @@ export class GreeneryStandardProject extends StandardProjectCard {
   constructor() {
     super({
       name: CardName.GREENERY_STANDARD_PROJECT,
-      cost: 23,
+      cost: 22,
       metadata: {
         cardNumber: 'SP6',
         renderData: CardRenderer.builder((b) =>
-          b.standardProject('Spend 23 M€ to place a greenery tile and raise oxygen 1 step.', (eb) => {
-            eb.megacredits(23).startAction.greenery();
+          b.standardProject('Spend 22 M€ to place a greenery tile and raise oxygen 1 step.', (eb) => {
+            eb.megacredits(22).startAction.greenery();
           }),
         ),
       },

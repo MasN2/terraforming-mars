@@ -11,12 +11,12 @@ export class AirScrappingStandardProject extends StandardProjectCard {
   constructor() {
     super({
       name: CardName.AIR_SCRAPPING_STANDARD_PROJECT,
-      cost: 15,
+      cost: 14,
       metadata: {
         cardNumber: 'SP1',
         renderData: CardRenderer.builder((b) =>
-          b.standardProject('Spend 15 M€ to raise Venus 1 step.', (eb) => {
-            eb.megacredits(15).startAction.venus(1);
+          b.standardProject('Spend 14 M€ to raise Venus 1 step.', (eb) => {
+            eb.megacredits(14).startAction.venus(1);
           }),
         ),
       },

@@ -13,13 +13,13 @@ export class StandardTechnology extends Card implements IProjectCard {
       cardType: CardType.ACTIVE,
       name: CardName.STANDARD_TECHNOLOGY,
       tags: [Tags.SCIENCE],
-      cost: 6,
+      cost: 4,
 
       metadata: {
         cardNumber: '156',
         renderData: CardRenderer.builder((b) => {
-          b.effect('After you pay for a standard project, except selling patents, you gain 3 M€.', (eb) => {
-            eb.plate('Standard projects').startEffect.megacredits(3);
+          b.effect('After you pay for a standard project, except selling patents, you gain 2 M€.', (eb) => {
+            eb.plate('Standard projects').startEffect.megacredits(2);
           });
         }),
       },
@@ -27,7 +27,7 @@ export class StandardTechnology extends Card implements IProjectCard {
   }
   public onStandardProject(player: Player, projectType: StandardProjectCard) {
     if (projectType.name !== CardName.SELL_PATENTS_STANDARD_PROJECT) {
-      player.megaCredits += 3;
+      player.megaCredits += 2;
     }
   }
   public play() {

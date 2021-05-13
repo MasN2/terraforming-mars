@@ -20,7 +20,7 @@ export class TharsisRepublic extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.THARSIS_REPUBLIC,
-      tags: [Tags.BUILDING],
+      tags: [Tags.CITY, Tags.BUILDING],
       initialActionText: 'Place a city tile',
       startingMegaCredits: 40,
 
