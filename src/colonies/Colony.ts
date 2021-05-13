@@ -266,6 +266,11 @@ export abstract class Colony implements SerializedColony {
           game.log('${0} gained ${1} VP', (b) => b.player(player).number(quantity));
         }
         break;
+        
+      case ColonyBenefit.INCREASE_TEMPERATURE:
+        game.increaseTemperature(player, quantity as 3|2|1);
+        game.log('${0} increased Temperature ${1} step(s)', (b) => b.player(player).number(quantity));
+        break;
 
       case ColonyBenefit.INCREASE_VENUS_SCALE:
         game.increaseVenusScaleLevel(player, quantity as 3|2|1);
