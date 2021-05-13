@@ -64,7 +64,7 @@ export class MiningGuild extends Card implements CorporationCard {
       player.game.addTile(player, foundSpace.spaceType, foundSpace, {tileType: TileType.MINING_RIGHTS});
       foundSpace.adjacency = this.adjacencyBonus;
       return undefined;
-    });
+    }));
   }
 
   public play(player: Player) {
