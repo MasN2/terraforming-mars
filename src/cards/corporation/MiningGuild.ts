@@ -27,7 +27,7 @@ export class MiningGuild extends Card implements CorporationCard {
         cardNumber: 'R24',
         description: 'You start with 36 M€. As your first action in the game, place this tile on a location with a STEEL bonus.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br;
+          b.br;
           b.megacredits(36).nbsp.tile(TileType.MINING_RIGHTS, true).asterix();
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you get any steel as a placement bonus on the map, increase your steel production 1 step.', (eb) => {

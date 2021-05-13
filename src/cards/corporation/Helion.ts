@@ -20,7 +20,7 @@ export class Helion extends Card implements CorporationCard {
         description: 'You start with 5 heat production and 45 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.heat(5)).nbsp.megacredits(45).digit;
+          b.production((pb) => pb.heat(5).digit).nbsp.megacredits(45);
           b.corpBox('effect', (ce) => {
             ce.effect('You may use heat as MC. You may not use M€ as heat.', (eb) => {
               eb.startEffect.text('x').heat(1).equals().megacredits(0).multiplier;
