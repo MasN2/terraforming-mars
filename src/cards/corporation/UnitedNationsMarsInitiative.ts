@@ -27,7 +27,7 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
           b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(41);
           b.corpBox('action', (ce) => {
             ce.action('If your Terraform Rating was raised this generation, you may raise it 1 step more.', (eb) => {
-              startAction.tr(1).asterix();
+              eb.startAction.tr(1).asterix();
             });
           });
         }),

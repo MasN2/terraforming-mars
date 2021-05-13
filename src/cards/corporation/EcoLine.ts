@@ -1,10 +1,14 @@
 import {Card} from '../Card';
 import {CorporationCard} from './CorporationCard';
+import {IProjectCard} from '../IProjectCard';
 import {Tags} from '../Tags';
 import {Player} from '../../Player';
+import {OrOptions} from '../../inputs/OrOptions';
+import {SelectOption} from '../../inputs/SelectOption';
 import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
+import {DeferredAction} from '../../deferredActions/DeferredAction';
 import {CardRenderer} from '../render/CardRenderer';
 
 export class EcoLine extends Card implements CorporationCard {
@@ -23,7 +27,7 @@ export class EcoLine extends Card implements CorporationCard {
           b.production((pb) => pb.plants(3)).nbsp.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play a plant or microbe tag, including these, gain 2 MC or 1 plant.', (eb) => {
-              eb.plant().played.slash().microbe().played.startEffect.megacredits(2).slash().plants(1);
+              eb.plants(1).played.slash().microbe().played.startEffect.megacredits(2).slash().plants(1);
             });
           });
         }),
