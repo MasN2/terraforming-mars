@@ -34,7 +34,7 @@ export class MiningGuild extends Card implements CorporationCard {
               eb.steel(1).asterix();
               eb.startEffect.production((pb) => pb.steel(1));
             });
-			ce.effect('Same for titanium.', (eb) => {
+            ce.effect('Same for titanium.', (eb) => {
               eb.titanium(1).asterix();
               eb.startEffect.production((pb) => pb.titanium(1));
             });
@@ -56,7 +56,7 @@ export class MiningGuild extends Card implements CorporationCard {
     if (space.bonus.some((bonus) => bonus === SpaceBonus.STEEL)) {
       cardOwner.game.defer(new GainProduction(cardOwner, Resources.STEEL));
     }
-	if (space.bonus.some((bonus) => bonus === SpaceBonus.TITANIUM)) {
+    if (space.bonus.some((bonus) => bonus === SpaceBonus.TITANIUM)) {
       cardOwner.game.defer(new GainProduction(cardOwner, Resources.TITANIUM));
     }
   }
