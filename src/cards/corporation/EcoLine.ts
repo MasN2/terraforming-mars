@@ -36,30 +36,30 @@ export class EcoLine extends Card implements CorporationCard {
   }
 
   public onCardPlayed(player: Player, card: IProjectCard) {
-      if (player.corporationCard !== undefined && player.corporationCard.name === this.name){
-          const lifeTags = card.tags.filter((tag) => tag === Tags.PLANT || tag === Tags.MICROBE).length;
-          for (let i = 0; i < lifeTags; i++) {
-            player.game.defer(new DeferredAction(
-              player,
-              () => {
-                return new OrOptions(
-                  new SelectOption('Gain 2 MC', 'Gain MC', () => {
-                    player.addResource(Resources.MEGACREDITS, 2);
-                    player.game.log('${0} gained 2 MC', (b) => b.player(player));
-                    return undefined;
-                  }),
-                  new SelectOption('Gain 1 plant', 'Gain plant', () => {
-                    player.addResource(Resources.PLANTS, 1);
-                    player.game.log('${0} gained 1 PLANT', (b) => b.player(player));
-                    return undefined;
-                  }),
-                );
-              },
-            ), -1); // Unshift that deferred action
-          }
+    if (player.corporationCard !== undefined && player.corporationCard.name === this.name) {
+      const lifeTags = card.tags.filter((tag) => tag === Tags.PLANT || tag === Tags.MICROBE).length;
+      for (let i = 0; i < lifeTags; i++) {
+        player.game.defer(new DeferredAction(
+          player,
+          () => {
+            return new OrOptions(
+              new SelectOption('Gain 2 MC', 'Gain MC', () => {
+                player.addResource(Resources.MEGACREDITS, 2);
+                player.game.log('${0} gained 2 MC', (b) => b.player(player));
+                return undefined;
+              }),
+              new SelectOption('Gain 1 plant', 'Gain plant', () => {
+                player.addResource(Resources.PLANTS, 1);
+                player.game.log('${0} gained 1 PLANT', (b) => b.player(player));
+                return undefined;
+              }),
+            );
+          },
+        ), -1); // Unshift that deferred action
       }
-      return undefined;
     }
+    return undefined;
+  }
 
   public play(player: Player) {
     player.addProduction(Resources.PLANTS, 3);
