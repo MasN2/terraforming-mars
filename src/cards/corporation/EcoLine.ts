@@ -24,7 +24,7 @@ export class EcoLine extends Card implements CorporationCard {
         description: 'You start with 3 plant production, and 39 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.plants(3)).nbsp.megacredits(36);
+          b.production((pb) => pb.plants(3)).nbsp.megacredits(39);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play a plant or microbe tag, including these, gain 2 MC or 1 plant.', (eb) => {
               eb.plants(1).played.slash().microbes(1).played.startEffect.megacredits(2).slash().plants(1);
