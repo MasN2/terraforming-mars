@@ -12,7 +12,8 @@ export class NitrogenDelivery extends PreludeCard implements IProjectCard {
       metadata: {
         cardNumber: 'P24',
         renderData: CardRenderer.builder((b) => {
-          b.tr(3).plants(4);
+          b.tr(3).br;
+          b.plants(4);
         }),
         description: 'Increase your TR 3 steps. Gain 4 plants.',
       },

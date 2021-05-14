@@ -1,6 +1,8 @@
+import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {Card} from '../Card';
 import {CorporationCard} from '../corporation/CorporationCard';
+import {Resources} from '../../Resources';
 import {SelectSpace} from '../../inputs/SelectSpace';
 import {ISpace} from '../../boards/ISpace';
 import {IActionCard} from '../ICard';
@@ -14,19 +16,21 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
     super({
       cardType: CardType.CORPORATION,
       name: CardName.ARCADIAN_COMMUNITIES,
-      startingMegaCredits: 40,
+      tags: [Tags.BUILDING],
+      startingMegaCredits: 36,
       initialActionText: 'Place a community (player marker) on a non-reserved area',
 
       metadata: {
         cardNumber: 'R44',
-        description: 'You start with 40 M€ and 10 steel. AS YOUR FIRST ACTION, PLACE A COMMUNITY [PLAYER MARKER] ON A NON-RESERVED AREA.',
+        description: 'You start with 2 steel production and 36 MC. AS YOUR FIRST ACTION, PLACE A COMMUNITY [PLAYER MARKER] ON FOUR NON-RESERVED AREAS.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(40).nbsp.steel(10).digit.nbsp.community().community().asterix();
+          b.production((pb) => pb.steel(2)).nbsp.megacredits(36).br;
+          b.community().community().community()..community();
           b.corpBox('action', (ce) => {
             ce.text('ACTION: PLACE A COMMUNITY (PLAYER MARKER) ON A NON-RESERVED AREA ADJACENT TO ONE OF YOUR TILES OR MARKED AREAS', Size.TINY, true);
             ce.vSpace(Size.MEDIUM);
-            ce.text('EFFECT: MARKED AREAS ARE RESERVED FOR YOU. WHEN YOU PLACE A TILE THERE, GAIN 3 M€', Size.TINY, true);
+            ce.text('EFFECT: MARKED AREAS ARE RESERVED FOR YOU. WHEN YOU PLACE A TILE THERE, GAIN 4 M€', Size.TINY, true);
           });
         }),
       },
@@ -34,17 +38,18 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
   }
 
   public initialAction(player: Player) {
-    return new SelectSpace(
-      'Select space for claim',
-      player.game.board.getAvailableSpacesOnLand(player),
-      (foundSpace: ISpace) => {
-        foundSpace.player = player;
-
-        player.game.log('${0} placed a Community (player marker)', (b) => b.player(player));
-
-        return undefined;
-      },
-    );
+    for (let i = 0; i < 4; i++) {
+      player.game.defer(new SelectSpace(
+        'Select space for claim',
+        player.game.board.getAvailableSpacesOnLand(player),
+        (foundSpace: ISpace) => {
+          foundSpace.player = player;
+          player.game.log('${0} placed a Community (player marker)', (b) => b.player(player));
+          return undefined;
+        },
+      ));
+    }
+    return undefined;
   }
 
   public canAct(player: Player): boolean {
@@ -63,7 +68,7 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
   }
 
   public play(player: Player) {
-    player.steel = 10;
+    player.addProduction(Resources.STEEL, 2);
     return undefined;
   }
 }
