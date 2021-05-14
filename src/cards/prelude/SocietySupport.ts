@@ -4,14 +4,13 @@ import {PreludeCard} from './PreludeCard';
 import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardRenderer} from '../render/CardRenderer';
-import {Units} from '../../Units';
 
 export class SocietySupport extends PreludeCard {
   constructor() {
     super({
       name: CardName.SOCIETY_SUPPORT,
       tags: [Tags.WILDCARD],
-      productionBox: Units.of({heat: 1, plants: 1, energy: 1}),
+      // productionBox: Units.of({heat: 1, plants: 1, energy: 1}),
 
       metadata: {
         cardNumber: 'P31',

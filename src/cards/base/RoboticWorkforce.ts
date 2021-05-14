@@ -241,7 +241,6 @@ export class RoboticWorkforce extends Card implements IProjectCard {
       new Updater(CardName.CAPITAL, {energy: -2, megacredits: 5}),
       new Updater(CardName.CAPITAL_ARES, {energy: -2, megacredits: 5}),
       new Updater(CardName.CULTURAL_METROPOLIS, {energy: -1, megacredits: 3}),
-      new Updater(CardName.DOME_FARMING, {megacredits: 2, plants: 1}),
       new Updater(CardName.EARLY_SETTLEMENT, {plants: 1}),
       new Updater(CardName.FACTORUM, {steel: 1}),
       new Updater(CardName.FIELD_CAPPED_CITY, {energy: 1, megacredits: 2}),
@@ -258,14 +257,12 @@ export class RoboticWorkforce extends Card implements IProjectCard {
       new Updater(CardName.MINING_QUOTA, {steel: 2}),
       new Updater(CardName.MINING_RIGHTS, {steel: this.miningSteelProduction, titanium: this.miningTitaniumProduction}),
       new Updater(CardName.MINING_RIGHTS_ARES, {steel: this.miningSteelProduction, titanium: this.miningTitaniumProduction}),
-      new Updater(CardName.MOHOLE, {heat: 3}),
       new Updater(CardName.MOHOLE_AREA, {heat: 4}),
       new Updater(CardName.MOHOLE_AREA_ARES, {heat: 4}),
       new Updater(CardName.MOHOLE_EXCAVATION, {steel: 1, heat: 2}),
       new Updater(CardName.NATURAL_PRESERVE, {megacredits: 1}),
       new Updater(CardName.NATURAL_PRESERVE_ARES, {megacredits: 1}),
       new Updater(CardName.PARLIAMENT_HALL, {megacredits: Math.floor(player.getTagCount(Tags.BUILDING) / 3)}),
-      new Updater(CardName.POLAR_INDUSTRIES, {heat: 2}),
       new Updater(CardName.RECYCLON, {steel: 2, plants: 1}),
       new Updater(CardName.SELF_SUFFICIENT_SETTLEMENT, {megacredits: 2}),
       new Updater(CardName.SOLAR_FARM, {energy: this.solarFarmEnergyProduction}),
@@ -273,6 +270,12 @@ export class RoboticWorkforce extends Card implements IProjectCard {
       new Updater(CardName.SPINOFF_DEPARTMENT, {megacredits: 2}),
       new Updater(CardName.SPONSORED_MOHOLE, {heat: 2}),
       new Updater(CardName.UTOPIA_INVEST, {steel: 1, titanium: 1}),
+      // Preludes
+      new Updater(CardName.DOME_FARMING, {megacredits: 3, plants: 1}),
+      new Updater(CardName.MOHOLE, {heat: 4, energy: 1}),
+      new Updater(CardName.POLAR_INDUSTRIES, {heat: 3}),
+      new Updater(CardName.RESEARCH_NETWORK, {megacredits: 1}),
+      new Updater(CardName.SOCIETY_SUPPORT, {heat: 1, plants: 1, energy: 1}),
     ];
 
     const result: Updater | undefined = updaters.find((u) => u.name === cardName);
