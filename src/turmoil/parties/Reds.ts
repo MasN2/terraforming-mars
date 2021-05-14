@@ -29,7 +29,7 @@ class RedsBonus01 implements Bonus {
   grant(game: Game) {
     const players = game.getPlayers();
 
-    if (game.isSoloMode() && players[0].getTerraformRating() <= 20) {
+    if (game.isSoloMode() && players[0].getTerraformRating() <= 27) {
       players[0].increaseTerraformRating();
     } else {
       players.sort((p1, p2) => p1.getTerraformRating() - p2.getTerraformRating());
