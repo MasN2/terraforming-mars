@@ -24,7 +24,7 @@ export class PointLuna extends Card implements CorporationCard {
           b.br;
           b.production((pb) => pb.titanium(1)).nbsp.megacredits(48);
           b.corpBox('effect', (ce) => {
-            ce.effect('When you play an Earth tag, including this, draw a card.', (eb) => {
+            ce.effect('When you play an Earth tag, including this, draw a card, then discard a card.', (eb) => {
               eb.earth().played.startEffect.plus().cards(1).minus().cards(1);
             });
           });
@@ -36,13 +36,13 @@ export class PointLuna extends Card implements CorporationCard {
     const tagCount = card.tags.filter((tag) => tag === Tags.EARTH).length;
     if (player.isCorporation(this.name) && card.tags.includes(Tags.EARTH)) {
       player.drawCard(tagCount);
-      new DiscardCards(player, tagCount, 'Point Luna effect: Select card(s) to discard');
+      player.game.defer(new DiscardCards(player, tagCount, 'Point Luna effect: Select card(s) to discard'));
     }
   }
   public play(player: Player) {
     player.addProduction(Resources.TITANIUM, 1);
     player.drawCard();
-    new DiscardCards(player, 1, 'Point Luna effect: Select a card to discard');
+    player.game.defer(new DiscardCards(player, 1, 'Point Luna effect: Select a card to discard'));
     return undefined;
   }
 }
