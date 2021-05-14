@@ -85,7 +85,7 @@ export class DrawCards<T extends undefined | SelectCard<IProjectCard>> implement
     const cb = (selected: Array<IProjectCard>) => {
       // Polyphemos Hook
       if (options.paying && player.isCorporation(CardName.POLYPHEMOS)) {
-          player.titanium += (cards.length - selected.length);
+        player.titanium += (cards.length - selected.length);
       }
       if (options.paying && selected.length > 0) {
         player.game.defer(
