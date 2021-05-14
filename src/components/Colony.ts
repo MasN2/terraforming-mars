@@ -129,7 +129,7 @@ export const Colony = Vue.component('colony', {
     </div>
     <div class="colony-content" :style="'margin-top: ' + getColonyContentOffset(colony) + 'px;'">
       <div v-if="colony.name === getGanymede()" class="resource plant"></div>
-      <div v-if="colony.name === getEuropa()" class="resource money">1</div>
+      <div v-if="colony.name === getEuropa()" class="resource money">2</div>
       <div v-if="colony.name === getTitan()" class="resource floater"></div>
       <div v-if="colony.name === getEnceladus()" class="resource microbe"></div>
       <div v-if="colony.name === getCallisto()" class="resource energy"></div>
@@ -364,9 +364,9 @@ export const Colony = Vue.component('colony', {
       <div>2</div>
       <div>3</div>
       <div>4</div>
-      <div>6</div>
-      <div>8</div>
-      <div>10</div>
+      <div>5</div>
+      <div>7</div>
+      <div>9</div>
     </div>
 
     <div v-if="colony.name === getTriton()" class="colony-grid-container">
@@ -444,13 +444,13 @@ export const Colony = Vue.component('colony', {
     <div></div>
   </div>
   <div v-if="colony.name === getEuropa()" class="colony-grid-container2">
-    <div><div class="production-box"><div class="production money">1</div></div></div>
+    <div><div class="production-box"><div class="production heat"></div></div></div>
     <div><div class="production-box"><div class="production money">1</div></div></div>
     <div><div class="production-box"><div class="production energy"></div></div></div>
-    <div><div class="production-box"><div class="production energy"></div></div></div>
     <div><div class="production-box"><div class="production plant"></div></div></div>
-    <div><div class="production-box"><div class="production plant"></div></div></div>
-    <div><div class="production-box"><div class="production plant"></div></div></div>
+    <div><div class="production-box"><div class="production steel"></div></div></div>
+    <div><div class="production-box"><div class="production titanium"></div></div></div>
+    <div><div class="production-box"><div class="production money">4</div></div></div>
   </div>
 
   <div v-if="colony.name === getPallas()" class="colony-grid-container">

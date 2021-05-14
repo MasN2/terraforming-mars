@@ -1,3 +1,4 @@
+import {Tags} from '../Tags';
 import {IActionCard} from '../ICard';
 import {Player} from '../../Player';
 import {CorporationCard} from './../corporation/CorporationCard';
@@ -33,7 +34,7 @@ export class RobinsonIndustries extends Card implements IActionCard, Corporation
       },
     });
   }
-  public play() {
+  public play(player: Player) {
     player.addProduction(Resources.MEGACREDITS, 2);
     return undefined;
   }

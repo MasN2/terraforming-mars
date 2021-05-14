@@ -4,7 +4,7 @@ import {CorporationCard} from './../corporation/CorporationCard';
 import {IProjectCard} from '../IProjectCard';
 import {Resources} from '../../Resources';
 import {Card} from '../Card';
-import {DiscardCards} from '../deferredActions/DiscardCards';
+import {DiscardCards} from '../../deferredActions/DiscardCards';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
@@ -36,13 +36,13 @@ export class PointLuna extends Card implements CorporationCard {
     const tagCount = card.tags.filter((tag) => tag === Tags.EARTH).length;
     if (player.isCorporation(this.name) && card.tags.includes(Tags.EARTH)) {
       player.drawCard(tagCount);
-      action = new DiscardCards(player, tagCount, 'Point Luna effect: Select card(s) to discard');
+      new DiscardCards(player, tagCount, 'Point Luna effect: Select card(s) to discard');
     }
   }
   public play(player: Player) {
     player.addProduction(Resources.TITANIUM, 1);
     player.drawCard();
-    action = new DiscardCards(player, 1, 'Point Luna effect: Select a card to discard');
+    new DiscardCards(player, 1, 'Point Luna effect: Select a card to discard');
     return undefined;
   }
 }
