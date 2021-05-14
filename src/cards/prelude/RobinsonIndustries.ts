@@ -10,6 +10,7 @@ import {CardName} from '../../CardName';
 import {LogHelper} from '../../LogHelper';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
+import {Units} from '../../Units';
 
 export class RobinsonIndustries extends Card implements IActionCard, CorporationCard {
   constructor() {
@@ -18,6 +19,7 @@ export class RobinsonIndustries extends Card implements IActionCard, Corporation
       name: CardName.ROBINSON_INDUSTRIES,
       tags: [Tags.WILDCARD],
       startingMegaCredits: 45,
+      productionBox: Units.of({megacredits: 2}),
 
       metadata: {
         cardNumber: 'R27',
