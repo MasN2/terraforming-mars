@@ -10,7 +10,7 @@ export class Luna extends Colony {
     public buildQuantity = [2, 2, 2];
     public buildResource = Resources.MEGACREDITS;
     public tradeType = ColonyBenefit.GAIN_RESOURCES;
-    public tradeQuantity = [2, 3, 5, 7, 9, 12, 16];
+    public tradeQuantity = [3, 4, 5, 7, 9, 12, 16];
     public tradeResource = Resources.MEGACREDITS;
     public colonyBonusType = ColonyBenefit.GAIN_RESOURCES;
     public colonyBonusQuantity = 2;

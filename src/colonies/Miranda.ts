@@ -10,6 +10,6 @@ export class Miranda extends Colony {
     public resourceType = ResourceType.ANIMAL;
     public buildType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
     public tradeType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
-    public tradeQuantity = [0, 1, 1, 2, 2, 3, 3];
+    public tradeQuantity = [1, 1, 1, 2, 2, 3, 3];
     public colonyBonusType = ColonyBenefit.DRAW_CARDS;
 }
