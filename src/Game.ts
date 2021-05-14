@@ -1347,7 +1347,7 @@ export class Game implements ISerializable<SerializedGame> {
       TurmoilHandler.resolveTilePlacementBonuses(player, spaceType);
 
       if (arcadianCommunityBonus) {
-        this.defer(new GainResources(player, Resources.MEGACREDITS, {count: 4}));
+        this.defer(new GainResources(player, Resources.MEGACREDITS, {count: 5}));
       }
     } else {
       space.player = undefined;
