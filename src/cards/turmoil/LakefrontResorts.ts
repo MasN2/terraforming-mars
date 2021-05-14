@@ -9,6 +9,7 @@ import {CardName} from '../../CardName';
 import {Priority} from '../../deferredActions/DeferredAction';
 import {GainProduction} from '../../deferredActions/GainProduction';
 import {CardType} from '../CardType';
+import {PlaceOceanTile} from '../../deferredActions/PlaceOceanTile';
 import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../render/Size';
 
@@ -19,19 +20,18 @@ export class LakefrontResorts extends Card implements CorporationCard {
       name: CardName.LAKEFRONT_RESORTS,
       tags: [Tags.BUILDING],
       startingMegaCredits: 54,
+      initialActionText: 'Place an Ocean',
 
       metadata: {
         cardNumber: 'R38',
-        description: 'You start with 54 M€.',
+        description: 'You start with 46 M€. As your first action, place an ocean.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(54);
+          b.megacredits(46).oceans(1);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.MEDIUM);
-            ce.effect('When any ocean tile is placed, increase your M€ production 1 step. Your bonus for placing adjacent to oceans is 3M€ instead of 2 M€.', (eb) => {
-              eb.oceans(1, Size.SMALL).any.colon().production((pb) => pb.megacredits(1));
-              eb.emptyTile('normal', Size.SMALL).oceans(1, Size.SMALL);
-              eb.startEffect.megacredits(3);
+            ce.effect('When any ocean tile is placed, increase your M€ production 1 step.', (eb) => {
+              eb.oceans(1).any.startEffect.production((pb) => pb.megacredits(1));
             });
           });
         }),
@@ -39,8 +39,12 @@ export class LakefrontResorts extends Card implements CorporationCard {
     });
   }
 
-  public play(player: Player) {
-    player.oceanBonus = 3;
+  public initialAction(player: Player) {
+    player.game.defer(new PlaceOceanTile(player));
+    return undefined;
+  }
+
+  public play() {
     return undefined;
   }
 
