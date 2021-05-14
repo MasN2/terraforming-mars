@@ -16,7 +16,7 @@ export class RobinsonIndustries extends Card implements IActionCard, Corporation
     super({
       cardType: CardType.CORPORATION,
       name: CardName.ROBINSON_INDUSTRIES,
-      tags: [Tags.WILD],
+      tags: [Tags.WILDCARD],
       startingMegaCredits: 45,
 
       metadata: {

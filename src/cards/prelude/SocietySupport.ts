@@ -9,7 +9,7 @@ export class SocietySupport extends PreludeCard {
   constructor() {
     super({
       name: CardName.SOCIETY_SUPPORT,
-      tags: [Tags.WILD],
+      tags: [Tags.WILDCARD],
 
       metadata: {
         cardNumber: 'P31',

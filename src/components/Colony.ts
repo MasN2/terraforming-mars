@@ -140,7 +140,8 @@ export const Colony = Vue.component('colony', {
       <div v-if="colony.name === getCeres()" class="resource steel"></div>
       <div v-if="colony.name === getCeres()" class="resource steel"></div>
       <div v-if="colony.name === getIo()" class="resource heat"></div>
-      <div v-if="colony.name === getIo()" class="resource heat"></div>      
+      <div v-if="colony.name === getIo()" class="resource heat"></div>
+      <div v-if="colony.name === getIo()" class="resource heat"></div>
       <div v-if="colony.name === getLuna()" class="resource money">2</div>
 
       <div v-if="colony.name === getIapetus()" class="resource card card-with-border" style="transform: scale(0.8);"></div>
@@ -155,7 +156,7 @@ export const Colony = Vue.component('colony', {
       <div v-if="colony.name === getPallas()" style="display:inline-block">
         <div class="resource money">1</div> / party <div class="delegate"></div>
       </div>
-      
+
       <span v-if="colony.name === getLeavitt()" style="display: inline-block;margin-left: 10px;font-size: 14px;">REVEAL TOP CARD OF DECK.</span>
       <span v-if="colony.name === getLeavitt()"><br></span>
       <span v-if="colony.name === getLeavitt()" style="font-size: 14px; margin-left: 10px;">BUY OR DISCARD IT.</span>
@@ -164,7 +165,7 @@ export const Colony = Vue.component('colony', {
       <div v-if="colony.name === getPluto()" class="resource card card-with-border" style="transform: scale(0.8);margin-left:-2px;"></div>
       <span v-if="colony.name === getPluto()" class="white-char">-</span>
       <div v-if="colony.name === getPluto()" class="resource card card-with-border" style="transform: scale(0.8);margin-left:-2px;"></div>
-      
+
       <span v-if="colony.name !== getTitania()" class="colony-background-color">
         Colony Bonus
       </span>
@@ -198,7 +199,7 @@ export const Colony = Vue.component('colony', {
       </span>
       <span v-if="colony.name === getPluto()" class="colony-background-color" style="position:relative; top:-3px">
         Trade Income
-      </span> 
+      </span>
       <span v-if="colony.name === getEuropa()" class="colony-background-color" style="margin-left: 3px;position: relative;top: -12px;">
         Trade Income: Gain the indicated production
       </span>
@@ -265,7 +266,7 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getPluto()" class="colony-grid-container2">
-      <div>0</div>
+      <div>1</div>
       <div>1</div>
       <div>2</div>
       <div>2</div>
@@ -294,9 +295,9 @@ export const Colony = Vue.component('colony', {
     </div>
 
     <div v-if="colony.name === getIo()" class="colony-grid-container">
-      <div><div class="production-box"><div class="production heat"></div></div></div>
-      <div><div class="production-box"><div class="production heat"></div></div></div>
-      <div><div class="production-box"><div class="production heat"></div></div></div>
+      <div><div class="temperature-tile"></div></div></div>
+      <div><div class="temperature-tile"></div></div></div>
+      <div><div class="temperature-tile"></div></div></div>
       <div></div>
       <div></div>
       <div></div>
@@ -305,11 +306,11 @@ export const Colony = Vue.component('colony', {
     <div v-if="colony.name === getIo()" class="colony-grid-container2">
       <div>2</div>
       <div>3</div>
-      <div>4</div>
-      <div>6</div>
-      <div>8</div>
-      <div>10</div>
-      <div>13</div>
+      <div>5</div>
+      <div>7</div>
+      <div>9</div>
+      <div>12</div>
+      <div>15</div>
     </div>
 
     <div v-if="colony.name === getLuna()" class="colony-grid-container">
@@ -322,13 +323,13 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getLuna()" class="colony-grid-container2">
-      <div>1</div>
       <div>2</div>
-      <div>4</div>
+      <div>3</div>
+      <div>5</div>
       <div>7</div>
-      <div>10</div>
-      <div>13</div>
-      <div>17</div>
+      <div>9</div>
+      <div>12</div>
+      <div>16</div>
     </div>
 
     <div v-if="colony.name === getIapetus()" class="colony-grid-container">
@@ -387,9 +388,9 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getTriton()" class="colony-grid-container2">
-      <div>0</div>
       <div>1</div>
       <div>1</div>
+      <div>2</div>
       <div>2</div>
       <div>3</div>
       <div>4</div>
@@ -406,13 +407,13 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getGanymede()" class="colony-grid-container2">
-      <div>0</div>
       <div>1</div>
       <div>2</div>
       <div>3</div>
       <div>4</div>
       <div>5</div>
       <div>6</div>
+      <div>7</div>
     </div>
 
     <div v-if="colony.name === getCallisto()" class="colony-grid-container">
@@ -425,7 +426,7 @@ export const Colony = Vue.component('colony', {
     <div></div>
   </div>
   <div v-if="colony.name === getCallisto()" class="colony-grid-container2">
-    <div>0</div>
+    <div>1</div>
     <div>2</div>
     <div>3</div>
     <div>5</div>
