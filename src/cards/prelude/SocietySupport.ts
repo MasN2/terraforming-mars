@@ -8,21 +8,20 @@ export class SocietySupport extends PreludeCard {
   constructor() {
     super({
       name: CardName.SOCIETY_SUPPORT,
+      tags: [Tags.WILD],
 
       metadata: {
         cardNumber: 'P31',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(-1).plants(1).br;
-            pb.energy(1).heat(1);
+            pb.plants(1).energy(1).heat(1);
           });
         }),
-        description: 'Increase your plant, energy and heat production 1 step. Decrease money production 1 step.',
+        description: 'Increase your plant, energy and heat production 1 step.',
       },
     });
   }
   public play(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, -1);
     player.addProduction(Resources.PLANTS, 1);
     player.addProduction(Resources.ENERGY, 1);
     player.addProduction(Resources.HEAT, 1);

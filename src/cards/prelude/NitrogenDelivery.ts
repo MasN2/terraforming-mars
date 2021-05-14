@@ -13,17 +13,15 @@ export class NitrogenDelivery extends PreludeCard implements IProjectCard {
       metadata: {
         cardNumber: 'P24',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1)).tr(1).br;
-          b.megacredits(5);
+          b.tr(3).plants(4);
         }),
-        description: 'Increase your plant production 1 step. Increase your TR 1 step. Gain 5 M€.',
+        description: 'Increase your TR 3 steps. Gain 4 plants.',
       },
     });
   }
   public play(player: Player) {
-    player.megaCredits += 5;
-    player.increaseTerraformRating();
-    player.addProduction(Resources.PLANTS, 1);
+    player.increaseTerraformRatingSteps(3);
+    player.plants += 4;
     return undefined;
   }
 }

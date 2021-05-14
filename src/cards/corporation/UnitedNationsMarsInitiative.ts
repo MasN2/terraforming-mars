@@ -16,18 +16,18 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
       cardType: CardType.CORPORATION,
       name: CardName.UNITED_NATIONS_MARS_INITIATIVE,
       tags: [Tags.EARTH],
-      startingMegaCredits: 41,
+      startingMegaCredits: 42,
 
       metadata: {
         cardNumber: 'R32',
-        description: 'You start with 41 M€.',
+        description: 'You start with 42 M€.',
         renderData: CardRenderer.builder((b) => {
           // TODO(chosta): find a not so hacky solutions to spacing
           b.br.br.br;
-          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(41);
+          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(42);
           b.corpBox('action', (ce) => {
             ce.action('If your Terraform Rating was raised this generation, you may raise it 1 step more.', (eb) => {
-              eb.startAction.tr(1).asterix();
+              eb.empty().startAction.tr(1).asterix();
             });
           });
         }),

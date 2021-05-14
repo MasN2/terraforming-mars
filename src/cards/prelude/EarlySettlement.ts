@@ -15,14 +15,16 @@ export class EarlySettlement extends PreludeCard {
       metadata: {
         cardNumber: 'P09',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1)).city();
+          b.production((pb) => pb.plants(1)).plants(3).br;
+          b.city();
         }),
-        description: 'Increase your plant production 1 step. Place a city tile.',
+        description: 'Increase your plant production 1 step and gain 3 plants. Place a city tile.',
       },
     });
   }
   public play(player: Player) {
     player.addProduction(Resources.PLANTS, 1);
+    player.plants += 3;
     player.game.defer(new PlaceCityTile(player));
     return undefined;
   }

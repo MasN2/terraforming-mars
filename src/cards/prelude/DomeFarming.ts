@@ -14,15 +14,15 @@ export class DomeFarming extends PreludeCard {
       metadata: {
         cardNumber: 'P07',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.megacredits(2).plants(1));
+          b.production((pb) => pb.megacredits(3).plants(1));
         }),
-        description: 'Increase your M€ production 2 steps and plant production 1 step.',
+        description: 'Increase your M€ production 3 steps and plant production 1 step.',
       },
     });
   }
   public play(player: Player) {
     player.addProduction(Resources.PLANTS, 1);
-    player.addProduction(Resources.MEGACREDITS, 2);
+    player.addProduction(Resources.MEGACREDITS, 3);
     return undefined;
   }
 }
