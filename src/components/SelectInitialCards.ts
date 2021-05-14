@@ -47,32 +47,33 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
       let result = 0;
       for (const prelude of this.selectedPrelude) {
         switch (prelude) {
-        case CardName.ALLIED_BANKS:
-          result += 3;
-          break;
-        case CardName.BUSINESS_EMPIRE:
-          result -= 6;
-          break;
-        case CardName.AQUIFER_TURBINES:
-          result -= 3;
+        case CardName.LOAN:
+          result += 30;
           break;
         case CardName.DONATION:
           result += 21;
-          break;
-        case CardName.GALILEAN_MINING:
-        case CardName.HUGE_ASTEROID:
-          result -= 5;
-          break;
-        case CardName.LOAN:
-          result += 30;
           break;
         case CardName.MARTIAN_INDUSTRIES:
         case CardName.VALUABLE_GASES:
           result += 6;
           break;
-        case CardName.NITROGEN_SHIPMENT:
+        case CardName.POLAR_INDUSTRIES:
           result += 5;
           break;
+        case CardName.SELF_SUFFICIENT_SETTLEMENT:
+        case CardName.ALLIED_BANKS:
+          result += 3;
+          break;
+        case CardName.AQUIFER_TURBINES:
+          result -= 3;
+          break;
+        case CardName.GALILEAN_MINING:
+          result -= 5;
+          break;
+        case CardName.BUSINESS_EMPIRE:
+          result -= 6;
+          break;
+
         case CardName.AEROSPACE_MISSION:
           result -= 14;
           break;
@@ -93,6 +94,8 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
             result += 6;
             break;
           case CardName.DOME_FARMING:
+            result += 3;
+            break;
           case CardName.SELF_SUFFICIENT_SETTLEMENT:
             result += 2;
             break;
@@ -113,7 +116,6 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
         case CardName.PHARMACY_UNION:
           switch (prelude) {
           case CardName.BIOFUELS:
-          case CardName.ECOLOGY_EXPERTS:
             result -= 4;
             break;
           }
@@ -121,7 +123,6 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
         case CardName.SPLICE:
           switch (prelude) {
           case CardName.BIOFUELS:
-          case CardName.ECOLOGY_EXPERTS:
             result += 2;
             break;
           }
