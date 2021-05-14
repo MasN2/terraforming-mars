@@ -19,32 +19,37 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
     super({
       name: CardName.STORMCRAFT_INCORPORATED,
       tags: [Tags.JOVIAN],
-      startingMegaCredits: 48,
+      startingMegaCredits: 44,
       resourceType: ResourceType.FLOATER,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: 'R29',
-        description: 'You start with 48 M€.',
+        description: 'You start with 44 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(48);
+          b.megacredits(44);
           b.corpBox('action', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.action('Add a floater to ANY card.', (eb) => {
               eb.empty().startAction.floaters(1).asterix();
             });
             ce.vSpace();
-            ce.effect('Floaters on this card may be used as 2 heat each.', (eb) => {
-              eb.startEffect.floaters(1).equals().heat(2);
+            ce.effect('Floaters on this card may be used as 3 heat each.', (eb) => {
+              eb.startEffect.floaters(1).equals().heat(3);
             });
           });
         }),
+		victoryPoints: CardRenderDynamicVictoryPoints.jovians(1, 1),
       },
     });
   }
 
   public resourceCount = 0;
-
+  
+  public getVictoryPoints(player: Player) {
+    return player.getTagCount(Tags.JOVIAN, false, false);
+  }
+  
   public play() {
     return undefined;
   }
@@ -79,13 +84,13 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
 
     return new AndOptions(
       () => {
-        if (heatAmount + (floaterAmount * 2) < targetAmount) {
+        if (heatAmount + (floaterAmount * 3) < targetAmount) {
           throw new Error(`Need to pay ${targetAmount} heat`);
         }
-        if (heatAmount > 0 && heatAmount - 1 + (floaterAmount * 2) >= targetAmount) {
+        if (heatAmount > 0 && heatAmount - 1 + (floaterAmount * 3) >= targetAmount) {
           throw new Error(`You cannot overspend heat`);
         }
-        if (floaterAmount > 0 && heatAmount + ((floaterAmount - 1) * 2) >= targetAmount) {
+        if (floaterAmount > 0 && heatAmount + ((floaterAmount - 1) * 3) >= targetAmount) {
           throw new Error(`You cannot overspend floaters`);
         }
         player.removeResourceFrom(player.corporationCard as ICard, floaterAmount);
@@ -99,7 +104,7 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
       new SelectAmount('Select amount of floaters on corporation to spend', 'Spend floaters', (amount: number) => {
         floaterAmount = amount;
         return undefined;
-      }, 0, Math.min(player.getResourcesOnCorporation(), Math.ceil(targetAmount / 2))),
+      }, 0, Math.min(player.getResourcesOnCorporation(), Math.ceil(targetAmount / 3))),
     );
   }
 }

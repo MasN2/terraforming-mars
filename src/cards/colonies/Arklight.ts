@@ -15,19 +15,19 @@ export class Arklight extends Card implements CorporationCard, IResourceCard {
   constructor() {
     super({
       name: CardName.ARKLIGHT,
-      tags: [Tags.ANIMAL],
-      startingMegaCredits: 45,
+      tags: [Tags.ANIMAL, Tags.ANIMAL],
+      startingMegaCredits: 48,
       resourceType: ResourceType.ANIMAL,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: 'R04',
-        description: 'You start with 45 M€. Increase your M€ production 2 steps. 1 VP per 2 animals on this card.',
+        description: 'You start with 48 M€. 1 VP per 2 animals on this card.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(45).nbsp.production((pb) => pb.megacredits(2));
+          b.megacredits(48);
           b.corpBox('effect', (ce) => {
-            ce.effect('When you play an animal or plant tag, including this, add 1 animal to this card.', (eb) => {
-              eb.animals(1).played.slash().plants(1).played.startEffect.animals(1);
+            ce.effect('When you play an animal or plant tag, including these, gain 1 MC production and add 1 animal to this card.', (eb) => {
+              eb.animals(1).played.slash().plants(1).played.startEffect.production((pb) => pb.megacredits(2)).animals(1);
             });
             ce.vSpace(); // to offset the description to the top a bit so it can be readable
           });
@@ -41,13 +41,15 @@ export class Arklight extends Card implements CorporationCard, IResourceCard {
 
     public play(player: Player) {
       player.addProduction(Resources.MEGACREDITS, 2);
-      player.addResourceTo(this);
+      player.addResourceTo(this, 2);
       return undefined;
     }
 
     public onCardPlayed(player: Player, card: IProjectCard): void {
       if (player.isCorporation(CardName.ARKLIGHT)) {
-        player.addResourceTo(this, card.tags.filter((cardTag) => cardTag === Tags.ANIMAL || cardTag === Tags.PLANT).length);
+        qty = card.tags.filter((cardTag) => cardTag === Tags.ANIMAL || cardTag === Tags.PLANT).length
+        player.addProduction(Resources.MEGACREDITS, qty);
+        player.addResourceTo(this, qty);
       }
     }
 

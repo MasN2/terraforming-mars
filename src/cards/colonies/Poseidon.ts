@@ -10,19 +10,19 @@ export class Poseidon extends Card implements CorporationCard {
   constructor() {
     super({
       name: CardName.POSEIDON,
-      startingMegaCredits: 45,
+      startingMegaCredits: 38,
       cardType: CardType.CORPORATION,
       initialActionText: 'Place a colony',
 
       metadata: {
         cardNumber: 'R02',
-        description: 'You start with 45 M€. As your first action, place a colony.',
+        description: 'You start with 38 M€. As your first action, place a colony.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(45).nbsp.colonies(1);
+          b.megacredits(38).nbsp.colonies(1);
           b.corpBox('effect', (ce) => {
-            ce.effect('When any colony is placed, including this, raise your M€ production 1 step.', (eb) => {
-              eb.colonies(1).any.startEffect.production((pb) => pb.megacredits(1));
+            ce.effect('When you place a colony, including this, raise your M€ production 2 steps.', (eb) => {
+              eb.colonies(1).startEffect.production((pb) => pb.megacredits(2));
             });
           });
         }),
