@@ -236,8 +236,10 @@ class Builder {
     return this;
   }
 
-  public cards(amount: number): Builder {
-    this._addRowItem(new CardRenderItem(CardRenderItemType.CARDS, amount));
+  public cards(amount: number, cancelled: boolean = false): Builder {
+    const item = new CardRenderItem(CardRenderItemType.CARDS, amount);
+    item.cancelled = cancelled;
+    this._addRowItem(item);
     return this;
   }
 

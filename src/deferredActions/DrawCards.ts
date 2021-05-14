@@ -4,6 +4,7 @@ import {IProjectCard} from '../cards/IProjectCard';
 import {DeferredAction, Priority} from './DeferredAction';
 import {SelectCard} from '../inputs/SelectCard';
 import {ResourceType} from '../ResourceType';
+import {CardName} from '../CardName';
 import {CardType} from '../cards/CardType';
 import {SelectHowToPayDeferred} from './SelectHowToPayDeferred';
 import {LogHelper} from '../LogHelper';
@@ -82,6 +83,10 @@ export class DrawCards<T extends undefined | SelectCard<IProjectCard>> implement
       `Select ${max} card(s) to keep`;
     const button = max === 0 ? 'Ok' : (options.paying ? 'Buy' : 'Select');
     const cb = (selected: Array<IProjectCard>) => {
+      // Polyphemos Hook
+      if (options.paying && player.isCorporation(CardName.POLYPHEMOS)) {
+          player.titanium += (cards.length - selected.length);
+      }
       if (options.paying && selected.length > 0) {
         player.game.defer(
           new SelectHowToPayDeferred(player, selected.length * player.cardCost, {
