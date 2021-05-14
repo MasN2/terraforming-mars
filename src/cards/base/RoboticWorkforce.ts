@@ -122,7 +122,7 @@ export class RoboticWorkforce extends Card implements IProjectCard {
     CardName.RAD_CHEM_FACTORY,
     CardName.RESEARCH_NETWORK,
     CardName.SELF_SUFFICIENT_SETTLEMENT,
-    CardName.SOCIETY_SUPPORT
+    CardName.SOCIETY_SUPPORT,
     CardName.SOIL_FACTORY,
     CardName.SOLAR_FARM,
     CardName.SOLAR_POWER,
@@ -146,7 +146,7 @@ export class RoboticWorkforce extends Card implements IProjectCard {
     CardName.MANUTECH,
     CardName.MINING_GUILD,
     CardName.RECYCLON,
-    CardName.ROBINSON_INDUSTRIES
+    CardName.ROBINSON_INDUSTRIES,
     CardName.UTOPIA_INVEST,
     CardName.CURIOSITY_II,
   ];
