@@ -26,7 +26,7 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.production((pb) => pb.steel(2)).nbsp.megacredits(36).br;
-          b.community().community().community()..community();
+          b.community().community().community().community();
           b.corpBox('action', (ce) => {
             ce.text('ACTION: PLACE A COMMUNITY (PLAYER MARKER) ON A NON-RESERVED AREA ADJACENT TO ONE OF YOUR TILES OR MARKED AREAS', Size.TINY, true);
             ce.vSpace(Size.MEDIUM);
