@@ -10,7 +10,6 @@ import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {PlaceCommunityTile} from '../../deferredActions/PlaceCommunityTile';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
 
 export class ArcadianCommunities extends Card implements IActionCard, CorporationCard {
   constructor() {
@@ -30,7 +29,7 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
           b.community().community().community().community();
           b.corpBox('action', (ce) => {
             ce.action('Place a community adjacent to one of your tiles or communities. When you place a tile there, gain 4 MC.', (eb) => {
-              eb.empty().startAction.community().asterix().nbsp.community().colon.megacredits(4);
+              eb.empty().startAction.community().asterix().nbsp.community().colon().megacredits(4);
             });
           });
         }),
