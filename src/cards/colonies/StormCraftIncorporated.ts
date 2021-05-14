@@ -13,6 +13,7 @@ import {Card} from '../Card';
 import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../render/Size';
 import {PlayerInput} from '../../PlayerInput';
+import {CardRenderDynamicVictoryPoints} from '../render/CardRenderDynamicVictoryPoints';
 
 export class StormCraftIncorporated extends Card implements IActionCard, CorporationCard, IResourceCard {
   constructor() {
