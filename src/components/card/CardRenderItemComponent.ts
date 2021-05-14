@@ -325,7 +325,7 @@ export const CardRenderItemComponent = Vue.component('CardRenderItemComponent', 
         return '<div class="board-cube--bronze"></div>';
       }
       // TODO(chosta): abstract once another case of cancel (X) on top of an item is needed
-      if (this.item.type === CardRenderItemType.TR && this.item.cancelled === true) {
+      if (this.item.cancelled === true) {
         result = '<div class="card-x">x</div>';
       }
 
