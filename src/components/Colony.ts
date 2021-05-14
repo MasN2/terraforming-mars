@@ -295,9 +295,9 @@ export const Colony = Vue.component('colony', {
     </div>
 
     <div v-if="colony.name === getIo()" class="colony-grid-container">
-      <div><div class="tile temperature-tile temperature-tile-colony"></div></div></div>
-      <div><div class="tile temperature-tile temperature-tile-colony"></div></div></div>
-      <div><div class="tile temperature-tile temperature-tile-colony"></div></div></div>
+      <div><div class="tile temperature-tile temperature-tile-colony"></div></div>
+      <div><div class="tile temperature-tile temperature-tile-colony"></div></div>
+      <div><div class="tile temperature-tile temperature-tile-colony"></div></div>
       <div></div>
       <div></div>
       <div></div>
