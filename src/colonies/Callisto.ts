@@ -9,9 +9,9 @@ export class Callisto extends Colony {
     public buildType = ColonyBenefit.GAIN_PRODUCTION;
     public buildResource = Resources.ENERGY;
     public tradeType = ColonyBenefit.GAIN_RESOURCES;
-    public tradeQuantity = [1, 2, 3, 5, 7, 10, 13];
+    public tradeQuantity = [1, 2, 4, 6, 9, 13, 18];
     public tradeResource = Resources.ENERGY;
     public colonyBonusType = ColonyBenefit.GAIN_RESOURCES;
-    public colonyBonusQuantity = 3;
+    public colonyBonusQuantity = 4;
     public colonyBonusResource = Resources.ENERGY;
 }
