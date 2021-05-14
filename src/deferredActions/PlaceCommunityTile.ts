@@ -11,7 +11,7 @@ export class PlaceCommunityTile implements DeferredAction {
   ) {}
 
   public execute() {
-    const availableSpaces = this.player.game.board.getNonReservedLandSpaces(this.player);
+    const availableSpaces = this.player.game.board.getNonReservedLandSpaces();
     if (availableSpaces.length === 0) {
       return undefined;
     }
@@ -20,8 +20,7 @@ export class PlaceCommunityTile implements DeferredAction {
       this.title,
       availableSpaces,
       (space: ISpace) => {
-        foundSpace.player = player;
-        player.game.log('${0} placed a Community (player marker)', (b) => b.player(player));
+        space.player = this.player;
         return undefined;
       },
     );
