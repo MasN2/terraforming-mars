@@ -391,7 +391,7 @@ export enum CardName {
     ARKLIGHT = 'Arklight',
     POSEIDON = 'Poseidon',
     STORMCRAFT_INCORPORATED = 'Stormcraft Incorporated',
-    ARCADIAN_COMMUNITIES = 'Arcadian',
+    ARCADIAN_COMMUNITIES = 'Arcadian Communities',
     ASTRODRILL = 'Astrodrill',
     ADVERTISING = 'Advertising',
     PHARMACY_UNION = 'Pharmacy Union',

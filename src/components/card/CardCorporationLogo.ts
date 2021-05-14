@@ -79,7 +79,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.AGRICOLA_INC:
         return '<span class="card-agricola-logo">Agricola Inc</span>';
       case CardName.ARCADIAN_COMMUNITIES:
-        return '<span class="card-arcadian-logo"><span>Arcadian</span></br><span>Communities</span></span>';
+        return '<span class="card-arcadian-logo">Arcadian</span>';
       case CardName.INCITE:
         return '<span class="card-incite-logo">Incite</span>';
       case CardName.LAKEFRONT_RESORTS:
