@@ -22,7 +22,6 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
         cardNumber: 'R44',
         description: 'You start with 1 steel production and 40 MC. As your first action, place 5 communities.',
         renderData: CardRenderer.builder((b) => {
-          b.br;
           b.production((pb) => pb.steel(1)).nbsp.megacredits(40).br;
           b.community().community().community().community().community();
           b.corpBox('action', (ce) => {
