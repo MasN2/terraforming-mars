@@ -1,6 +1,5 @@
 import {CorporationCard} from '../corporation/CorporationCard';
-import {Player} from '../../Player';
-import {Resources} from '../../Resources';
+import {Tags} from '../Tags';
 import {Card} from '../Card';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
@@ -10,6 +9,7 @@ export class Polyphemos extends Card implements CorporationCard {
   constructor() {
     super({
       name: CardName.POLYPHEMOS,
+      tags: [Tags.SPACE],
       startingMegaCredits: 40,
       cardType: CardType.CORPORATION,
 
