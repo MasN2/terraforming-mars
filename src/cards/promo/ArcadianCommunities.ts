@@ -23,15 +23,15 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
 
       metadata: {
         cardNumber: 'R44',
-        description: 'You start with 2 steel production and 36 MC. AS YOUR FIRST ACTION, PLACE A COMMUNITY [PLAYER MARKER] ON FOUR NON-RESERVED AREAS.',
+        description: 'You start with 2 steel production and 36 MC. As your first action, place 4 communities.',
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.production((pb) => pb.steel(2)).nbsp.megacredits(36).br;
           b.community().community().community().community();
           b.corpBox('action', (ce) => {
-            ce.text('ACTION: PLACE A COMMUNITY (PLAYER MARKER) ON A NON-RESERVED AREA ADJACENT TO ONE OF YOUR TILES OR MARKED AREAS', Size.TINY, true);
-            ce.vSpace(Size.MEDIUM);
-            ce.text('EFFECT: MARKED AREAS ARE RESERVED FOR YOU. WHEN YOU PLACE A TILE THERE, GAIN 4 M€', Size.TINY, true);
+            ce.action('Place a community adjacent to one of your tiles or communities. When you place a tile there, gain 4 MC.', (eb) => {
+              eb.empty().startAction.community().asterix().nbsp.community().colon.megacredits(4);
+            });
           });
         }),
       },
