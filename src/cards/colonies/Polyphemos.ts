@@ -1,4 +1,5 @@
 import {CorporationCard} from '../corporation/CorporationCard';
+import {Player} from '../../Player';
 import {Tags} from '../Tags';
 import {Card} from '../Card';
 import {CardName} from '../../CardName';
@@ -28,7 +29,8 @@ export class Polyphemos extends Card implements CorporationCard {
       },
     });
   }
-  public play() {
+  public play(player: Player) {
+    player.titanium = 10 - player.cardsInHand.length;
     return undefined;
   }
 }
