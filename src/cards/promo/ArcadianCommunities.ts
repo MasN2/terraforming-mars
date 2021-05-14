@@ -8,6 +8,7 @@ import {ISpace} from '../../boards/ISpace';
 import {IActionCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
+import {PlaceCommunityTile} from '../../deferredActions/PlaceCommunityTile';
 import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../render/Size';
 
@@ -38,17 +39,10 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
   }
 
   public initialAction(player: Player) {
-    for (let i = 0; i < 4; i++) {
-      player.game.defer(new SelectSpace(
-        'Select space for claim',
-        player.game.board.getAvailableSpacesOnLand(player),
-        (foundSpace: ISpace) => {
-          foundSpace.player = player;
-          player.game.log('${0} placed a Community (player marker)', (b) => b.player(player));
-          return undefined;
-        },
-      ));
-    }
+    player.game.defer(new PlaceCommunityTile(player, 'Select space for first community'));
+    player.game.defer(new PlaceCommunityTile(player, 'Select space for second community'));
+    player.game.defer(new PlaceCommunityTile(player, 'Select space for third community'));
+    player.game.defer(new PlaceCommunityTile(player, 'Select space for fourth community'));
     return undefined;
   }
 
