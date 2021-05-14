@@ -262,8 +262,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.NONE;
 
-      players[0].setTerraformRating(14);
-      players[0].terraformRatingAtGenerationStart = 14;
+      players[0].setTerraformRating(20);  // Variant: 20 TR, 13 gens
+      players[0].terraformRatingAtGenerationStart = 20;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
@@ -532,7 +532,7 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public lastSoloGeneration(): number {
-    let lastGeneration = 14;
+    let lastGeneration = 13;
     const options = this.gameOptions;
     if (options.preludeExtension) {
       lastGeneration -= 2;
