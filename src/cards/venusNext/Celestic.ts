@@ -87,7 +87,7 @@ export class Celestic extends Card implements IActionCard, CorporationCard, IRes
         'Add floater',
         floaterCards,
         (foundCards: Array<ICard>) => {
-          player.addResourceTo(foundCards[0], 2, {log: true});
+          player.addResourceTo(foundCards[0], {count: 2, log: true});
           return undefined;
         },
       );

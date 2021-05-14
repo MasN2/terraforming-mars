@@ -1,5 +1,6 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
+import {Tags} from '../Tags';
 import {Card} from '../Card';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
@@ -10,6 +11,7 @@ export class Poseidon extends Card implements CorporationCard {
   constructor() {
     super({
       name: CardName.POSEIDON,
+      tags: [Tags.SPACE],
       startingMegaCredits: 38,
       cardType: CardType.CORPORATION,
       initialActionText: 'Place a colony',
