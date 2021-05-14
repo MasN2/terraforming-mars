@@ -262,7 +262,7 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.NONE;
 
-      players[0].setTerraformRating(20);  // Variant: 20 TR, 13 gens
+      players[0].setTerraformRating(20); // Variant: 20 TR, 13 gens
       players[0].terraformRatingAtGenerationStart = 20;
     }
 
