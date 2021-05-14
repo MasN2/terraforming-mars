@@ -1173,7 +1173,7 @@ export class Game implements ISerializable<SerializedGame> {
     // Check for Aphrodite corporation
     const aphrodite = this.players.find((player) => player.isCorporation(CardName.APHRODITE));
     if (aphrodite !== undefined) {
-      aphrodite.megaCredits += steps * 2;
+      aphrodite.plants += steps * 2;
     }
 
     this.venusScaleLevel += steps * 2;

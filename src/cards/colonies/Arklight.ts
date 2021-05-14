@@ -27,7 +27,7 @@ export class Arklight extends Card implements CorporationCard, IResourceCard {
           b.megacredits(48);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an animal or plant tag, including these, gain 1 MC production and add 1 animal to this card.', (eb) => {
-              eb.animals(1).played.slash().plants(1).played.startEffect.production((pb) => pb.megacredits(2)).animals(1);
+              eb.animals(1).played.slash().plants(1).played.startEffect.production((pb) => pb.megacredits(1)).animals(1);
             });
             ce.vSpace(); // to offset the description to the top a bit so it can be readable
           });
