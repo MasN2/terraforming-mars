@@ -47,7 +47,7 @@ export class Arklight extends Card implements CorporationCard, IResourceCard {
 
     public onCardPlayed(player: Player, card: IProjectCard): void {
       if (player.isCorporation(CardName.ARKLIGHT)) {
-        const qty = card.tags.filter((cardTag) => cardTag === Tags.ANIMAL || cardTag === Tags.PLANT).length
+        const qty = card.tags.filter((cardTag) => cardTag === Tags.ANIMAL || cardTag === Tags.PLANT).length;
         player.addProduction(Resources.MEGACREDITS, qty);
         player.addResourceTo(this, qty);
       }

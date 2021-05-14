@@ -40,17 +40,17 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
             });
           });
         }),
-		victoryPoints: CardRenderDynamicVictoryPoints.jovians(1, 1),
+        victoryPoints: CardRenderDynamicVictoryPoints.jovians(1, 1),
       },
     });
   }
 
   public resourceCount = 0;
-  
+
   public getVictoryPoints(player: Player) {
     return player.getTagCount(Tags.JOVIAN, false, false);
   }
-  
+
   public play() {
     return undefined;
   }
