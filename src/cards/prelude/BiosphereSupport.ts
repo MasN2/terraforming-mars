@@ -15,8 +15,7 @@ export class BiosphereSupport extends PreludeCard {
         cardNumber: 'P05',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.megacredits(1).br;
-            pb.plants(2);
+            pb.megacredits(1).plants(2);
           });
         }),
         description: 'Increase your plant production 2 steps. Increase your M€ production 1 step.',

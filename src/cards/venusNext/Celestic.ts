@@ -16,7 +16,7 @@ export class Celestic extends Card implements IActionCard, CorporationCard, IRes
   constructor() {
     super({
       name: CardName.CELESTIC,
-      tags: [Tags.VENUS],
+      tags: [Tags.VENUS, Tags.JOVIAN],
       startingMegaCredits: 42,
       resourceType: ResourceType.FLOATER,
       cardType: CardType.CORPORATION,
