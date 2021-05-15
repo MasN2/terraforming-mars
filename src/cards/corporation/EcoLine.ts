@@ -16,7 +16,7 @@ export class EcoLine extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.ECOLINE,
-      tags: [Tags.PLANT, Tags.PLANT],
+      tags: [Tags.PLANT, Tags.MICROBE],
       startingMegaCredits: 39,
 
       metadata: {
