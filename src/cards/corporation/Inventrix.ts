@@ -11,16 +11,16 @@ export class Inventrix extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.INVENTRIX,
-      tags: [Tags.SCIENCE],
+      tags: [Tags.SCIENCE, Tags.SCIENCE],
       initialActionText: 'Draw 4 cards',
-      startingMegaCredits: 47,
+      startingMegaCredits: 42,
 
       metadata: {
         cardNumber: 'R43',
-        description: 'As your first action in the game, draw 4 cards. Start with 47 M€.',
+        description: 'As your first action in the game, draw 4 cards. Start with 42 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(47).nbsp.cards(4);
+          b.megacredits(42).nbsp.cards(4);
           b.corpBox('effect', (ce) => {
             ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +3 or -3 steps, your choice in each case.', (eb) => {
               eb.plate('Global requirements').startEffect.text('+/- 3');

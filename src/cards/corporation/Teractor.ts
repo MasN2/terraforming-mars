@@ -12,19 +12,19 @@ export class Teractor extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.TERACTOR,
-      tags: [Tags.EARTH],
-      startingMegaCredits: 60,
+      tags: [Tags.EARTH, Tags.EARTH],
+      startingMegaCredits: 51,
 
-      cardDiscount: {tag: Tags.EARTH, amount: 3},
+      cardDiscount: {tag: Tags.EARTH, amount: 5},
       metadata: {
         cardNumber: 'R30',
-        description: 'You start with 60 M€.',
+        description: 'You start with 51 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(60);
+          b.megacredits(51);
           b.corpBox('effect', (ce) => {
-            ce.effect('When you play an Earth tag, you pay 3 M€ less for it.', (eb) => {
-              eb.earth(1).played.startEffect.megacredits(-3);
+            ce.effect('When you play an Earth tag, you pay 5 M€ less for it.', (eb) => {
+              eb.earth(1).played.startEffect.megacredits(-5);
             });
           });
         }),
@@ -33,7 +33,7 @@ export class Teractor extends Card implements CorporationCard {
   }
 
   public getCardDiscount(_player: Player, card: IProjectCard) {
-    return card.tags.filter((tag) => tag === Tags.EARTH).length * 3;
+    return card.tags.filter((tag) => tag === Tags.EARTH).length * 5;
   }
   public play() {
     return undefined;
