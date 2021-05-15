@@ -9,6 +9,7 @@ import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {PlaceCommunityTile} from '../../deferredActions/PlaceCommunityTile';
 import {CardRenderer} from '../render/CardRenderer';
+import {Size} from '../render/Size';
 
 export class ArcadianCommunities extends Card implements IActionCard, CorporationCard {
   constructor() {
