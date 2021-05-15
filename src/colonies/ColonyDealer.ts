@@ -104,7 +104,7 @@ export class ColonyDealer {
         colonyTiles.forEach((e) => allowList.push(e.colonyName));
       }
       if (players === 1) {
-        count = 4;
+        count = 5;
       } else if (players === 2) {
         count = 5;
       }
