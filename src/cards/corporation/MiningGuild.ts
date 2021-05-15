@@ -25,7 +25,7 @@ export class MiningGuild extends Card implements CorporationCard {
 
       metadata: {
         cardNumber: 'R24',
-        description: 'You start with 36 M€. As your first action in the game, place this tile on a location with a STEEL bonus.',
+        description: 'You start with 36 M€. As your first action, place this tile on a location with a STEEL bonus.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
           b.megacredits(36).nbsp.tile(TileType.MINING_RIGHTS, true).asterix();
