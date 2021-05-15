@@ -1174,10 +1174,10 @@ export class Player implements ISerializable<SerializedPlayer> {
     return (this.canUseHeatAsMegaCredits) ? (this.heat + this.megaCredits) : this.megaCredits;
   }
 
-  public runResearchPhase(draftVariant: boolean): void {
+  public runResearchPhase(draftVariant: boolean, extra: boolean): void {
     let dealtCards: Array<IProjectCard> = [];
-    cardDraw: number = 4;
-    if (this.game.players.length == 1 && gameOptions.preludeExtension) {
+    let cardDraw: number = 4;
+    if (extra) {
         cardDraw++;
     }
     if (LunaProjectOffice.isActive(this)) {

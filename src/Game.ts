@@ -750,7 +750,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.researchedPlayers.clear();
     this.save();
     this.players.forEach((player) => {
-      player.runResearchPhase(this.gameOptions.draftVariant);
+      player.runResearchPhase(this.gameOptions.draftVariant, this.players.length == 1 && gameOptions.preludeExtension);
     });
   }
 
