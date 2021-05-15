@@ -17,6 +17,7 @@ export class Aridor extends Card implements CorporationCard {
   constructor() {
     super({
       name: CardName.ARIDOR,
+      tags: [Tags.SPACE],
       startingMegaCredits: 40,
       cardType: CardType.CORPORATION,
       initialActionText: 'Add a colony tile',
@@ -28,7 +29,7 @@ export class Aridor extends Card implements CorporationCard {
           b.br.br;
           b.megacredits(40).nbsp.placeColony();
           b.corpBox('effect', (ce) => {
-            ce.effect('When you get a new type of tag in play [event cards do not count], increase your M€ production 1 step.', (eb) => {
+            ce.effect('When you get a new type of tag in play, including this, increase your M€ production 1 step. (Event and Wild tags do not count.)', (eb) => {
               eb.diverseTag().startEffect.production((pb) => pb.megacredits(1));
             });
           });
@@ -96,7 +97,8 @@ export class Aridor extends Card implements CorporationCard {
       }
       return undefined;
     }
-    public play() {
+    public play(player: Player) {
+      player.addProduction(Resources.MEGACREDITS, 1);
       return undefined;
     }
 }

@@ -12,14 +12,14 @@ export class MonsInsurance extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.MONS_INSURANCE,
-      startingMegaCredits: 48,
+      startingMegaCredits: 54,
 
       metadata: {
         cardNumber: 'R46',
-        description: 'You start with 48 M€. Increase your M€ production 4 steps. ALL OPPONENTS DECREASE THEIR M€ production 2 STEPS. THIS DOES NOT TRIGGER THE EFFECT BELOW.',
+        description: 'You start with 54 M€. Increase your M€ production 1 steps for each player, including you. ALL OPPONENTS DECREASE THEIR M€ production 2 STEPS. THIS DOES NOT TRIGGER THE EFFECT BELOW.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(48).production((pb) => {
-            pb.megacredits(4).nbsp.megacredits(-2).any.asterix();
+          b.megacredits(54).production((pb) => {
+            pb.megacredits(1).slash().megacredits(-2).any.asterix();
           });
           b.corpBox('effect', (cb) => {
             cb.vSpace(Size.SMALL);
@@ -34,7 +34,7 @@ export class MonsInsurance extends Card implements CorporationCard {
   }
 
   public play(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, 6);
+    player.addProduction(Resources.MEGACREDITS, 2 + player.game.getPlayers().length);
     for (const p of player.game.getPlayers()) {
       p.addProduction(Resources.MEGACREDITS, -2);
     }
