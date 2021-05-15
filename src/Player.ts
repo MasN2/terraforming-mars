@@ -1178,10 +1178,10 @@ export class Player implements ISerializable<SerializedPlayer> {
     let dealtCards: Array<IProjectCard> = [];
     let cardDraw: number = 4;
     if (extra) {
-        cardDraw++;
+      cardDraw++;
     }
     if (LunaProjectOffice.isActive(this)) {
-        cardDraw++;
+      cardDraw++;
     }
     if (!draftVariant) {
       this.dealCards(cardDraw, dealtCards);
