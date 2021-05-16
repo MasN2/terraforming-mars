@@ -24,7 +24,7 @@ export class PolarIndustries extends PreludeCard implements IProjectCard {
     });
   }
   public play(player: Player) {
-    player.addProduction(Resources.HEAT, 2);
+    player.addProduction(Resources.HEAT, 3);
     player.megaCredits += 5;
     player.game.defer(new PlaceOceanTile(player));
     return undefined;
