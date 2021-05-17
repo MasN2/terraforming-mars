@@ -24,7 +24,7 @@ export class WarpHub extends Card implements CorporationCard {
           b.megacredits(35);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a space tag, you pay 7 M€ less for it.', (eb) => {
-              eb.building().played.startEffect.megacredits(-3);
+              eb.space().played.startEffect.megacredits(-7);
             });
           });
         }),
