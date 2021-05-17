@@ -17,7 +17,7 @@ export class WarpHub extends Card implements CorporationCard {
       tags: [Tags.SCIENCE, Tags.SPACE],
       startingMegaCredits: 35,
 
-      cardDiscount: {tag: Tags.SPACE, amount: 7,
+      cardDiscount: {tag: Tags.SPACE, amount: 7},
       metadata: {
         cardNumber: '',
         description: 'You start with 35 M€.',
