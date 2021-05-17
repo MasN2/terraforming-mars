@@ -1,19 +1,15 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
 import {Tags} from '../Tags';
-import {PlaceGreeneryTile} from '../../inputs/PlaceGreeneryTile';
-import {ResourceType} from '../../ResourceType';
-import {ICard, IActionCard, IResourceCard} from '../ICard';
-import {AndOptions} from '../../inputs/AndOptions';
-import {SelectAmount} from '../../inputs/SelectAmount';
-import {SelectCard} from '../../inputs/SelectCard';
+import {Board} from '../../boards/Board';
+import {PlaceGreeneryTile} from '../../deferredActions/PlaceGreeneryTile';
+import {ISpace} from '../../boards/ISpace';
+import {IActionCard, IResourceCard} from '../ICard';
+import {SelectSpace} from '../../inputs/SelectSpace';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
-import {LogHelper} from '../../LogHelper';
 import {Card} from '../Card';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
-import {PlayerInput} from '../../PlayerInput';
 import {CardRenderDynamicVictoryPoints} from '../render/CardRenderDynamicVictoryPoints';
 
 export class NewAmazonProject extends Card implements IActionCard, CorporationCard, IResourceCard {
