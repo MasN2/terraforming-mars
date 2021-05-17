@@ -2,12 +2,10 @@ import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {CorporationCard} from './../corporation/CorporationCard';
 import {IProjectCard} from '../IProjectCard';
-import {Resources} from '../../Resources';
 import {Card} from '../Card';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
-import {Units} from '../../Units';
 
 export class WarpHub extends Card implements CorporationCard {
   constructor() {
