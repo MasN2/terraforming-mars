@@ -20,10 +20,10 @@ export class Quantum extends Card implements CorporationCard {
         cardNumber: '',
         description: 'You start with 38 M€.',
         renderData: CardRenderer.builder((b) => {
-          b.br;
+          b.br.br;
           b.megacredits(38);
           b.corpBox('effect', (ce) => {
-            ce.effect('Each time you play a science tag, including these, increase your energy production.', (eb) => {
+            ce.effect('Each time you play a science tag, including this, increase your energy production.', (eb) => {
               eb.science(1).played.startEffect.production((pb) => pb.energy(1));
             });
           });
