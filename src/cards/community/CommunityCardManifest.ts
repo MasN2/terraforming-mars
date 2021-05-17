@@ -14,6 +14,8 @@ import {PoliticalUprising} from './PoliticalUprising';
 import {ByElection} from './ByElection';
 import {Midas} from './Midas';
 import {CuriosityII} from './CuriosityII';
+import {Quantum} from './Quantum';
+import {WarpHub} from './WarpHub';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -25,6 +27,8 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.PLAYWRIGHTS, Factory: Playwrights},
     {cardName: CardName.CURIOSITY_II, Factory: CuriosityII},
     {cardName: CardName.MIDAS, Factory: Midas},
+    {cardName: CardName.QUANTUM, Factory: Quantum},
+    {cardName: CardName.WARP_HUB, Factory: WarpHub},
   ],
   preludeCards: [
     {cardName: CardName.RESEARCH_GRANT, Factory: ResearchGrant},

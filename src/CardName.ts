@@ -473,6 +473,8 @@ export enum CardName {
     MIDAS = 'Midas',
     PLAYWRIGHTS = 'Playwrights',
     PROJECT_WORKSHOP = 'Project Workshop',
+    QUANTUM = 'Quantum',
+    WARP_HUB = 'Warp Hub',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
