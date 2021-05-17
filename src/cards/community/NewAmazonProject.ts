@@ -18,10 +18,11 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
       name: CardName.NEW_AMAZON_PROJECT,
       tags: [Tags.PLANT, Tags.PLANT],
       startingMegaCredits: 36,
+      initialActionText: 'Place two greenery tiles and raise the oxygen 2 steps',
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 36 M€. As your first action, place two greenery tiles.',
+        description: 'You start with 36 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
           b.megacredits(36).nbsp.greenery().greenery();
