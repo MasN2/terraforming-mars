@@ -43,7 +43,7 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
   }
 
   public getVictoryPoints(player: Player) {
-    return -1 * this.board.spaces.filter((space) => Board.isCitySpace(space) && space.player !== undefined && space.player === player).length;
+    return -1 * player.game.board.spaces.filter((space) => Board.isCitySpace(space) && space.player !== undefined && space.player === player).length;
   }
 
   public play() {

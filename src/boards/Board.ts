@@ -219,6 +219,11 @@ export abstract class Board {
     return space.tile === undefined && space.spaceType === SpaceType.LAND;
   }
 
+  public static isGreenerySpace(space: ISpace): boolean {
+    const greeneryTileTypes = [TileType.GREENERY, TileType.OCEAN_FARM];
+    return space.tile !== undefined && greeneryTileTypes.includes(space.tile.tileType);
+  }
+
   public static isCitySpace(space: ISpace): boolean {
     const cityTileTypes = [TileType.CITY, TileType.CAPITAL, TileType.OCEAN_CITY];
     return space.tile !== undefined && cityTileTypes.includes(space.tile.tileType);
