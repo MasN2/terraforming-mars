@@ -24,7 +24,6 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
         cardNumber: '',
         description: 'You start with 36 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br;
           b.megacredits(36).nbsp.greenery().greenery();
           b.corpBox('action', (ce) => {
             ce.action('Pay 12 MC to place a greenery tile on ANY SPACE ADJACENT TO AT LEAST TWO OTHER GREENERY TILES.', (eb) => {
