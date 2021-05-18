@@ -33,7 +33,8 @@ export class FuelGreen extends Card implements CorporationCard {
     });
   }
 
-  public play() {
+  public play(player: Player) {
+    player.addProduction(Resources.PLANTS, 4);
     return undefined;
   }
   public canAct(player: Player): boolean {
