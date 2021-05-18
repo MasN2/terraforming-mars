@@ -793,17 +793,13 @@ export class Game implements ISerializable<SerializedGame> {
     // solar Phase Option
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
-    if (this.players.length === 1 && ! this.marsIsTerraformed()) {
+    if (this.players.length === 1) {
       this.pending_wgt++;
-      this.first.worldGovernmentTerraforming();
     }
-    if (this.gameOptions.solarPhaseOption && ! this.marsIsTerraformed()) {
+    if (this.gameOptions.solarPhaseOption) {
       this.pending_wgt++;
-      this.first.worldGovernmentTerraforming();
     }
-    if (this.pending_wgt === 0) {
-      this.gotoEndGeneration();
-    }
+    this.doneWorldGovernmentTerraforming();
   }
 
   private gotoEndGeneration() {
@@ -851,9 +847,11 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public doneWorldGovernmentTerraforming() {
-    // Carry on to next phase
-    this.pending_wgt--;
-    if (this.pending_wgt === 0) {
+    if (this.pending_wgt > 0 && ! this.marsIsTerraformed()) {
+      this.pending_wgt--;
+      this.first.worldGovernmentTerraforming();
+    } else {
+      this.pending_wgt = 0;
       this.gotoEndGeneration();
     }
   }
