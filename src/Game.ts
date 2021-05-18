@@ -533,7 +533,7 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public lastSoloGeneration(): number {
-    let lastGeneration = 12;
+    let lastGeneration = 11;
     const options = this.gameOptions;
     if (options.preludeExtension) {
       lastGeneration -= 2;
@@ -728,14 +728,14 @@ export class Game implements ISerializable<SerializedGame> {
         player.setWaitingFor(this.pickCorporationCard(player));
       }
     }
-    if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 1);
+    if (this.players.length === 1) {
+      this.players[0].addProduction(Resources.MEGACREDITS, 3);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 3);
+      this.players[0].addProduction(Resources.MEGACREDITS, 5);
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 3);
+      this.players[0].addProduction(Resources.MEGACREDITS, 5);
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
@@ -745,7 +745,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.players[0].addProduction(Resources.MEGACREDITS, -1);
     }
     if (this.players.length === 1 && this.gameOptions.removeNegativeGlobalEventsOption) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -2);
+      this.players[0].addProduction(Resources.MEGACREDITS, -3);
     }
   }
 
@@ -794,6 +794,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
     if (this.players.length === 1) {
+      this.pending_wgt++;
       this.pending_wgt++;
     }
     if (this.gameOptions.solarPhaseOption) {
