@@ -20,15 +20,15 @@ export class PharmacyUnion extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.PHARMACY_UNION,
-      startingMegaCredits: 46, // 54 minus 8 for the 2 deseases
+      startingMegaCredits: 47, // 51 minus 4 for the diesease
       resourceType: ResourceType.DISEASE,
 
       metadata: {
         cardNumber: 'R39',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(54).cards(1).secondaryTag(Tags.SCIENCE);
+          b.megacredits(51).disease();
           // blank space after MC is on purpose
-          b.text('(You start with 54 M€ . Draw a Science card.)', Size.TINY, false, false);
+          b.text('(You start with 51 M€ . Add a disease here.)', Size.TINY, false, false);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {
@@ -52,12 +52,12 @@ export class PharmacyUnion extends Card implements CorporationCard {
       if (this.isDisabled) {
         return [];
       }
-      return [Tags.MICROBE, Tags.MICROBE];
+      return [Tags.MICROBE, Tags.SCIENCE];
     }
 
     public play(player: Player) {
-      this.resourceCount = 2;
-      player.drawCard(1, {tag: Tags.SCIENCE});
+      this.resourceCount = 1;
+      player.increaseTerraformRating();
       return undefined;
     }
 

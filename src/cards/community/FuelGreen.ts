@@ -24,7 +24,7 @@ export class FuelGreen extends Card implements CorporationCard {
           b.br.br;
           b.production((pb) => pb.plants(4)).megacredits(35);
           b.corpBox('action', (ce) => {
-            ce.effect('Spend any amount of Plants and gain that amount of Energy.', (eb) => {
+            ce.action('Spend any amount of Plants and gain that amount of Energy.', (eb) => {
               eb.text('x').plants(1).startAction.text('x').energy(1);
             });
           });
