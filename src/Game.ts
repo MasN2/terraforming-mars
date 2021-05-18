@@ -161,6 +161,7 @@ export class Game implements ISerializable<SerializedGame> {
   public undoCount: number = 0; // Each undo increases it
 
   public generation: number = 1;
+  public pending_wgt: number = 0;
   public phase: Phase = Phase.RESEARCH;
   public dealer: Dealer;
   public board: Board;
@@ -532,7 +533,7 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public lastSoloGeneration(): number {
-    let lastGeneration = 13;
+    let lastGeneration = 12;
     const options = this.gameOptions;
     if (options.preludeExtension) {
       lastGeneration -= 2;
@@ -728,17 +729,20 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 2);
+      this.players[0].addProduction(Resources.MEGACREDITS, 1);
+    }
+    if (this.players.length === 1 && this.gameOptions.preludeExtension) {
+      this.players[0].addProduction(Resources.MEGACREDITS, 3);
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 1);
-    }
-    if (this.players.length === 1 && this.gameOptions.preludeExtension && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 1);
+      this.players[0].addProduction(Resources.MEGACREDITS, 3);
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
       this.defer(new RemoveColonyFromGame(this.players[0]));
+    }
+    if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
+      this.players[0].addProduction(Resources.MEGACREDITS, -1);
     }
     if (this.players.length === 1 && this.gameOptions.removeNegativeGlobalEventsOption) {
       this.players[0].addProduction(Resources.MEGACREDITS, -2);
@@ -788,11 +792,18 @@ export class Game implements ISerializable<SerializedGame> {
 
     // solar Phase Option
     this.phase = Phase.SOLAR;
-    if (this.gameOptions.solarPhaseOption && ! this.marsIsTerraformed()) {
+    this.pending_wgt = 0;
+    if (this.players.length === 1) {
+      this.pending_wgt++;
       this.gotoWorldGovernmentTerraforming();
-      return;
     }
-    this.gotoEndGeneration();
+    if (this.gameOptions.solarPhaseOption && ! this.marsIsTerraformed()) {
+      this.pending_wgt++;
+      this.gotoWorldGovernmentTerraforming();
+    }
+    if (this.pending_wgt === 0){
+      this.gotoEndGeneration();
+    }
   }
 
   private gotoEndGeneration() {
@@ -845,7 +856,10 @@ export class Game implements ISerializable<SerializedGame> {
 
   public doneWorldGovernmentTerraforming() {
     // Carry on to next phase
-    this.gotoEndGeneration();
+    this.pending_wgt--;
+    if (this.pending_wgt === 0){
+      this.gotoEndGeneration();
+    }
   }
 
   private allPlayersHavePassed(): boolean {
