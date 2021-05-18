@@ -801,7 +801,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.pending_wgt++;
       this.gotoWorldGovernmentTerraforming();
     }
-    if (this.pending_wgt === 0){
+    if (this.pending_wgt === 0) {
       this.gotoEndGeneration();
     }
   }
@@ -857,7 +857,7 @@ export class Game implements ISerializable<SerializedGame> {
   public doneWorldGovernmentTerraforming() {
     // Carry on to next phase
     this.pending_wgt--;
-    if (this.pending_wgt === 0){
+    if (this.pending_wgt === 0) {
       this.gotoEndGeneration();
     }
   }
