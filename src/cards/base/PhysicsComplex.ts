@@ -26,7 +26,7 @@ export class PhysicsComplex extends Card implements IActionCard, IProjectCard, I
           }).br;
           b.vpText('2 VP for each science resource on this card.');
         }),
-        victoryPoints: CardRenderDynamicVictoryPoints.science(2, 2),
+        victoryPoints: CardRenderDynamicVictoryPoints.science(2, 1),
       },
     });
   }

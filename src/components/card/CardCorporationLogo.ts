@@ -167,6 +167,8 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
         return '<div class="card-phobolog-logo">Warp Hub</div>';
       case CardName.NEW_AMAZON_PROJECT:
         return '<div class="card-morning-star-logo">NEW AMAZON PROJECT</div>';
+      case CardName.FUEL_GREEN:
+        return '<div class="card-ecoline-logo">fuel GREEN</div>'; 
       }
       return '';
     },

@@ -17,6 +17,7 @@ import {CuriosityII} from './CuriosityII';
 import {Quantum} from './Quantum';
 import {WarpHub} from './WarpHub';
 import {NewAmazonProject} from './NewAmazonProject';
+import {FuelGreen} from './FuelGreen';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -31,6 +32,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.QUANTUM, Factory: Quantum},
     {cardName: CardName.WARP_HUB, Factory: WarpHub},
     {cardName: CardName.NEW_AMAZON_PROJECT, Factory: NewAmazonProject},
+    {cardName: CardName.FUEL_GREEN, Factory: FuelGreen},
   ],
   preludeCards: [
     {cardName: CardName.RESEARCH_GRANT, Factory: ResearchGrant},
