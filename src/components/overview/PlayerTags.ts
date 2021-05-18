@@ -19,6 +19,7 @@ const JOVIAN_MULTIPLIERS: Array<CardName> = [
   CardName.IO_MINING_INDUSTRIES,
   CardName.GANYMEDE_COLONY,
   CardName.WATER_IMPORT_FROM_EUROPA,
+  CardName.STORMCRAFT_INCORPORATED,
 ];
 
 const hasDiscount = (tag: InterfaceTagsType, card: CardModel): boolean => {
