@@ -13,15 +13,15 @@ export class WarpHub extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.WARP_HUB,
       tags: [Tags.SCIENCE, Tags.SPACE],
-      startingMegaCredits: 33,
+      startingMegaCredits: 37,
 
       cardDiscount: {tag: Tags.SPACE, amount: 6},
       metadata: {
         cardNumber: '',
-        description: 'You start with 33 M€.',
+        description: 'You start with 37 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(33);
+          b.megacredits(37);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a space tag, you pay 6 M€ less for it.', (eb) => {
               eb.space().played.startEffect.megacredits(-6);

@@ -25,7 +25,7 @@ export class UnitedNationsMissionOne extends Card implements CorporationCard {
           b.corpBox('effect', (ce) => {
             ce.vSpace();
             ce.effect('When any player takes an action or plays a card that increases TR, including this, they gain 1 MC for each step and you gain 1 MC for each step.', (eb) => {
-              eb.tr(1).any.startEffect.megacredits(1).any.megacredits(1);
+              eb.tr(1).any.startEffect.megacredits(1).any.nbsp.megacredits(1);
             });
           });
         }),
