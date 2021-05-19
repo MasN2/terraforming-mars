@@ -800,7 +800,7 @@ export class Game implements ISerializable<SerializedGame> {
     if (this.players.length === 1) {
       this.bonus_rate++;
 	  if (this.bonus_rate > 0) {
-		  this.pending_wgt += bonus_rate;
+		  this.pending_wgt += this.bonus_rate;
 	  } else {
 		  this.temperature += 2; // Unlikely already maxed
 	  }
