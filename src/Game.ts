@@ -729,13 +729,13 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 2);
+      this.players[0].addProduction(Resources.MEGACREDITS, 1);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -1);
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 5);
+      this.players[0].addProduction(Resources.MEGACREDITS, 4);
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
