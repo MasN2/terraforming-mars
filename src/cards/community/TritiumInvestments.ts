@@ -1,7 +1,6 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
 import {Tags} from '../Tags';
-import {ResourceType} from '../../ResourceType';
 import {IActionCard, IResourceCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
@@ -16,25 +15,22 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
       name: CardName.TRITIUM_INVESTMENTS,
       tags: [Tags.EARTH, Tags.EARTH],
       startingMegaCredits: 31,
-      resourceType: ResourceType.CAMP,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
         description: 'You start with 31 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br;
-          b.megacredits(31).production((pb) => pb.megacredits(1).slash().delegates(1)).minus().tr(1, Size.SMALL);
+          b.br;
+          b.megacredits(31).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
           b.corpBox('action', (ce) => {
             ce.action('Increase your MC production by 1 per camp here, THEN add a camp here.', (eb) => {
-              eb.empty().startAction.production((pb) => pb.megacredits(1).slash().camps()).camps();
+              eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('gen', Size.SMALL, true).megacredits(-1));
             });
           });
         }),
       },
     });
   }
-
-  public resourceCount = 0;
 
   public play(player: Player) {
     player.addProduction(Resources.MEGACREDITS, player.game.getPlayers().length - 1);
@@ -47,7 +43,7 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
   }
 
   public action(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, this.resourceCount, {log: true});
+    player.addProduction(Resources.MEGACREDITS, player.game.generation - 1, {log: true});
     player.addResourceTo(this);
     return undefined;
   }
