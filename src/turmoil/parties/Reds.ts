@@ -23,7 +23,7 @@ export class Reds extends Party implements IParty {
 
 class RedsBonus01 implements Bonus {
   id = 'rb01';
-  description = 'The player(s) with the lowest TR gains 1 TR';
+  description = 'The player(s) with the lowest TR gains 1 TR (26 or less in solo)';
   isDefault = true;
 
   grant(game: Game) {
