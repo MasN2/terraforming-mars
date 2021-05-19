@@ -161,6 +161,7 @@ export class Game implements ISerializable<SerializedGame> {
   public undoCount: number = 0; // Each undo increases it
 
   public generation: number = 1;
+  public bonus_rate: number = -3;
   public pending_wgt: number = 0;
   public phase: Phase = Phase.RESEARCH;
   public dealer: Dealer;
@@ -729,20 +730,23 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 1);
+      this.players[0].addProduction(Resources.MEGACREDITS, 2);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -1);
+      this.players[0].addProduction(Resources.MEGACREDITS, -2);
+      this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 4);
+      this.players[0].addProduction(Resources.MEGACREDITS, 0);
+      this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
       this.defer(new RemoveColonyFromGame(this.players[0]));
     }
     if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -2);
+      this.players[0].decreaseTerraformRating();
+      this.players[0].decreaseTerraformRating();
     }
     if (this.players.length === 1 && this.gameOptions.removeNegativeGlobalEventsOption) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
@@ -794,9 +798,12 @@ export class Game implements ISerializable<SerializedGame> {
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
     if (this.players.length === 1) {
-      this.pending_wgt++;
-      this.pending_wgt++;
-      this.pending_wgt++;
+      this.bonus_rate++;
+	  if (this.bonus_rate > 0) {
+		  this.pending_wgt += bonus_rate;
+	  } else {
+		  this.temperature += 2; // Unlikely already maxed
+	  }
     }
     if (this.gameOptions.solarPhaseOption) {
       this.pending_wgt++;
