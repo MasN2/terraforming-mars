@@ -65,6 +65,7 @@ import {ConvertPlants} from './cards/base/standardActions/ConvertPlants';
 import {ConvertHeat} from './cards/base/standardActions/ConvertHeat';
 import {Manutech} from './cards/venusNext/Manutech';
 import {LunaProjectOffice} from './cards/moon/LunaProjectOffice';
+import {UnitedNationsMissionOne} from './cards/community/UnitedNationsMissionOne';
 import {PlaceMoonMineTile} from './moon/PlaceMoonMineTile';
 import {PlaceMoonColonyTile} from './moon/PlaceMoonColonyTile';
 import {PlaceMoonRoadTile} from './moon/PlaceMoonRoadTile';
