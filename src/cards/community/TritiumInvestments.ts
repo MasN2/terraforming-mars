@@ -2,18 +2,12 @@ import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
 import {Tags} from '../Tags';
 import {ResourceType} from '../../ResourceType';
-import {ICard, IActionCard, IResourceCard} from '../ICard';
-import {AndOptions} from '../../inputs/AndOptions';
-import {SelectAmount} from '../../inputs/SelectAmount';
-import {SelectCard} from '../../inputs/SelectCard';
+import {IActionCard, IResourceCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
-import {LogHelper} from '../../LogHelper';
 import {Card} from '../Card';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
-import {PlayerInput} from '../../PlayerInput';
-import {CardRenderDynamicVictoryPoints} from '../render/CardRenderDynamicVictoryPoints';
+import {Resources} from '../../Resources';
 
 export class TritiumInvestments extends Card implements IActionCard, CorporationCard, IResourceCard {
   constructor() {
