@@ -737,7 +737,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 0);
+      this.players[0].addProduction(Resources.MEGACREDITS, -1);
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
