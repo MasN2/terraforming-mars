@@ -533,10 +533,10 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public lastSoloGeneration(): number {
-    let lastGeneration = 11;
+    let lastGeneration = 10;
     const options = this.gameOptions;
     if (options.preludeExtension) {
-      lastGeneration -= 2;
+      lastGeneration -= 1;
     }
 
     // Only add 2 more generations when using the track completion option
@@ -729,10 +729,10 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 3);
+      this.players[0].addProduction(Resources.MEGACREDITS, 2);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 5);
+      this.players[0].addProduction(Resources.MEGACREDITS, -1);
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, 5);
@@ -754,7 +754,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.researchedPlayers.clear();
     this.save();
     this.players.forEach((player) => {
-      player.runResearchPhase(this.gameOptions.draftVariant, this.players.length === 1 && this.gameOptions.preludeExtension);
+      player.runResearchPhase(this.gameOptions.draftVariant, this.players.length === 1);
     });
   }
 
@@ -794,6 +794,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
     if (this.players.length === 1) {
+      this.pending_wgt++;
       this.pending_wgt++;
       this.pending_wgt++;
     }
