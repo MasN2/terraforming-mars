@@ -23,8 +23,8 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
           b.br;
           b.megacredits(31).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
           b.corpBox('action', (ce) => {
-            ce.action('Increase your MC production by 1 per camp here, THEN add a camp here.', (eb) => {
-              eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('gen', Size.SMALL, true).megacredits(-1));
+            ce.action('Increase your MC production by the current generation number minus 1.', (eb) => {
+              eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('gen', Size.SMALL, true).nbsp.megacredits(-1));
             });
           });
         }),
