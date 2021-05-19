@@ -477,6 +477,7 @@ export enum CardName {
     WARP_HUB = 'Warp Hub',
     NEW_AMAZON_PROJECT = 'New Amazon Project',
     FUEL_GREEN = 'Fuel Green',
+    TRITIUM_INVESTMENTS = 'Tritium Investments',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
