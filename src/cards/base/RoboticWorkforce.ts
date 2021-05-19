@@ -263,7 +263,7 @@ export class RoboticWorkforce extends Card implements IProjectCard {
       new Updater(CardName.NATURAL_PRESERVE, {megacredits: 1}),
       new Updater(CardName.NATURAL_PRESERVE_ARES, {megacredits: 1}),
       new Updater(CardName.PARLIAMENT_HALL, {megacredits: Math.floor(player.getTagCount(Tags.BUILDING) / 3)}),
-      new Updater(CardName.RECYCLON, {steel: 2, plants: 1}),
+      new Updater(CardName.RECYCLON, {steel: 2}),
       new Updater(CardName.SELF_SUFFICIENT_SETTLEMENT, {megacredits: 2}),
       new Updater(CardName.SOLAR_FARM, {energy: this.solarFarmEnergyProduction}),
       new Updater(CardName.SPACE_PORT, {energy: -1, megacredits: 4}),
