@@ -15,7 +15,7 @@ export class WarpHub extends Card implements CorporationCard {
       tags: [Tags.SCIENCE, Tags.SPACE],
       startingMegaCredits: 35,
 
-      cardDiscount: {tag: Tags.SPACE, amount: 7},
+      cardDiscount: {tag: Tags.SPACE, amount: 6},
       metadata: {
         cardNumber: '',
         description: 'You start with 35 M€.',
@@ -23,8 +23,8 @@ export class WarpHub extends Card implements CorporationCard {
           b.br.br;
           b.megacredits(35);
           b.corpBox('effect', (ce) => {
-            ce.effect('When you play a space tag, you pay 7 M€ less for it.', (eb) => {
-              eb.space().played.startEffect.megacredits(-7);
+            ce.effect('When you play a space tag, you pay 6 M€ less for it.', (eb) => {
+              eb.space().played.startEffect.megacredits(-6);
             });
           });
         }),
@@ -34,7 +34,7 @@ export class WarpHub extends Card implements CorporationCard {
 
 
   public getCardDiscount(_player: Player, card: IProjectCard) {
-    return card.tags.filter((tag) => tag === Tags.SPACE).length * 7;
+    return card.tags.filter((tag) => tag === Tags.SPACE).length * 6;
   }
 
   public play() {
