@@ -441,6 +441,7 @@ export class Game implements ISerializable<SerializedGame> {
           a[1].map((c) => c.name),
         ];
       }),
+      unitedNationsMissionOneOwner: this.unitedNationsMissionOneOwner,
       venusScaleLevel: this.venusScaleLevel,
     };
     if (this.aresData !== undefined) {

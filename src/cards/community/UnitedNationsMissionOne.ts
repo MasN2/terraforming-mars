@@ -1,12 +1,12 @@
-import {CorporationCard} from '../../corporation/CorporationCard';
-import {Tags} from '../../Tags';
-import {CardName} from '../../../CardName';
-import {CardType} from '../../CardType';
-import {CardRenderer} from '../../render/CardRenderer';
-import {Card} from '../../Card';
-import {Game} from '../../../Game';
-import {Player} from '../../../Player';
-import {Phase} from '../../../Phase';
+import {CorporationCard} from '../corporation/CorporationCard';
+import {Tags} from '../Tags';
+import {CardName} from '../../CardName';
+import {CardType} from '../CardType';
+import {CardRenderer} from '../render/CardRenderer';
+import {Card} from '../Card';
+import {Game} from '../../Game';
+import {Player} from '../../Player';
+import {Phase} from '../../Phase';
 
 export class UnitedNationsMissionOne extends Card implements CorporationCard {
   constructor() {

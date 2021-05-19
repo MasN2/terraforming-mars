@@ -19,7 +19,7 @@ import {WarpHub} from './WarpHub';
 import {NewAmazonProject} from './NewAmazonProject';
 import {FuelGreen} from './FuelGreen';
 import {TritiumInvestments} from './TritiumInvestments';
-import {UnitedNationsMissionOne} from './corporations/UnitedNationsMissionOne';
+import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
