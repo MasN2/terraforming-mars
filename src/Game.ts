@@ -201,6 +201,8 @@ export class Game implements ISerializable<SerializedGame> {
   // Card-specific data
   // Mons Insurance promo corp
   public monsInsuranceOwner: PlayerId | undefined = undefined;
+  // United Nations Mission One community corp
+  public unitedNationsMissionOneOwner: PlayerId | undefined = undefined;
   // Crash Site promo project
   public someoneHasRemovedOtherPlayersPlants: boolean = false;
   // Syndicate Pirate Raids

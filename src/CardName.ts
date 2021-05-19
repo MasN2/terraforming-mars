@@ -478,6 +478,7 @@ export enum CardName {
     NEW_AMAZON_PROJECT = 'New Amazon Project',
     FUEL_GREEN = 'Fuel Green',
     TRITIUM_INVESTMENTS = 'Tritium Investments',
+    UNITED_NATIONS_MISSION_ONE = 'United Nations Mission One',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',

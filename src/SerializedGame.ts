@@ -56,6 +56,7 @@ export interface SerializedGame {
     turmoil?: SerializedTurmoil;
     undoCount: number;
     unDraftedCards: Array<[PlayerId, Array<CardName>]>;
+    unitedNationsMissionOneOwner: PlayerId | undefined;
     venusScaleLevel: number;
 }
 

@@ -242,6 +242,9 @@ export class Player implements ISerializable<SerializedPlayer> {
   }
 
   public increaseTerraformRating() {
+    // United Nations Mission One hook
+    UnitedNationsMissionOne.onTRIncrease(this.game, this);
+
     if (!this.game.gameOptions.turmoilExtension) {
       this.terraformRating++;
       this.hasIncreasedTerraformRatingThisGeneration = true;
