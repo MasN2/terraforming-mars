@@ -173,6 +173,8 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
         return '<div class="card-morning-star-logo">Tritium Investments</div>';
       case CardName.UNITED_NATIONS_MISSION_ONE:
         return '<span class="card-unmo-logo">UNITED NATIONS<br/>MISSION ONE</span>';
+      case CardName.BIG_OXIDE:
+        return '<span class="card-teractor-logo">BIG OXIDE</span>';
       }
       return '';
     },

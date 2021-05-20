@@ -44,7 +44,6 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
 
   public action(player: Player) {
     player.addProduction(Resources.MEGACREDITS, player.game.generation - 1, {log: true});
-    player.addResourceTo(this);
     return undefined;
   }
 }
