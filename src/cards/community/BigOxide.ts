@@ -39,7 +39,7 @@ export class BigOxide extends Card implements IActionCard, CorporationCard, IRes
     return undefined;
   }
 
-  public canAct(): boolean {
+  public canAct(player: Player): boolean {
     const hasEnoughEnergy = player.energy >= 1;
 
     if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS)) {
