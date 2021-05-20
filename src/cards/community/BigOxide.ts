@@ -8,7 +8,9 @@ import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {Card} from '../Card';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
+import {REDS_RULING_POLICY_COST} from '../../constants';
+import {PartyHooks} from '../../turmoil/parties/PartyHooks';
+import {PartyName} from '../../turmoil/parties/PartyName';
 
 export class BigOxide extends Card implements IActionCard, CorporationCard, IResourceCard {
   constructor() {
