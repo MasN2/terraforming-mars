@@ -6,7 +6,7 @@ import {AirRaid} from './AirRaid';
 import {Aridor} from './Aridor';
 import {Arklight} from './Arklight';
 import {AtmoCollectors} from './AtmoCollectors';
-import {CommunityServices} from './CommunityServices';
+//import {CommunityServices} from './CommunityServices';
 import {Conscription} from './Conscription';
 import {CoronaExtractor} from './CoronaExtractor';
 import {CryoSleep} from './CryoSleep';
@@ -64,7 +64,7 @@ export const COLONIES_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.AIRLINERS, Factory: Airliners},
     {cardName: CardName.AIR_RAID, Factory: AirRaid},
     {cardName: CardName.ATMO_COLLECTORS, Factory: AtmoCollectors},
-    {cardName: CardName.COMMUNITY_SERVICES, Factory: CommunityServices},
+ // {cardName: CardName.COMMUNITY_SERVICES, Factory: CommunityServices},
     {cardName: CardName.CONSCRIPTION, Factory: Conscription},
     {cardName: CardName.CORONA_EXTRACTOR, Factory: CoronaExtractor},
     {cardName: CardName.CRYO_SLEEP, Factory: CryoSleep},

@@ -48,6 +48,8 @@ import {SubCrustMeasurements} from './SubCrustMeasurements';
 import {TopsoilContract} from './TopsoilContract';
 import {BioPrintingFacility} from './BioPrintingFacility';
 import {BactoviralResearch} from './BactoviralResearch';
+import {EarthCatapultCurated} from './EarthCatapultCurated';
+import {TollStationCurated} from './TollStationCurated';
 
 export const PROMO_CARD_MANIFEST = new CardManifest({
   module: GameModule.Promo,
@@ -91,12 +93,35 @@ export const PROMO_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.SATURN_SURFING, Factory: SaturnSurfing},
     {cardName: CardName.BIO_PRINTING_FACILITY, Factory: BioPrintingFacility},
     {cardName: CardName.BACTOVIRAL_RESEARCH, Factory: BactoviralResearch},
+    {cardName: CardName.EARTH_CATAPULT_CURATED, Factory: EarthCatapultCurated},
+    {cardName: CardName.TOLL_STATION_CURATED, Factory: TollStationCurated},
   ],
 
   cardsToRemove: [
     CardName.DEIMOS_DOWN,
     CardName.GREAT_DAM,
-    CardName.MAGNETIC_FIELD_GENERATORS],
+    CardName.MAGNETIC_FIELD_GENERATORS,
+    CardName.SMALL_ASTEROID,
+    CardName.SELF_REPLICATING_ROBOTS,
+    CardName.SNOW_ALGAE,
+    CardName.ORBITAL_CLEANUP,
+    CardName.ASTEROID_HOLLOWING,
+    CardName.MELTWORKS,
+    CardName.BACTOVIRAL_RESEARCH,
+    CardName.SECURITY_FLEET,
+    CardName.AEROBRAKED_AMMONIA_ASTEROID,
+    CardName.UNDERGROUND_DETONATIONS,
+    CardName.GHG_IMPORT_FROM_VENUS,
+    CardName.SABOTAGE,
+    CardName.HACKERS,
+    CardName.INSULATION,
+    CardName.MICROMILLS,
+    CardName.DUST_SEALS,
+    CardName.ICE_CAP_MELTING,
+    CardName.MARKET_MANIPULATION,
+    CardName.CARETAKER_CONTRACT,
+    CardName.CORPORATE_STRONGHOLD,
+  ],
 
   corporationCards: [
     {cardName: CardName.ARCADIAN_COMMUNITIES, Factory: ArcadianCommunities},
