@@ -115,7 +115,7 @@ export const PROMO_CARD_MANIFEST = new CardManifest({
     CardName.SABOTAGE,
     CardName.HACKERS,
     CardName.INSULATION,
-    CardName.MICROMILLS,
+    CardName.MICRO_MILLS,
     CardName.DUST_SEALS,
     CardName.ICE_CAP_MELTING,
     CardName.MARKET_MANIPULATION,

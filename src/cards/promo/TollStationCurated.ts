@@ -7,7 +7,7 @@ import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardRenderer} from '../render/CardRenderer';
 
-export class TollStation_Curated extends Card implements IProjectCard {
+export class TollStationCurated extends Card implements IProjectCard {
   constructor() {
     super({
       cardType: CardType.AUTOMATED,
