@@ -121,6 +121,8 @@ export const PROMO_CARD_MANIFEST = new CardManifest({
     CardName.MARKET_MANIPULATION,
     CardName.CARETAKER_CONTRACT,
     CardName.CORPORATE_STRONGHOLD,
+    CardName.EARTH_CATAPULT,
+    CardName.TOLL_STATION,
   ],
 
   corporationCards: [
