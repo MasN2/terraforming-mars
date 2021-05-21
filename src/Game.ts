@@ -360,7 +360,7 @@ export class Game implements ISerializable<SerializedGame> {
           }
         }
         if (gameOptions.preludeExtension) {
-          for (let i = 0; i < 4; i++) {
+          for (let i = 0; i < 3; i++) {
             player.dealtPreludeCards.push(dealer.dealPreludeCard());
           }
         }

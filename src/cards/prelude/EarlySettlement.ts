@@ -17,7 +17,7 @@ export class EarlySettlement extends PreludeCard {
         renderData: CardRenderer.builder((b) => {
           b.city().greenery();
         }),
-        description: 'Place a city tile, then place a greenery tile.',
+        description: 'Place a city tile, then place a greenery tile. Raise oxygen 1 step.',
       },
     });
   }
