@@ -23,13 +23,13 @@ export class Reds extends Party implements IParty {
 
 class RedsBonus01 implements Bonus {
   id = 'rb01';
-  description = 'The player(s) with the lowest TR gains 1 TR (26 or less in solo)';
+  description = 'The player(s) with the lowest TR gains 1 TR (25 or less in solo)';
   isDefault = true;
 
   grant(game: Game) {
     const players = game.getPlayers();
 
-    if (game.isSoloMode() && players[0].getTerraformRating() <= 26) {
+    if (game.isSoloMode() && players[0].getTerraformRating() <= 25) {
       players[0].increaseTerraformRating();
     } else {
       players.sort((p1, p2) => p1.getTerraformRating() - p2.getTerraformRating());

@@ -161,7 +161,7 @@ export class Game implements ISerializable<SerializedGame> {
   public undoCount: number = 0; // Each undo increases it
 
   public generation: number = 1;
-  public bonus_rate: number = -4;
+  public bonus_rate: number = -3;
   public pending_wgt: number = 0;
   public phase: Phase = Phase.RESEARCH;
   public dealer: Dealer;
@@ -748,8 +748,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.defer(new RemoveColonyFromGame(this.players[0]));
     }
     if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
-      this.players[0].decreaseTerraformRating();
-      this.players[0].decreaseTerraformRating();
+      this.players[0].decreaseTerraformRatingSteps(4);
     }
     if (this.players.length === 1 && this.gameOptions.removeNegativeGlobalEventsOption) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
