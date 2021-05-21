@@ -514,6 +514,7 @@ export class Game implements ISerializable<SerializedGame> {
     const oceansMaxed = this.board.getOceansOnBoard() === constants.MAX_OCEAN_TILES;
     let globalParametersMaxed = oxygenMaxed && temperatureMaxed && oceansMaxed;
     const venusMaxed = this.getVenusScaleLevel() === constants.MAX_VENUS_SCALE;
+    const venusSatisfied = this.getVenusScaleLevel() >= 18;
 
     MoonExpansion.ifMoon(this, (moonData) => {
       if (this.gameOptions.requiresMoonTrackCompletion) {
@@ -525,9 +526,9 @@ export class Game implements ISerializable<SerializedGame> {
       }
     });
 
-    // Solo games with Venus needs Venus maxed to end the game.
+    // Solo games with Venus needs Venus at 18% to end the game.
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      return globalParametersMaxed && venusMaxed;
+      return globalParametersMaxed && venusSatisfied;
     }
     // new option "requiresVenusTrackCompletion" also makes maximizing Venus a game-end requirement
     if (this.gameOptions.venusNextExtension && this.gameOptions.requiresVenusTrackCompletion) {
@@ -740,8 +741,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 2);
-      this.bonus_rate += 1;
+      this.players[0].addProduction(Resources.MEGACREDITS, 0);
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
