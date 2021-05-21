@@ -12,16 +12,16 @@ import {CheungShingMARS} from './CheungShingMARS';
 import {DomeFarming} from './DomeFarming';
 import {Donation} from './Donation';
 import {EarlySettlement} from './EarlySettlement';
-import {EccentricSponsor} from './EccentricSponsor';
+// import {EccentricSponsor} from './EccentricSponsor';
 import {EcologyExperts} from './EcologyExperts';
-import {ExperimentalForest} from './ExperimentalForest';
+// import {ExperimentalForest} from './ExperimentalForest';
 import {GalileanMining} from './GalileanMining';
 import {GreatAquifer} from './GreatAquifer';
 import {HousePrinting} from './HousePrinting';
 import {HugeAsteroid} from './HugeAsteroid';
 import {IoResearchOutpost} from './IoResearchOutpost';
 import {LavaTubeSettlement} from './LavaTubeSettlement';
-import {Loan} from './Loan';
+// import {Loan} from './Loan';
 import {MartianIndustries} from './MartianIndustries';
 import {MartianSurvey} from './MartianSurvey';
 import {MetalRichAsteroid} from './MetalRichAsteroid';
@@ -96,14 +96,14 @@ export const PRELUDE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.GALILEAN_MINING, Factory: GalileanMining},
     {cardName: CardName.HUGE_ASTEROID, Factory: HugeAsteroid},
     {cardName: CardName.METALS_COMPANY, Factory: MetalsCompany},
-    {cardName: CardName.LOAN, Factory: Loan},
+    // {cardName: CardName.LOAN, Factory: Loan},
     {cardName: CardName.MOHOLE, Factory: Mohole},
     {cardName: CardName.METAL_RICH_ASTEROID, Factory: MetalRichAsteroid},
     {cardName: CardName.ORBITAL_CONSTRUCTION_YARD, Factory: OrbitalConstructionYard},
     {cardName: CardName.ACQUIRED_SPACE_AGENCY, Factory: AcquiredSpaceAgency},
     {cardName: CardName.RESEARCH_NETWORK, Factory: ResearchNetwork},
-    {cardName: CardName.ECCENTRIC_SPONSOR, Factory: EccentricSponsor},
+    // {cardName: CardName.ECCENTRIC_SPONSOR, Factory: EccentricSponsor},
     {cardName: CardName.ECOLOGY_EXPERTS, Factory: EcologyExperts},
-    {cardName: CardName.EXPERIMENTAL_FOREST, Factory: ExperimentalForest},
+    // {cardName: CardName.EXPERIMENTAL_FOREST, Factory: ExperimentalForest},
   ],
 });
