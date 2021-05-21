@@ -130,7 +130,7 @@ export const Colony = Vue.component('colony', {
     <div class="colony-content" :style="'margin-top: ' + getColonyContentOffset(colony) + 'px;'">
       <div v-if="colony.name === getGanymede()" class="resource plant"></div>
       <div v-if="colony.name === getGanymede()" class="resource plant"></div>
-      <div v-if="colony.name === getEuropa()" class="resource money">2</div>
+      <div v-if="colony.name === getEuropa()" class="resource plant"></div>
       <div v-if="colony.name === getTitan()" class="resource floater"></div>
       <div v-if="colony.name === getEnceladus()" class="resource microbe"></div>
       <div v-if="colony.name === getCallisto()" class="resource energy"></div>
@@ -450,10 +450,10 @@ export const Colony = Vue.component('colony', {
     <div><div class="production-box"><div class="production heat"></div></div></div>
     <div><div class="production-box"><div class="production money">1</div></div></div>
     <div><div class="production-box"><div class="production energy"></div></div></div>
-    <div><div class="production-box"><div class="production plant"></div></div></div>
     <div><div class="production-box"><div class="production steel"></div></div></div>
     <div><div class="production-box"><div class="production titanium"></div></div></div>
-    <div><div class="production-box"><div class="production money">4</div></div></div>
+    <div><div class="production-box"><div class="production money">5</div></div></div>
+    <div><div class="production-box"><div class="production plant triple-res white-x white-x--3"></div></div></div>
   </div>
 
   <div v-if="colony.name === getPallas()" class="colony-grid-container">
