@@ -467,8 +467,8 @@ export enum CardName {
     BACTOVIRAL_RESEARCH = 'Bactoviral Research',
     
     // Rebalanced Projects
-    EARTH_CATAPULT_CURATED = 'Earth Catapult:curated'
-    TOLL_STATION_CURATED = 'Toll Station:curated'
+    EARTH_CATAPULT_CURATED = 'Earth Catapult:curated',
+    TOLL_STATION_CURATED = 'Toll Station:curated',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',
