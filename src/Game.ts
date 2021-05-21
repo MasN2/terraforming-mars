@@ -161,7 +161,7 @@ export class Game implements ISerializable<SerializedGame> {
   public undoCount: number = 0; // Each undo increases it
 
   public generation: number = 1;
-  public bonus_rate: number = -5;
+  public bonus_rate: number = -4;
   public pending_wgt: number = 0;
   public phase: Phase = Phase.RESEARCH;
   public dealer: Dealer;
@@ -537,7 +537,7 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public lastSoloGeneration(): number {
-    let lastGeneration = 10;
+    let lastGeneration = 9;
     const options = this.gameOptions;
     if (options.preludeExtension) {
       lastGeneration -= 1;
@@ -740,7 +740,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 1);
+      this.players[0].addProduction(Resources.MEGACREDITS, 2);
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
