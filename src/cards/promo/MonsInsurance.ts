@@ -39,6 +39,9 @@ export class MonsInsurance extends Card implements CorporationCard {
       p.addProduction(Resources.MEGACREDITS, -2);
     }
     player.game.monsInsuranceOwner = player.id;
+    if (player.game.getPlayers().length === 1) {
+      p.addProduction(Resources.MEGACREDITS, 3);
+    }
     return undefined;
   }
 }
