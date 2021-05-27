@@ -16,16 +16,14 @@ export class SelfSufficientSettlement extends PreludeCard implements IProjectCar
       metadata: {
         cardNumber: 'P29',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.megacredits(2)).megacredits(3).br;
-          b.city();
+          b.production((pb) => pb.megacredits(3)).city().br;
         }),
-        description: 'Increase your MC production 2 steps and gain 3 MC. Place a City tile.',
+        description: 'Increase your MC production 3 steps. Place a City tile.',
       },
     });
   }
   public play(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, 2);
-    player.megaCredits += 3;
+    player.addProduction(Resources.MEGACREDITS, 3);
     player.game.defer(new PlaceCityTile(player));
     return undefined;
   }
