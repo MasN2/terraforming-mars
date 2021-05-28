@@ -176,7 +176,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.BIG_OXIDE:
         return '<span class="card-teractor-logo">BIG OXIDE</span>';
       case CardName.SUPER_EFFECTIVE:
-        return '<div class="card-lakefront-logo">Super <br> &nbsp;&nbsp;Effective!</div>';
+        return '<div class="card-inventrix-logo">Super Effective!</div>';
       }
       return '';
     },
