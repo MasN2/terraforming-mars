@@ -21,7 +21,7 @@ export class SuperEffective extends Card implements CorporationCard {
         cardNumber: 'R38',
         description: 'You start with 36 M€.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br.br;
+          b.br;
           b.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
@@ -38,7 +38,11 @@ export class SuperEffective extends Card implements CorporationCard {
     });
   }
 
-  public play() {
+  public play(player: Player) {
+    if (player.game.getPlayers().length === 1) {
+      // Get bonus for 2 neutral greeneries
+      player.heat += 4;
+    }
     return undefined;
   }
 
