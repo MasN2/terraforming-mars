@@ -21,6 +21,7 @@ import {FuelGreen} from './FuelGreen';
 import {TritiumInvestments} from './TritiumInvestments';
 import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {BigOxide} from './BigOxide';
+import {SuperEffective} from './SuperEffective';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -39,6 +40,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.TRITIUM_INVESTMENTS, Factory: TritiumInvestments},
     {cardName: CardName.UNITED_NATIONS_MISSION_ONE, Factory: UnitedNationsMissionOne},
     {cardName: CardName.BIG_OXIDE, Factory: BigOxide, compatibility: GameModule.Venus},
+    {cardName: CardName.SUPER_EFFECTIVE, Factory: SuperEffective},
   ],
   preludeCards: [
     {cardName: CardName.RESEARCH_GRANT, Factory: ResearchGrant},

@@ -175,6 +175,8 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
         return '<span class="card-unmo-logo">UNITED NATIONS<br/>MISSION ONE</span>';
       case CardName.BIG_OXIDE:
         return '<span class="card-teractor-logo">BIG OXIDE</span>';
+      case CardName.SUPER_EFFECTIVE:
+        return '<div class="card-lakefront-logo">Super <br> &nbsp;&nbsp;Effective!</div>';
       }
       return '';
     },

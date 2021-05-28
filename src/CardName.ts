@@ -484,6 +484,7 @@ export enum CardName {
     TRITIUM_INVESTMENTS = 'Tritium Investments',
     UNITED_NATIONS_MISSION_ONE = 'United Nations Mission One',
     BIG_OXIDE = 'Big Oxide',
+    SUPER_EFFECTIVE = 'Super Effective',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
