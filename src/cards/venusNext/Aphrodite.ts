@@ -11,7 +11,7 @@ export class Aphrodite extends Card implements CorporationCard {
   constructor() {
     super({
       name: CardName.APHRODITE,
-      tags: [Tags.PLANT, Tags.VENUS],
+      tags: [Tags.VENUS, Tags.PLANT],
       startingMegaCredits: 40,
       cardType: CardType.CORPORATION,
       initialActionText: 'Raise Venus two steps',
