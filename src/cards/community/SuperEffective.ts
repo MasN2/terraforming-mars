@@ -3,7 +3,6 @@ import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {ISpace} from '../../boards/ISpace';
 import {TileType} from '../../TileType';
-import {Resources} from '../../Resources';
 import {Card} from '../Card';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
@@ -43,7 +42,7 @@ export class SuperEffective extends Card implements CorporationCard {
     return undefined;
   }
 
-  public onTilePlaced(cardOwner: Player, activePlayer: Player, space: ISpace) {
+  public onTilePlaced(cardOwner: Player, _activePlayer: Player, space: ISpace) {
     if (space.tile?.tileType === TileType.OCEAN) {
       cardOwner.plants += 2;
     }
