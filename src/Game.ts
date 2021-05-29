@@ -734,7 +734,7 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 3);
+      this.players[0].addProduction(Resources.MEGACREDITS, 2);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -2);
@@ -744,7 +744,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.players[0].addProduction(Resources.MEGACREDITS, 0);
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -3);
+      this.players[0].addProduction(Resources.MEGACREDITS, -2);
       this.defer(new RemoveColonyFromGame(this.players[0]));
     }
     if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
