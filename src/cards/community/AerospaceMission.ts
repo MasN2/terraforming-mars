@@ -9,27 +9,20 @@ export class AerospaceMission extends PreludeCard {
   constructor() {
     super({
       name: CardName.AEROSPACE_MISSION,
-      tags: [Tags.SPACE],
+      tags: [Tags.SPACE, Tags.JOVIAN],
 
       metadata: {
         cardNumber: 'Y01',
         renderData: CardRenderer.builder((b) => {
-          b.colonies(1).nbsp.colonies(1).br;
-          b.minus().megacredits(14);
+          b.colonies(1).br;
         }),
-        description: 'Place 2 colonies. Pay 14 M€.',
+        description: 'Place a colony.',
       },
     });
   }
 
-  public canPlay(player: Player) {
-    return player.canAfford(14);
-  }
-
   public play(player: Player) {
-    player.megaCredits -= 14;
-    player.game.defer(new BuildColony(player, false, 'Select where to build the first colony'));
-    player.game.defer(new BuildColony(player, false, 'Select where to build the second colony'));
+    player.game.defer(new BuildColony(player, false, 'Select where to build the colony'));
     return undefined;
   }
 }
