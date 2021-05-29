@@ -5,7 +5,7 @@ import {AcquiredSpaceAgency} from './AcquiredSpaceAgency';
 import {AlliedBanks} from './AlliedBanks';
 import {AquiferTurbines} from './AquiferTurbines';
 import {Biofuels} from './Biofuels';
-import {Biolab} from './Biolab';
+// import {Biolab} from './Biolab';
 import {BiosphereSupport} from './BiosphereSupport';
 import {BusinessEmpire} from './BusinessEmpire';
 import {CheungShingMARS} from './CheungShingMARS';
@@ -88,7 +88,7 @@ export const PRELUDE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.SUPPLIER, Factory: Supplier},
     {cardName: CardName.SUPPLY_DROP, Factory: SupplyDrop},
     {cardName: CardName.GREAT_AQUIFER, Factory: GreatAquifer},
-    {cardName: CardName.BIOLAB, Factory: Biolab},
+    // {cardName: CardName.BIOLAB, Factory: Biolab},
     {cardName: CardName.MARTIAN_INDUSTRIES, Factory: MartianIndustries},
     {cardName: CardName.IO_RESEARCH_OUTPOST, Factory: IoResearchOutpost},
     {cardName: CardName.POLAR_INDUSTRIES, Factory: PolarIndustries},

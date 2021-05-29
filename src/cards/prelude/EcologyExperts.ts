@@ -15,10 +15,10 @@ export class EcologyExperts extends PreludeCard {
       metadata: {
         cardNumber: 'P10',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.plants(1)).br.br;
+          b.production((pb) => pb.plants(1)).cards(1).br;
           b.projectRequirements();
         }),
-        description: 'Increase your plant production 1 step. Play a card from hand, ignoring global requirements.',
+        description: 'Increase your plant production 1 step. Draw a card. Play a card from hand, ignoring global requirements.',
       },
     });
   }
@@ -31,6 +31,7 @@ export class EcologyExperts extends PreludeCard {
   }
   public play(player: Player) {
     player.addProduction(Resources.PLANTS, 1);
+    player.drawCard(1);
     player.game.defer(new PlayProjectCard(player));
     return undefined;
   }
