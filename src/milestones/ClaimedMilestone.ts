@@ -11,7 +11,7 @@ export interface ClaimedMilestone {
 export interface SerializedClaimedMilestone {
   name?: string;
   playerId?: PlayerId;
-  value?: number;
+  value: number;
 }
 
 export function serializeClaimedMilestones(claimedMilestones: Array<ClaimedMilestone>) : Array<SerializedClaimedMilestone> {
