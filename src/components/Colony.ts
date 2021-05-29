@@ -223,15 +223,15 @@ export const Colony = Vue.component('colony', {
 
     <div v-if="colony.name === getEnceladus()" class="colony-grid-container">
       <div>
-        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--4"></div>
       </div>
 
       <div>
-        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--4"></div>
       </div>
 
       <div>
-        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--4"></div>
       </div>
 
       <div></div>
@@ -240,10 +240,10 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getEnceladus()" class="colony-grid-container2">
-      <div>1</div>
       <div>2</div>
       <div>2</div>
       <div>3</div>
+      <div>4</div>
       <div>4</div>
       <div>5</div>
       <div>6</div>
@@ -578,15 +578,15 @@ export const Colony = Vue.component('colony', {
 
   <div v-if="colony.name === getTitan()" class="colony-grid-container">
     <div>
-      <div class="colony-placement-bonus triple-res resource floater white-x white-x--3"></div>
+      <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
     </div>
 
     <div>
-      <div class="colony-placement-bonus triple-res resource floater white-x white-x--3"></div>
+      <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
     </div>
 
     <div>
-      <div class="colony-placement-bonus triple-res resource floater white-x white-x--3"></div>
+      <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
     </div>
     <div></div>
     <div></div>
@@ -595,9 +595,9 @@ export const Colony = Vue.component('colony', {
   </div>
   <div v-if="colony.name === getTitan()" class="colony-grid-container2">
     <div>1</div>
-    <div>1</div>
     <div>2</div>
     <div>2</div>
+    <div>3</div>
     <div>3</div>
     <div>4</div>
     <div>5</div>
