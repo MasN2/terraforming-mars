@@ -162,7 +162,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.CURIOSITY_II:
         return '<div class="card-curiosity-ii-logo">Curiosity II</div>';
       case CardName.QUANTUM:
-        return '<div class="card-inventrix-logo">QUANTUM</div>';
+        return '<div class="card-quantum-logo"><span style="font-size:45px;">Q</span>UANTUM</div>';
       case CardName.WARP_HUB:
         return '<div class="card-warp-hub-logo">Warp Hub</div>';
       case CardName.NEW_AMAZON_PROJECT:
