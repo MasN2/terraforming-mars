@@ -5,11 +5,13 @@ import {IMilestone} from './IMilestone';
 export interface ClaimedMilestone {
   milestone: IMilestone;
   player: Player;
+  vp: number;
 }
 
 export interface SerializedClaimedMilestone {
   name?: string;
   playerId?: PlayerId;
+  value?: number;
 }
 
 export function serializeClaimedMilestones(claimedMilestones: Array<ClaimedMilestone>) : Array<SerializedClaimedMilestone> {
@@ -17,6 +19,7 @@ export function serializeClaimedMilestones(claimedMilestones: Array<ClaimedMiles
     return {
       name: claimedMilestone.milestone.name,
       playerId: claimedMilestone.player.id,
+      value: claimedMilestone.vp,
     };
   });
 }
@@ -44,6 +47,6 @@ export function deserializeClaimedMilestones(
       throw new Error(`Player ${playerId} not found when rebuilding claimed milestone ${milestoneName}`);
     }
 
-    return {milestone, player};
+    return {milestone, player, value};
   });
 }
