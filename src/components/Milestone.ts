@@ -56,7 +56,7 @@ export const Milestone = Vue.component('milestone', {
                 <a class="ma-clickable" href="#" v-on:click.prevent="toggleList()" v-i18n>Milestones</a>
                 <span v-for="milestone in milestones_list" v-if="milestone.player_name" class="milestone-award-inline paid" :title="milestone.player_name">
                     <span v-i18n>{{ milestone.milestone.name }}</span>
-                    <span v-for="n in milestone.scores[0].playerScore"><span class="ma-player-cube"><i :class="'board-cube board-cube--'+milestone.player_color" /></span></span>
+                    <span v-for="n in milestone.vp"><span class="ma-player-cube"><i :class="'board-cube board-cube--'+milestone.player_color" /></span></span>
                 </span>
                 <span v-for="spotPrice in getAvailableMilestoneSpots()" class="milestone-award-inline unpaid" v-if="isLearnerModeOn()">
                     <div class="milestone-award-price">{{spotPrice}}</div>

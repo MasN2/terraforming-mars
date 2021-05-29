@@ -11,4 +11,5 @@ export interface ClaimedMilestoneModel {
     player_name: string;
     player_color: string;
     scores: Array<IMilestoneScore>;
+    vp: number;
 }

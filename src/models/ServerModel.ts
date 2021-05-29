@@ -198,7 +198,7 @@ export class Server {
         (m) => m.milestone.name === milestone.name,
       );
       const scores: Array<IMilestoneScore> = [];
-      if (claimed === undefined && claimedMilestones.length < 3) {
+      if (claimed === undefined && claimedMilestones.length < 5) {
         game.getPlayers().forEach((player) => {
           scores.push({
             playerColor: player.color,
@@ -212,6 +212,7 @@ export class Server {
         player_color: claimed === undefined ? '' : claimed.player.color,
         milestone,
         scores,
+        vp: claimed === undefined ? 0 : claimed.vp,
       });
     }
 
