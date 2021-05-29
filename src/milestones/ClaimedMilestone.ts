@@ -46,7 +46,7 @@ export function deserializeClaimedMilestones(
     if (player === undefined) {
       throw new Error(`Player ${playerId} not found when rebuilding claimed milestone ${milestoneName}`);
     }
-
-    return {milestone, player, element.value};
+    const vp = element.value;
+    return {milestone, player, vp};
   });
 }
