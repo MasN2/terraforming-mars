@@ -1578,7 +1578,7 @@ export class Player implements ISerializable<SerializedPlayer> {
       this.game.claimedMilestones.push({
         player: this,
         milestone: milestone,
-        vp: 5 - this.game.claimedMilestones.length;
+        vp: 5 - this.game.claimedMilestones.length,
       });
       this.game.defer(new SelectHowToPayDeferred(this, MILESTONE_COST, {title: 'Select how to pay for milestone'}));
       this.game.log('${0} claimed ${1} milestone', (b) => b.player(this).milestone(milestone));
