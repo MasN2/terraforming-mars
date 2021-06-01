@@ -40,7 +40,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
         &nbsp;Cheung Shing <br><div style="margin-left:10px"> ■■MARS■■ </div>
         </div>`;
       case CardName.CREDICOR:
-        return '<div class="card-credicor-logo">CREDICOR</div>';
+        return '<div class="card-credicor-logo"><span style="background:purple; padding:2px; padding-left:10px; padding-right:10px">€</span> credicor</div>';
       case CardName.ECOLINE:
         return '<div class="card-ecoline-logo">ecoline</div>';
       case CardName.HELION:
@@ -177,6 +177,8 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
         return '<span class="card-teractor-logo">BIG OXIDE</span>';
       case CardName.SUPER_EFFECTIVE:
         return '<div class="card-inventrix-logo">Super Effective!</div>';
+      case CardName.NON_IPSE_POTEST_IUPPITER:
+        return '<div class="card-inventrix-logo">non ipse<br/>potest Iuppiter</div>';
       }
       return '';
     },
