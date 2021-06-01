@@ -60,7 +60,6 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
         case CardName.POLAR_INDUSTRIES:
           result += 5;
           break;
-        case CardName.SELF_SUFFICIENT_SETTLEMENT:
         case CardName.ALLIED_BANKS:
           result += 3;
           break;
@@ -97,7 +96,7 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
             result += 3;
             break;
           case CardName.SELF_SUFFICIENT_SETTLEMENT:
-            result += 2;
+            result += 3;
             break;
           case CardName.METALS_COMPANY:
           case CardName.RESEARCH_NETWORK:
@@ -123,7 +122,7 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
         case CardName.SPLICE:
           switch (prelude) {
           case CardName.BIOFUELS:
-            result += 2;
+            result += 4;
             break;
           }
           break;

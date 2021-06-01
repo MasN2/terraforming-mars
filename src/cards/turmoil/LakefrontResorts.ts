@@ -19,15 +19,15 @@ export class LakefrontResorts extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.LAKEFRONT_RESORTS,
       tags: [Tags.BUILDING],
-      startingMegaCredits: 54,
+      startingMegaCredits: 47,
       initialActionText: 'Place an Ocean',
 
       metadata: {
         cardNumber: 'R38',
-        description: 'You start with 46 M€. As your first action, place an ocean.',
+        description: 'You start with 47 M€. As your first action, place an ocean.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(46).oceans(1);
+          b.megacredits(47).oceans(1);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.MEDIUM);
             ce.effect('When any ocean tile is placed, increase your M€ production 1 step.', (eb) => {
