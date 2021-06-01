@@ -20,11 +20,11 @@ export class NonIpsePotestIuppiter extends Card implements CorporationCard {
         cardNumber: '',
         description: 'You start with 48 M€. As your first action, draw 2 Jovian cards.',
         renderData: CardRenderer.builder((b) => {
-          b.br;
+          b.br.br;
           b.megacredits(48).nbsp.cards(2).secondaryTag(Tags.JOVIAN);
           b.corpBox('effect', (ce) => {
-            ce.effect('Each time any Jovian tag is put into play, including this, draw a card with a MAX requirement.', (eb) => {
-              eb.jovian().played.any.startEffect.cards(1).text('max req');
+            ce.effect('Each time any Jovian tag is put into play, including this, draw a card with a MAX REQUIREMENT.', (eb) => {
+              eb.jovian().played.any.startEffect.cards(1).text('MAX REQUIREMENT');
             });
           });
         }),

@@ -485,7 +485,7 @@ export enum CardName {
     UNITED_NATIONS_MISSION_ONE = 'United Nations Mission One',
     BIG_OXIDE = 'Big Oxide',
     SUPER_EFFECTIVE = 'Super Effective',
-    NON_IPSE_POTEST_IUPPITER = 'non ipse potest Iuppiter',
+    NON_IPSE_POTEST_IUPPITER = 'Non ipse potest Iuppiter',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
