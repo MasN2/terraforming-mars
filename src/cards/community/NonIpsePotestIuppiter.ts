@@ -3,7 +3,6 @@ import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {CorporationCard} from '../corporation/CorporationCard';
 import {IProjectCard} from '../IProjectCard';
-import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
@@ -12,7 +11,7 @@ export class NonIpsePotestIuppiter extends Card implements CorporationCard {
   constructor() {
     super({
       cardType: CardType.CORPORATION,
-      name: CardName.NON_IPSE_POTEST_IUPITTER,
+      name: CardName.NON_IPSE_POTEST_IUPPITER,
       tags: [Tags.JOVIAN, Tags.SCIENCE],
       startingMegaCredits: 48,
       initialActionText: 'Draw 2 Jovian cards',
@@ -56,7 +55,7 @@ export class NonIpsePotestIuppiter extends Card implements CorporationCard {
   }
 
   public isMaxReq(card: IProjectCard) {
-    const maxReq: Array<IProjectCard> = [
+    const maxReq: Array<CardName> = [
       CardName.COLONIZER_TRAINING_CAMP,
       CardName.SEARCH_FOR_LIFE,
       CardName.DOMED_CRATER,
@@ -67,7 +66,7 @@ export class NonIpsePotestIuppiter extends Card implements CorporationCard {
       CardName.ELECTRO_CATAPULT,
       CardName.DUST_SEALS,
       CardName.EXTREME_COLD_FUNGUS,
-      CardName.DESIGNED_MICROORGANISMS,
+      CardName.DESIGNED_MICRO_ORGANISMS,
       CardName.ROTATOR_IMPACTS,
       CardName.SPIN_INDUCING_ASTEROID,
       CardName.MARTIAN_SURVEY,
