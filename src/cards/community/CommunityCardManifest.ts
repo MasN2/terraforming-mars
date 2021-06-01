@@ -37,7 +37,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.UNITED_NATIONS_MISSION_ONE, Factory: UnitedNationsMissionOne},
     {cardName: CardName.BIG_OXIDE, Factory: BigOxide, compatibility: GameModule.Venus},
     {cardName: CardName.SUPER_EFFECTIVE, Factory: SuperEffective},
-    {cardName: CardName.NON_IPSE_POTEST_IUPPITER, Factory:NonIpsePotestIuppiter},
+    {cardName: CardName.NON_IPSE_POTEST_IUPPITER, Factory: NonIpsePotestIuppiter},
   ],
   preludeCards: [
     {

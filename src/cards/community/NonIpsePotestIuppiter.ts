@@ -71,7 +71,7 @@ export class NonIpsePotestIuppiter extends Card implements CorporationCard {
       CardName.SPIN_INDUCING_ASTEROID,
       CardName.MARTIAN_SURVEY,
       CardName.PSYCHROPHILES,
-      CardName.PIONEER_SETTLEMENT,];
+      CardName.PIONEER_SETTLEMENT];
     return maxReq.includes(card.name);
   }
 
