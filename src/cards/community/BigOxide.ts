@@ -17,14 +17,14 @@ export class BigOxide extends Card implements IActionCard, CorporationCard, IRes
     super({
       name: CardName.BIG_OXIDE,
       tags: [Tags.VENUS, Tags.BUILDING],
-      startingMegaCredits: 39,
+      startingMegaCredits: 37,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 39 M€.',
+        description: 'You start with 37 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(39);
+          b.megacredits(37);
           b.corpBox('action', (ce) => {
             ce.action('Spend 1 energy to raise oxygen or Venus.', (eb) => {
               eb.energy(1).startAction.oxygen(1).or().venus(1);

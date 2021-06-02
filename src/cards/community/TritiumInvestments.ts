@@ -14,14 +14,14 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
     super({
       name: CardName.TRITIUM_INVESTMENTS,
       tags: [Tags.EARTH, Tags.EARTH],
-      startingMegaCredits: 31,
+      startingMegaCredits: 32,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 31 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
+        description: 'You start with 32 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(31).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
+          b.megacredits(32).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
           b.corpBox('action', (ce) => {
             ce.action('Increase your MC production by the current generation number.', (eb) => {
               eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('generation', Size.SMALL, true));

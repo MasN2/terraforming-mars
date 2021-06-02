@@ -13,7 +13,7 @@ export class SaturnSystems extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.SATURN_SYSTEMS,
-      tags: [Tags.JOVIAN],
+      tags: [Tags.JOVIAN, Tags.SPACE],
       startingMegaCredits: 42,
 
       metadata: {

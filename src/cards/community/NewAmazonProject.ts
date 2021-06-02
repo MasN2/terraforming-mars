@@ -17,14 +17,14 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
     super({
       name: CardName.NEW_AMAZON_PROJECT,
       tags: [Tags.PLANT, Tags.PLANT],
-      startingMegaCredits: 36,
+      startingMegaCredits: 35,
       initialActionText: 'Place two greenery tiles and raise the oxygen 2 steps',
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 36 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps.',
+        description: 'You start with 35 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(36).nbsp.greenery().greenery();
+          b.megacredits(35).nbsp.greenery().greenery();
           b.corpBox('action', (ce) => {
             ce.action('Pay 12 MC to place a greenery tile on ANY SPACE ADJACENT TO AT LEAST TWO OTHER GREENERY TILES.', (eb) => {
               eb.megacredits(12).startAction.greenery().asterix();
