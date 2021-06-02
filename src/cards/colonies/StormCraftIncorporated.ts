@@ -25,7 +25,7 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: 'R29',
-        description: 'You start with 44 M€.',
+        description: 'You start with 44 M€. 1 VP per Jovian tag you have.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
           b.megacredits(44);

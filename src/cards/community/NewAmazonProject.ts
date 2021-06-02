@@ -22,7 +22,7 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 35 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps.',
+        description: 'You start with 35 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps. -1 VP for each city tile you have.',
         renderData: CardRenderer.builder((b) => {
           b.megacredits(35).nbsp.greenery().greenery();
           b.corpBox('action', (ce) => {

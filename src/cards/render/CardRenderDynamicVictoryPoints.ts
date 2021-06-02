@@ -33,6 +33,12 @@ export class CardRenderDynamicVictoryPoints {
     item.anyPlayer = any;
     return new CardRenderDynamicVictoryPoints(item, points, target);
   }
+  public static venus(points: number, target: number): CardRenderDynamicVictoryPoints {
+    const item = new CardRenderItem(CardRenderItemType.VENUS);
+    item.isPlayed = true;
+
+    return new CardRenderDynamicVictoryPoints(item, points, target);
+  }
   public static jovians(points: number, target: number): CardRenderDynamicVictoryPoints {
     const item = new CardRenderItem(CardRenderItemType.JOVIAN);
     item.isPlayed = true;

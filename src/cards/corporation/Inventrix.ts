@@ -12,15 +12,15 @@ export class Inventrix extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.INVENTRIX,
       tags: [Tags.SCIENCE, Tags.SCIENCE],
-      initialActionText: 'Draw 4 cards',
-      startingMegaCredits: 42,
+      initialActionText: 'Draw 3 cards',
+      startingMegaCredits: 46,
 
       metadata: {
         cardNumber: 'R43',
-        description: 'As your first action in the game, draw 4 cards. Start with 42 M€.',
+        description: 'As your first action in the game, draw 3 cards. Start with 46 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(42).nbsp.cards(4);
+          b.megacredits(46).nbsp.cards(3);
           b.corpBox('effect', (ce) => {
             ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +3 or -3 steps, your choice in each case.', (eb) => {
               eb.plate('Global requirements').startEffect.text('+/- 3');
@@ -31,7 +31,7 @@ export class Inventrix extends Card implements CorporationCard {
     });
   }
   public initialAction(player: Player) {
-    player.drawCard(4);
+    player.drawCard(3);
     return undefined;
   }
   public getRequirementBonus(): number {
