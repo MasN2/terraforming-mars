@@ -15,22 +15,22 @@ export class SuperEffective extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.SUPER_EFFECTIVE,
       tags: [Tags.WILDCARD],
-      startingMegaCredits: 36,
+      startingMegaCredits: 40,
 
       metadata: {
         cardNumber: 'R38',
-        description: 'You start with 36 M€.',
+        description: 'You start with 40 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(36);
+          b.megacredits(40);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {
               eb.oceans(1).any.startEffect.plants(2);
             });
             ce.vSpace();
-            ce.effect('When any ocean tile is placed, gain 2 plants. When any greenery tile is placed, gain 2 heat.', (eb) => {
-              eb.greenery().any.startEffect.heat(2);
+            ce.effect('When any ocean tile is placed, gain 2 plants. When any greenery tile is placed, gain 3 heat.', (eb) => {
+              eb.greenery().any.startEffect.heat(3);
             });
           });
         }),
@@ -51,7 +51,7 @@ export class SuperEffective extends Card implements CorporationCard {
       cardOwner.plants += 2;
     }
     if (space.tile?.tileType === TileType.GREENERY) {
-      cardOwner.heat += 2;
+      cardOwner.heat += 3;
     }
   }
 }
