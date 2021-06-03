@@ -52,20 +52,23 @@ export class GameSetup {
   public static setupNeutralPlayer(game: Game) {
     // Single player add neutral player
     // put 2 neutrals cities on board with adjacent forest
+    // Puts two greeneries per city, since that seems to be the average ratio in #game-results
     const neutral = this.neutralPlayerFor(game.id);
 
     function placeCityAndForest(game: Game, direction: -1 | 1) {
       const board = game.board;
       const citySpace = game.getSpaceByOffset(direction, TileType.CITY);
       game.simpleAddTile(neutral, citySpace, {tileType: TileType.CITY});
-      const adjacentSpaces = board.getAdjacentSpaces(citySpace).filter((s) => game.board.canPlaceTile(s));
-      if (adjacentSpaces.length === 0) {
-        throw new Error('No space for forest');
+      for (let i = 0; i < 2; i++) {
+        const adjacentSpaces = board.getAdjacentSpaces(citySpace).filter((s) => game.board.canPlaceTile(s));
+        if (adjacentSpaces.length === 0) {
+          throw new Error('No space for forest');
+        }
+        let idx = game.discardForCost(TileType.GREENERY);
+        idx = Math.max(idx-1, 0); // Some cards cost zero.
+        const forestSpace = adjacentSpaces[idx%adjacentSpaces.length];
+        game.simpleAddTile(neutral, forestSpace, {tileType: TileType.GREENERY});
       }
-      let idx = game.discardForCost(TileType.GREENERY);
-      idx = Math.max(idx-1, 0); // Some cards cost zero.
-      const forestSpace = adjacentSpaces[idx%adjacentSpaces.length];
-      game.simpleAddTile(neutral, forestSpace, {tileType: TileType.GREENERY});
     }
 
     placeCityAndForest(game, 1);
