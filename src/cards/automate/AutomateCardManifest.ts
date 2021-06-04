@@ -15,5 +15,5 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
   cardsToRemove: [
     CardName.BUSINESS_NETWORK,
     CardName.INVENTORS_GUILD,
-  ]
+  ],
 });
