@@ -105,7 +105,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       showCorporationList: false,
       showCardsBlackList: false,
       turmoil: false,
-      automate: false;
+      automate: false,
       customCorporationsList: [],
       customColoniesList: [],
       cardsBlackList: [],
