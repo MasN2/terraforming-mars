@@ -58,5 +58,6 @@ export interface ICard {
     requirements?: CardRequirements;
     metadata: CardMetadata;
     warning?: string | Message;
+    onProductionPhase?: (player: Player) => undefined;
 }
 

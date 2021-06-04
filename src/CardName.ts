@@ -471,6 +471,7 @@ export enum CardName {
     TOLL_STATION_CURATED = 'Toll Station:curated',
     BUSINESS_NETWORK_AUTOMATE = 'Business Network:automate',
     INVENTORS_GUILD_AUTOMATE = 'Inventors Guild:automate',
+    REGOLITH_EATERS_AUTOMATE = 'Regolith Eaters:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',

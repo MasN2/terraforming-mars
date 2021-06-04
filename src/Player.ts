@@ -1026,6 +1026,11 @@ export class Player implements ISerializable<SerializedPlayer> {
     if (this.corporationCard !== undefined && this.corporationCard.onProductionPhase !== undefined) {
       this.corporationCard.onProductionPhase(this);
     }
+    for (const card of this.playedCards) {
+      if card.onProductionPhase !== undefined {
+        card.onProductionPhase(this);
+      }
+    }
   }
 
   private doneWorldGovernmentTerraforming(): void {
