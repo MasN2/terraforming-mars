@@ -469,6 +469,8 @@ export enum CardName {
     // Rebalanced Projects
     EARTH_CATAPULT_CURATED = 'Earth Catapult:curated',
     TOLL_STATION_CURATED = 'Toll Station:curated',
+    BUSINESS_NETWORK_AUTOMATE = 'Business Network:automate',
+    INVENTORS_GUILD_AUTOMATE = 'Inventors Guild:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',

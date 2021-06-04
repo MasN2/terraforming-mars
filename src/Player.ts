@@ -1187,11 +1187,21 @@ export class Player implements ISerializable<SerializedPlayer> {
     if (LunaProjectOffice.isActive(this)) {
       cardDraw++;
     }
+    let researchPower: number = 0;
+      for (const card of this.playedCards) {
+        if (card !== undefined && card.name == CardName.BUSINESS_NETWORK_AUTOMATE) {
+          researchPower += 1;
+        }
+        if (card !== undefined && card.name == CardName.INVENTORS_GUILD_AUTOMATE) {
+          researchPower += 1;
+        }
+      }
     if (!draftVariant) {
-      this.dealCards(cardDraw, dealtCards);
+      this.dealCards(cardDraw + researchPower, dealtCards);
     } else {
       dealtCards = this.draftedCards;
       this.draftedCards = [];
+      this.dealCards(researchPower, this.draftedCards);
     }
 
     const action = DrawCards.choose(this, dealtCards, {paying: true});
