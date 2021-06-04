@@ -35,7 +35,7 @@ export class RegolithEatersAutomate extends Card implements IActionCard, IProjec
   }
 
     public resourceCount = 0;
-  
+
     public play(player: Player) {
       player.addResourceTo(this, {log: true});
       return undefined;
