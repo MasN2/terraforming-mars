@@ -33,7 +33,7 @@ export class CardLoader {
       [gameOptions.aresExtension, ARES_CARD_MANIFEST],
       [gameOptions.promoCardsOption, PROMO_CARD_MANIFEST],
       [gameOptions.communityCardsOption, COMMUNITY_CARD_MANIFEST],
-      [gameOptions.automateCardsOption, AUTOMATE_CARD_MANIFEST],
+      [gameOptions.automateExtension, AUTOMATE_CARD_MANIFEST],
       [gameOptions.moonExpansion, MOON_CARD_MANIFEST],
     ];
 
