@@ -34,6 +34,7 @@ export interface CreateGameModel {
     venusNext: boolean;
     colonies: boolean;
     turmoil: boolean;
+    automate: boolean;
     customCorporationsList: Array<CardName>;
     customColoniesList: Array<ColonyName>;
     cardsBlackList: Array<CardName>;
@@ -104,6 +105,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       showCorporationList: false,
       showCardsBlackList: false,
       turmoil: false,
+      automate: false;
       customCorporationsList: [],
       customColoniesList: [],
       cardsBlackList: [],
@@ -385,6 +387,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       const venusNext = component.venusNext;
       const colonies = component.colonies;
       const turmoil = component.turmoil;
+      const automate = component.automate;
       const solarPhaseOption = this.solarPhaseOption;
       const shuffleMapOption = this.shuffleMapOption;
       const customCorporationsList = component.customCorporationsList;
@@ -457,6 +460,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
         venusNext,
         colonies,
         turmoil,
+        automate,
         customCorporationsList,
         customColoniesList,
         cardsBlackList,
@@ -607,6 +611,12 @@ export const CreateGameForm = Vue.component('create-game-form', {
                             <label for="communityCards-checkbox" class="expansion-button">
                                 <div class="create-game-expansion-icon expansion-icon-community"></div>
                                 <span v-i18n>Community</span>&nbsp;<a href="https://github.com/bafolts/terraforming-mars/wiki/Variants#community" class="tooltip" target="_blank">&#9432;</a>
+                            </label>
+
+                            <input type="checkbox" name="automate" id="automateCards-checkbox" v-model="automateCardsOption">
+                            <label for="automateCards-checkbox" class="expansion-button">
+                                <div class="create-game-expansion-icon expansion-icon-automate"></div>
+                                <span v-i18n>Automate</span>
                             </label>
 
                             <input type="checkbox" name="themoon" id="themoon-checkbox" v-model="moonExpansion">

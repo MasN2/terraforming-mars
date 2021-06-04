@@ -5,6 +5,7 @@ import {BASE_CARD_MANIFEST, CORP_ERA_CARD_MANIFEST} from './cards/StandardCardMa
 import {TURMOIL_CARD_MANIFEST} from './cards/turmoil/TurmoilCardManifest';
 import {VENUS_CARD_MANIFEST} from './cards/venusNext/VenusCardManifest';
 import {COMMUNITY_CARD_MANIFEST} from './cards/community/CommunityCardManifest';
+import {AUTOMATE_CARD_MANIFEST} from './cards/automate/AutomateCardManifest';
 import {ARES_CARD_MANIFEST} from './cards/ares/AresCardManifest';
 import {CardManifest} from './cards/CardManifest';
 import {CardName} from './CardName';
@@ -32,6 +33,7 @@ export class CardLoader {
       [gameOptions.aresExtension, ARES_CARD_MANIFEST],
       [gameOptions.promoCardsOption, PROMO_CARD_MANIFEST],
       [gameOptions.communityCardsOption, COMMUNITY_CARD_MANIFEST],
+      [gameOptions.automateCardsOption, AUTOMATE_CARD_MANIFEST],
       [gameOptions.moonExpansion, MOON_CARD_MANIFEST],
     ];
 
