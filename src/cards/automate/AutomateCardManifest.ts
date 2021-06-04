@@ -1,3 +1,4 @@
+import {CardName} from '../../CardName';
 import {GameModule} from '../../GameModule';
 import {CardManifest} from '../CardManifest';
 import {BusinessNetworkAutomate} from './BusinessNetworkAutomate';
