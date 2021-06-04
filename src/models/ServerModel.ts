@@ -563,6 +563,7 @@ export class Server {
   public static getGameOptionsAsModel(options: GameOptions): GameOptionsModel {
     return {
       aresExtension: options.aresExtension,
+      automateCardsOption: options.automateCardsOption,
       boardName: options.boardName,
       cardsBlackList: options.cardsBlackList,
       coloniesExtension: options.coloniesExtension,
