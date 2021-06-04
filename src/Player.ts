@@ -1188,14 +1188,14 @@ export class Player implements ISerializable<SerializedPlayer> {
       cardDraw++;
     }
     let researchPower: number = 0;
-      for (const card of this.playedCards) {
-        if (card !== undefined && card.name == CardName.BUSINESS_NETWORK_AUTOMATE) {
-          researchPower += 1;
-        }
-        if (card !== undefined && card.name == CardName.INVENTORS_GUILD_AUTOMATE) {
-          researchPower += 1;
-        }
+    for (const card of this.playedCards) {
+      if (card !== undefined && card.name === CardName.BUSINESS_NETWORK_AUTOMATE) {
+        researchPower += 1;
       }
+      if (card !== undefined && card.name === CardName.INVENTORS_GUILD_AUTOMATE) {
+        researchPower += 1;
+      }
+    }
     if (!draftVariant) {
       this.dealCards(cardDraw + researchPower, dealtCards);
     } else {
