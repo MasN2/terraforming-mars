@@ -93,7 +93,7 @@ export interface GameOptions {
   turmoilExtension: boolean;
   promoCardsOption: boolean;
   communityCardsOption: boolean;
-  automateExtension: boolean;
+  automateCardsOption: boolean;
   aresExtension: boolean;
   aresHazards: boolean;
   politicalAgendasExtension: AgendaStyle;
@@ -119,7 +119,7 @@ export interface GameOptions {
 const DEFAULT_GAME_OPTIONS: GameOptions = {
   aresExtension: false,
   aresHazards: true,
-  automateExtension: false,
+  automateCardsOption: false,
   boardName: BoardName.ORIGINAL,
   cardsBlackList: [],
   clonedGamedId: undefined,

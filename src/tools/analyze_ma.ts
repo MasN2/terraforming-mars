@@ -102,6 +102,7 @@ function simpleGameOptions(): GameOptions {
     turmoilExtension: false,
     promoCardsOption: false,
     communityCardsOption: false,
+    automateCardsOption: false,
     aresHazards: false,
     politicalAgendasExtension: AgendaStyle.STANDARD,
     solarPhaseOption: false,
