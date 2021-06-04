@@ -124,6 +124,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       shuffleMapOption: false,
       promoCardsOption: false,
       communityCardsOption: false,
+      automateCardsOption: false,
       aresExtension: false,
       politicalAgendasExtension: AgendaStyle.STANDARD,
       moonExpansion: false,
