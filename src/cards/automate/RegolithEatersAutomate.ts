@@ -4,9 +4,7 @@ import {Tags} from '../Tags';
 import {Card} from '../Card';
 import {CardType} from '../CardType';
 import {Player} from '../../Player';
-import {OrOptions} from '../../inputs/OrOptions';
 import {ResourceType} from '../../ResourceType';
-import {SelectOption} from '../../inputs/SelectOption';
 import {CardName} from '../../CardName';
 import {LogHelper} from '../../LogHelper';
 import {PartyHooks} from '../../turmoil/parties/PartyHooks';
@@ -42,7 +40,7 @@ export class RegolithEatersAutomate extends Card implements IActionCard, IProjec
       player.addResourceTo(this, {log: true});
       return undefined;
     }
-    public canAct(): boolean {
+    public canAct(player: Player): boolean {
       if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS) && !player.canAfford(REDS_RULING_POLICY_COST)) {
         return false;
       }
