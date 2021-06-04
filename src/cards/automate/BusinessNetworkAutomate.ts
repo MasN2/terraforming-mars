@@ -20,8 +20,9 @@ export class BusinessNetworkAutomate extends Card implements IProjectCard {
         cardNumber: '110',
         description: 'Decrease your M€ production 1 step.',
         renderData: CardRenderer.builder((b) => {
-          b.text('When played: Look at the top card and either buy it or discard it. Research +1', Size.SMALL, true).br;
-          b.production((pb) => pb.megacredits(-1));
+          b.text('+1 research power', Size.SMALL, true).br;
+          b.production((pb) => pb.megacredits(-1)).br;
+          b.text('Look at the top card and either buy it or discard it', Size.SMALL, true);
         }),
       },
     });

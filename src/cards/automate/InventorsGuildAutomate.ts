@@ -18,7 +18,8 @@ export class InventorsGuildAutomate extends Card implements IProjectCard {
       metadata: {
         cardNumber: '006',
         renderData: CardRenderer.builder((b) => {
-          b.text('When played: Look at the top card and either buy it or discard it. Research +1', Size.SMALL, true).br;
+          b.text('+1 research power', Size.SMALL, true).br;
+          b.text('Look at the top card and either buy it or discard it', Size.SMALL, true);
         }),
       },
     });
