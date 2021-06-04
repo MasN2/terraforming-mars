@@ -212,6 +212,10 @@ export const PlayerTags = Vue.component('player-tags', {
           multipliers += 1;
         }
       }
+      card = this.player.corporationCard;
+      if (card !== undefined && JOVIAN_MULTIPLIERS.includes(card.name as CardName)) {
+        multipliers += 1;
+      }
       return multipliers;
     },
   },
