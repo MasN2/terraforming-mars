@@ -489,6 +489,7 @@ export enum CardName {
     BIG_OXIDE = 'Big Oxide',
     SUPER_EFFECTIVE = 'Super Effective',
     NON_IPSE_POTEST_IUPPITER = 'Non ipse potest Iuppiter',
+    OUTER_PLANET_ALLIANCE = 'Outer Planet Alliance',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',

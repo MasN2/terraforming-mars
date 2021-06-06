@@ -18,6 +18,7 @@ import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {BigOxide} from './BigOxide';
 import {SuperEffective} from './SuperEffective';
 import {NonIpsePotestIuppiter} from './NonIpsePotestIuppiter';
+import {OuterPlanetAlliance} from './OuterPlanetAlliance';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -38,6 +39,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.BIG_OXIDE, Factory: BigOxide, compatibility: GameModule.Venus},
     {cardName: CardName.SUPER_EFFECTIVE, Factory: SuperEffective},
     {cardName: CardName.NON_IPSE_POTEST_IUPPITER, Factory: NonIpsePotestIuppiter},
+    {cardName: CardName.OUTER_PLANET_ALLIANCE, Factory: OuterPlanetAlliance},
   ],
   preludeCards: [
     {
