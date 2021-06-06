@@ -12,6 +12,7 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.OUTER_PLANET_ALLIANCE,
       tags: [Tags.JOVIAN, Tags.EARTH],
+      startingMegaCredits: 36,
 
       metadata: {
         cardNumber: '',
