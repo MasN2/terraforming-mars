@@ -21,7 +21,7 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
           b.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('During production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
-              eb.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
+              eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
             });
           });
         }),
