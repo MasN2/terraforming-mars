@@ -30,13 +30,13 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
     });
   }
 
-    public play() {
-      return undefined;
-    }
+  public play() {
+    return undefined;
+  }
 
-    public onProductionPhase(player: Player) {
-      player.drawCard(1, {tag: Tags.JOVIAN});
-      player.drawCard(1, {tag: Tags.EARTH});
-      return undefined;
-    }
+  public onProductionPhase(player: Player) {
+    player.drawCard(1, {tag: Tags.JOVIAN});
+    player.drawCard(1, {tag: Tags.EARTH});
+    return undefined;
+  }
 }
