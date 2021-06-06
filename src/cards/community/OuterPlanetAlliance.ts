@@ -2,7 +2,6 @@ import {Card} from '../Card';
 import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {CorporationCard} from '../corporation/CorporationCard';
-import {IProjectCard} from '../IProjectCard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
@@ -22,7 +21,7 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
           b.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('During your production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
-              eb.production((pb) => cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
+              eb.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
             });
           });
         }),
@@ -37,5 +36,6 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
   public onProductionPhase(player: Player) {
     player.drawCard(1, {tag: Tags.JOVIAN});
     player.drawCard(1, {tag: Tags.EARTH});
+    return undefined;
   }
 }
