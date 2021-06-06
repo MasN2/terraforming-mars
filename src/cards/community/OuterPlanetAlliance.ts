@@ -18,10 +18,11 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
         description: 'You start with 36 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(53).nbsp.nbsp.minus().tr(2, Size.SMALL);
+          b.megacredits(36);
           b.corpBox('effect', (ce) => {
-            ce.effect('During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 6 M€.', (eb) => {
-              eb.tr(1, Size.SMALL, true).startEffect.production((pb) => pb.preservation(1).megacredits(6));
+            ce.effect('During production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
+              eb.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
+            });
           });
         }),
       },
