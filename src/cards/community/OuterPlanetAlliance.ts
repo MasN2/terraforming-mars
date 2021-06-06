@@ -21,7 +21,7 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
           b.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('During production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
-              eb.tr(1, Size.SMALL, true).startEffect.production((pb) => pb.preservation(1).megacredits(6));
+              eb.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
             });
           });
         }),
@@ -29,13 +29,13 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
     });
   }
 
-  public play() {
-    return undefined;
-  }
+    public play() {
+      return undefined;
+    }
 
-  public onProductionPhase(player: Player) {
-    player.drawCard(1, {tag: Tags.JOVIAN});
-    player.drawCard(1, {tag: Tags.EARTH});
-    return undefined;
-  }
+    public onProductionPhase(player: Player) {
+      player.drawCard(1, {tag: Tags.JOVIAN});
+      player.drawCard(1, {tag: Tags.EARTH});
+      return undefined;
+    }
 }
