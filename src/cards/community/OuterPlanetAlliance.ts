@@ -12,14 +12,14 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.OUTER_PLANET_ALLIANCE,
       tags: [Tags.JOVIAN, Tags.EARTH],
-      startingMegaCredits: 36,
+      startingMegaCredits: 32,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 36 M€.',
+        description: 'You start with 32 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(36);
+          b.megacredits(32);
           b.corpBox('effect', (ce) => {
             ce.effect('During production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
               eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
