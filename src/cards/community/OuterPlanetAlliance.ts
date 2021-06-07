@@ -5,6 +5,7 @@ import {CorporationCard} from '../corporation/CorporationCard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
+import {Resources} from '../../Resources';
 
 export class OuterPlanetAlliance extends Card implements CorporationCard {
   constructor() {
@@ -12,17 +13,17 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.OUTER_PLANET_ALLIANCE,
       tags: [Tags.JOVIAN, Tags.EARTH],
-      startingMegaCredits: 32,
+      startingMegaCredits: 34,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 32 M€.',
+        description: 'You start with 1 titanium production, 1 megacredit production and 34 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(32);
+          b.production((pb) => pb.titanium(1).megacredits(1)).nbsp.megacredits(34);
           b.corpBox('effect', (ce) => {
-            ce.effect('During production phase, draw a card with a Jovian tag, and a card with an Earth tag.', (eb) => {
-              eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH));
+            ce.effect('During production phase, draw a card a Jovian tag or Earth tag (at random).', (eb) => {
+              eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).or().cards(1).secondaryTag(Tags.EARTH));
             });
           });
         }),
@@ -30,13 +31,14 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
     });
   }
 
-  public play() {
+  public play(player: Player) {
+    player.addProduction(Resources.TITANIUM, 1);
+    player.addProduction(Resources.MEGACREDITS, 1);
     return undefined;
   }
 
   public onProductionPhase(player: Player) {
-    player.drawCard(1, {tag: Tags.JOVIAN});
-    player.drawCard(1, {tag: Tags.EARTH});
+    player.drawCard(1, {tag_list: [Tags.JOVIAN, Tags.EARTH]});
     return undefined;
   }
 }

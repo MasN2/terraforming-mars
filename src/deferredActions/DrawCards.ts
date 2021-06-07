@@ -39,6 +39,14 @@ export class DrawCards<T extends undefined | SelectCard<IProjectCard>> implement
       if (this.options.include !== undefined && !this.options.include(card)) {
         return false;
       }
+      if (this.options.tag_list !== undefined) {
+        for (const tag of this.options.tag_list) {
+          if (card.tags.includes(tag)) {
+            return true;
+          }
+        }
+        return false;
+      }
       return true;
     });
 
@@ -122,6 +130,7 @@ export class DrawCards<T extends undefined | SelectCard<IProjectCard>> implement
 export namespace DrawCards {
   export interface DrawOptions {
     tag?: Tags,
+    tag_list?: Array<Tags>,
     resource?: ResourceType,
     cardType?: CardType,
     include?: (card: IProjectCard) => boolean,
