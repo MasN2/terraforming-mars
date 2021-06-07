@@ -62,7 +62,7 @@ export class GameSetup {
       for (let i = 0; i < 2; i++) {
         const adjacentSpaces = board.getAdjacentSpaces(citySpace).filter((s) => game.board.canPlaceTile(s));
         if (adjacentSpaces.length === 0) {
-          throw new Error('No space for forest');
+          continue;
         }
         let idx = game.discardForCost(TileType.GREENERY);
         idx = Math.max(idx-1, 0); // Some cards cost zero.
