@@ -1,6 +1,7 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
 import {Tags} from '../Tags';
+import {IActionCard, IResourceCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {Card} from '../Card';
@@ -8,22 +9,22 @@ import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../render/Size';
 import {Resources} from '../../Resources';
 
-export class TritiumInvestments extends Card implements CorporationCard {
+export class TritiumInvestments extends Card implements IActionCard, CorporationCard, IResourceCard {
   constructor() {
     super({
       name: CardName.TRITIUM_INVESTMENTS,
       tags: [Tags.EARTH, Tags.EARTH],
-      startingMegaCredits: 34,
+      startingMegaCredits: 32,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 34 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
+        description: 'You start with 32 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(34).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
-          b.corpBox('effect', (ce) => {
-            ce.effect('Immediately before each production phase, increase your megacredit production by the current generation number.', (eb) => {
-              eb.startEffect.production((pb) => pb.production((npb) => npb.megacredits(1)).slash().text('generation', Size.SMALL, true));
+          b.megacredits(32).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
+          b.corpBox('action', (ce) => {
+            ce.action('Increase your MC production by the current generation number.', (eb) => {
+              eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('generation', Size.SMALL, true));
             });
           });
         }),
@@ -40,9 +41,12 @@ export class TritiumInvestments extends Card implements CorporationCard {
     return undefined;
   }
 
-  public onProductionPhase(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, player.game.generation);
-    player.megaCredits += player.game.generation;
+  public canAct(): boolean {
+    return true;
+  }
+
+  public action(player: Player) {
+    player.addProduction(Resources.MEGACREDITS, player.game.generation, {log: true});
     return undefined;
   }
 }
