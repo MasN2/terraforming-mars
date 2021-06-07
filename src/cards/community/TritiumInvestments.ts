@@ -21,8 +21,8 @@ export class TritiumInvestments extends Card implements CorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.br;
           b.megacredits(34).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
-          b.corpBox('action', (ce) => {
-            ce.action('Immediately before each production phase, increase your megacredit production by the current generation number.', (eb) => {
+          b.corpBox('effect', (ce) => {
+            ce.effect('Immediately before each production phase, increase your megacredit production by the current generation number.', (eb) => {
               eb.startEffect.production((pb) => pb.production((npb) => npb.megacredits(1)).slash().text('generation', Size.SMALL, true));
             });
           });
