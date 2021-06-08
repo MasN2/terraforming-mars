@@ -13,15 +13,15 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.OUTER_PLANET_ALLIANCE,
       tags: [Tags.JOVIAN, Tags.EARTH],
-      startingMegaCredits: 41,
-      initialActionText: 'Draw 1 Jovian card and 1 Earth card',
+      startingMegaCredits: 34,
+      initialActionText: 'Draw a Jovian card',
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 1 titanium production and 41 M€. As your first action, draw a Jovian and Earth card.',
+        description: 'You start with 1 titanium production, 3 megacredit production, and 34 M€. As your first action, draw a Jovian card.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.production((pb) => pb.titanium(1)).megacredits(41).cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH);
+          b.production((pb) => pb.titanium(1).megacredits(3)).megacredits(34).cards(1).secondaryTag(Tags.JOVIAN);
           b.corpBox('effect', (ce) => {
             ce.effect('During production phase, draw a card with a Jovian tag or Earth tag (at random).', (eb) => {
               eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).or().cards(1).secondaryTag(Tags.EARTH));
@@ -34,7 +34,6 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
 
   public initialAction(player: Player) {
     player.drawCard(1, {tag: Tags.JOVIAN});
-    player.drawCard(1, {tag: Tags.EARTH});
     return undefined;
   }
 
