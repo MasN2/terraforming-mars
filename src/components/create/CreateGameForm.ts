@@ -34,7 +34,6 @@ export interface CreateGameModel {
     venusNext: boolean;
     colonies: boolean;
     turmoil: boolean;
-    automate: boolean;
     customCorporationsList: Array<CardName>;
     customColoniesList: Array<ColonyName>;
     cardsBlackList: Array<CardName>;
@@ -106,7 +105,6 @@ export const CreateGameForm = Vue.component('create-game-form', {
       showCorporationList: false,
       showCardsBlackList: false,
       turmoil: false,
-      automate: false,
       customCorporationsList: [],
       customColoniesList: [],
       cardsBlackList: [],
@@ -389,7 +387,6 @@ export const CreateGameForm = Vue.component('create-game-form', {
       const venusNext = component.venusNext;
       const colonies = component.colonies;
       const turmoil = component.turmoil;
-      const automate = component.automate;
       const solarPhaseOption = this.solarPhaseOption;
       const shuffleMapOption = this.shuffleMapOption;
       const customCorporationsList = component.customCorporationsList;
@@ -399,6 +396,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       const seed = component.seed;
       const promoCardsOption = component.promoCardsOption;
       const communityCardsOption = component.communityCardsOption;
+      const automateCardsOption = component.automateCardsOption;
       const aresExtension = component.aresExtension;
       const politicalAgendasExtension = this.politicalAgendasExtension;
       const moonExpansion = component.moonExpansion;
@@ -462,7 +460,6 @@ export const CreateGameForm = Vue.component('create-game-form', {
         venusNext,
         colonies,
         turmoil,
-        automate,
         customCorporationsList,
         customColoniesList,
         cardsBlackList,
@@ -471,6 +468,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
         solarPhaseOption,
         promoCardsOption,
         communityCardsOption,
+        automateCardsOption,
         aresExtension: aresExtension,
         politicalAgendasExtension: politicalAgendasExtension,
         moonExpansion: moonExpansion,
