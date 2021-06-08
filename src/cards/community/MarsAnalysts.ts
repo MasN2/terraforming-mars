@@ -12,7 +12,7 @@ export class MarsAnalysts extends Card implements CorporationCard {
     super({
       name: CardName.MARS_ANALYSTS,
       tags: [Tags.BUILDING, Tags.SCIENCE],
-      startingMegaCredits: 39,
+      startingMegaCredits: 36,
       cardType: CardType.CORPORATION,
 
       metadata: {

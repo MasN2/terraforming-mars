@@ -750,7 +750,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.defer(new RemoveColonyFromGame(this.players[0]));
     }
     if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
-      this.players[0].decreaseTerraformRatingSteps(4);
+      this.players[0].decreaseTerraformRatingSteps(3);
     }
     if (this.players.length === 1 && this.gameOptions.removeNegativeGlobalEventsOption) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
