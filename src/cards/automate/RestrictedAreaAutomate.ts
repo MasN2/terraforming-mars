@@ -10,6 +10,7 @@ import {CardName} from '../../CardName';
 import {IAdjacencyBonus} from '../../ares/IAdjacencyBonus';
 import {CardMetadata} from '../CardMetadata';
 import {CardRenderer} from '../render/CardRenderer';
+import {Resources} from '../../Resources';
 
 export class RestrictedAreaAutomate extends Card implements IProjectCard {
   constructor(
