@@ -26,7 +26,6 @@ export class InventorsGuildAutomate extends Card implements IProjectCard {
   }
 
   public play(player: Player) {
-    player.drawCardKeepSome(1, {paying: true});
-    return undefined;
+    return player.drawCardKeepSome(1, {paying: true});
   }
 }
