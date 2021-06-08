@@ -33,7 +33,6 @@ export class BusinessNetworkAutomate extends Card implements IProjectCard {
   }
   public play(player: Player) {
     player.addProduction(Resources.MEGACREDITS, -1);
-    player.drawCardKeepSome(1, {paying: true});
-    return undefined;
+    return player.drawCardKeepSome(1, {paying: true});
   }
 }
