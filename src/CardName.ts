@@ -477,6 +477,11 @@ export enum CardName {
     FISH_AUTOMATE = 'Fish:automate',
     SMALL_ANIMALS_AUTOMATE = 'Small Animals:automate',
     BIRDS_AUTOMATE = 'Birds:automate',
+    NITRITE_REDUCING_BACTERIA_AUTOMATE = 'Nitrite Reducing Bacteria:automate',
+    LIVESTOCK_AUTOMATE = 'Livestock:automate',
+    RESTRICTED_AREA_AUTOMATE = 'Restricted Area:automate',
+    AI_CENTRAL_AUTOMATE = 'AI Central:automate',
+    PENGUINS_AUTOMATE = 'Penguins:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',

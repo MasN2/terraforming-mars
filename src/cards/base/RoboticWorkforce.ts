@@ -33,7 +33,7 @@ export class RoboticWorkforce extends Card implements IProjectCard {
           b.text('Copy A', Size.SMALL, true).nbsp;
           b.production((pb) => pb.building().played);
         }),
-        description: 'Duplicate only the production box of one of your building cards.',
+        description: 'Duplicate only the standard resource component of a production box of one of your building cards.',
       },
     });
   }

@@ -11,27 +11,25 @@ import {PartyHooks} from '../../turmoil/parties/PartyHooks';
 import {PartyName} from '../../turmoil/parties/PartyName';
 import {REDS_RULING_POLICY_COST} from '../../constants';
 import {CardRenderer} from '../render/CardRenderer';
-import {CardRequirements} from '../CardRequirements';
 
-export class GHGProducingBacteriaAutomate extends Card implements IActionCard, IProjectCard, IResourceCard {
+export class NitriteReducingBacteriaAutomate extends Card implements IActionCard, IProjectCard, IResourceCard {
   constructor() {
     super({
       cardType: CardType.ACTIVE,
-      name: CardName.GHG_PRODUCING_BACTERIA_AUTOMATE,
-      tags: [Tags.SCIENCE, Tags.MICROBE],
-      cost: 7,
+      name: CardName.NITRITE_REDUCING_BACTERIA_AUTOMATE,
+      tags: [Tags.MICROBE],
+      cost: 10,
       resourceType: ResourceType.MICROBE,
 
-      requirements: CardRequirements.builder((b) => b.oxygen(4)),
       metadata: {
-        description: 'Requires 4% oxygen. Add 1 microbe here now and each production phase.',
-        cardNumber: '034',
+        cardNumber: '157',
         renderData: CardRenderer.builder((b) => {
-          b.action('Remove 3 Microbes from this card to raise temperature 1 step.', (eb) => {
-            eb.microbes(3).startAction.temperature(1);
+          b.action('Remove 4 Microbes to increase your TR 1 step.', (eb) => {
+            eb.microbes(4).startAction.tr(1);
           }).br;
-          b.microbes(1).production((pb) => pb.microbes(1));
+          b.microbes(4).production((pb) => pb.microbes(1));
         }),
+        description: 'Add 4 Microbes to this card, and one more each production phase.',
       },
     });
   }
@@ -39,19 +37,19 @@ export class GHGProducingBacteriaAutomate extends Card implements IActionCard, I
     public resourceCount: number = 0;
 
     public play(player: Player) {
-      player.addResourceTo(this, {log: true});
+      player.addResourceTo(this, 4);
       return undefined;
     }
     public canAct(player: Player): boolean {
       if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS) && !player.canAfford(REDS_RULING_POLICY_COST)) {
         return false;
       }
-      return this.resourceCount >= 3;
+      return this.resourceCount >= 4;
     }
     public action(player: Player) {
-      player.removeResourceFrom(this, 3);
-      LogHelper.logRemoveResource(player, this, 3, 'raise temperature 1 step');
-      return player.game.increaseTemperature(player, 1);
+      player.removeResourceFrom(this, 4);
+      LogHelper.logRemoveResource(player, this, 4, 'raise TR 1 step');
+      return player.increaseTerraformRating;
     }
     public onProductionPhase(player: Player) {
       player.addResourceTo(this);
