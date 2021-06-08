@@ -24,7 +24,7 @@ export class PowerPlantStandardProject extends StandardProjectCard {
 
   protected discount(player: Player): number {
     if (player.isCorporation(CardName.THORGATE)) {
-      return 4;
+      return 5;
     }
     return super.discount(player);
   }

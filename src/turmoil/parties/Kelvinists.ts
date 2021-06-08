@@ -45,10 +45,10 @@ class KelvinistsBonus02 implements Bonus {
 class KelvinistsPolicy01 implements Policy {
   isDefault = true;
   id = TurmoilPolicy.KELVINISTS_DEFAULT_POLICY;
-  description: string = 'Pay 10 M€ to increase your Energy and Heat production 1 step (Turmoil Kelvinists)';
+  description: string = 'Pay 9 M€ to increase your Energy and Heat production 1 step (Turmoil Kelvinists)';
 
   canAct(player: Player) {
-    return player.canAfford(10);
+    return player.canAfford(9);
   }
 
   action(player: Player) {
@@ -56,7 +56,7 @@ class KelvinistsPolicy01 implements Policy {
     game.log('${0} used Turmoil Kelvinists action', (b) => b.player(player));
     game.defer(new SelectHowToPayDeferred(
       player,
-      10,
+      9,
       {
         title: 'Select how to pay for Turmoil Kelvinists action',
         afterPay: () => {

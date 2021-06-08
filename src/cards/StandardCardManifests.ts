@@ -194,7 +194,7 @@ import {SpaceMirrors} from './base/SpaceMirrors';
 import {SpaceStation} from './base/SpaceStation';
 import {SpecialDesign} from './base/SpecialDesign';
 import {Sponsors} from './base/Sponsors';
-import {StandardTechnology} from './base/StandardTechnology';
+// import {StandardTechnology} from './base/StandardTechnology';
 import {Steelworks} from './base/Steelworks';
 import {StripMine} from './base/StripMine';
 import {SubterraneanReservoir} from './base/SubterraneanReservoir';
@@ -465,7 +465,7 @@ export const CORP_ERA_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.SPACE_ELEVATOR, Factory: SpaceElevator},
     {cardName: CardName.SPACE_STATION, Factory: SpaceStation},
     {cardName: CardName.SPONSORS, Factory: Sponsors},
-    {cardName: CardName.STANDARD_TECHNOLOGY, Factory: StandardTechnology},
+    // {cardName: CardName.STANDARD_TECHNOLOGY, Factory: StandardTechnology},
     {cardName: CardName.TARDIGRADES, Factory: Tardigrades},
     {cardName: CardName.TECHNOLOGY_DEMONSTRATION, Factory: TechnologyDemonstration},
     {cardName: CardName.TERRAFORMING_GANYMEDE, Factory: TerraformingGanymede},
