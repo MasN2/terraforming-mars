@@ -22,6 +22,7 @@ export class NitriteReducingBacteriaAutomate extends Card implements IActionCard
       resourceType: ResourceType.MICROBE,
 
       metadata: {
+        description: 'Add 4 Microbes to this card, and one more each production phase.',
         cardNumber: '157',
         renderData: CardRenderer.builder((b) => {
           b.action('Remove 4 Microbes to increase your TR 1 step.', (eb) => {
@@ -29,15 +30,17 @@ export class NitriteReducingBacteriaAutomate extends Card implements IActionCard
           }).br;
           b.microbes(4).production((pb) => pb.microbes(1));
         }),
-        description: 'Add 4 Microbes to this card, and one more each production phase.',
       },
     });
   }
 
-    public resourceCount: number = 0;
+    public resourceCount = 0;
 
     public play(player: Player) {
-      player.addResourceTo(this, 4);
+      player.addResourceTo(this, {log: true});
+      player.addResourceTo(this, {log: true});
+      player.addResourceTo(this, {log: true});
+      player.addResourceTo(this, {log: true});
       return undefined;
     }
     public canAct(player: Player): boolean {
