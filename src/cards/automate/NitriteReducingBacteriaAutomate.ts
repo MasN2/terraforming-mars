@@ -49,7 +49,7 @@ export class NitriteReducingBacteriaAutomate extends Card implements IActionCard
     public action(player: Player) {
       player.removeResourceFrom(this, 4);
       LogHelper.logRemoveResource(player, this, 4, 'raise TR 1 step');
-      return player.increaseTerraformRating;
+      return player.increaseTerraformRating();
     }
     public onProductionPhase(player: Player) {
       player.addResourceTo(this);
