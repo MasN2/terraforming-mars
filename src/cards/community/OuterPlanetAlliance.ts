@@ -13,16 +13,17 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.OUTER_PLANET_ALLIANCE,
       tags: [Tags.JOVIAN, Tags.EARTH],
-      startingMegaCredits: 34,
+      startingMegaCredits: 41,
+      initialActionText: 'Draw 1 Jovian card and 1 Earth card',
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 1 titanium production, 1 megacredit production and 34 M€.',
+        description: 'You start with 1 titanium production and 41 M€. As your first action, draw a Jovian and Earth card.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br.br;
-          b.production((pb) => pb.titanium(1).megacredits(1)).nbsp.megacredits(34);
+          b.br.br;
+          b.production((pb) => pb.titanium(1)).megacredits(41).cards(1).secondaryTag(Tags.JOVIAN).cards(1).secondaryTag(Tags.EARTH);
           b.corpBox('effect', (ce) => {
-            ce.effect('During production phase, draw a card a Jovian tag or Earth tag (at random).', (eb) => {
+            ce.effect('During production phase, draw a card with a Jovian tag or Earth tag (at random).', (eb) => {
               eb.startEffect.production((pb) => pb.cards(1).secondaryTag(Tags.JOVIAN).or().cards(1).secondaryTag(Tags.EARTH));
             });
           });
@@ -31,9 +32,14 @@ export class OuterPlanetAlliance extends Card implements CorporationCard {
     });
   }
 
+  public initialAction(player: Player) {
+    player.drawCard(1, {tag: Tags.JOVIAN});
+    player.drawCard(1, {tag: Tags.EARTH});
+    return undefined;
+  }
+
   public play(player: Player) {
     player.addProduction(Resources.TITANIUM, 1);
-    player.addProduction(Resources.MEGACREDITS, 1);
     return undefined;
   }
 
