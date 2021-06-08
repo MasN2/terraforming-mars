@@ -472,6 +472,11 @@ export enum CardName {
     BUSINESS_NETWORK_AUTOMATE = 'Business Network:automate',
     INVENTORS_GUILD_AUTOMATE = 'Inventors Guild:automate',
     REGOLITH_EATERS_AUTOMATE = 'Regolith Eaters:automate',
+    GHG_PRODUCING_BACTERIA_AUTOMATE = 'GHG Producing Bacteria:automate',
+    TARDIGRADES_AUTOMATE = 'Tardigrades:automate',
+    FISH_AUTOMATE = 'Fish:automate',
+    SMALL_ANIMALS_AUTOMATE = 'Small Animals:automate',
+    BIRDS_AUTOMATE = 'Birds:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',

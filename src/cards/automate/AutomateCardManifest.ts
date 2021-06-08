@@ -4,6 +4,11 @@ import {CardManifest} from '../CardManifest';
 import {BusinessNetworkAutomate} from './BusinessNetworkAutomate';
 import {InventorsGuildAutomate} from './InventorsGuildAutomate';
 import {RegolithEatersAutomate} from './RegolithEatersAutomate';
+import {GHGProducingBacteriaAutomate} from './GHGProducingBacteriaAutomate';
+import {TardigradesAutomate} from './TardigradesAutomate';
+import {FishAutomate} from './FishAutomate';
+import {SmallAnimalsAutomate} from './SmallAnimalsAutomate';
+import {BirdsAutomate} from './BirdsAutomate';
 
 export const AUTOMATE_CARD_MANIFEST = new CardManifest({
   module: GameModule.Automate,
@@ -12,6 +17,11 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.BUSINESS_NETWORK_AUTOMATE, Factory: BusinessNetworkAutomate},
     {cardName: CardName.INVENTORS_GUILD_AUTOMATE, Factory: InventorsGuildAutomate},
     {cardName: CardName.REGOLITH_EATERS_AUTOMATE, Factory: RegolithEatersAutomate},
+    {cardName: CardName.GHG_PRODUCING_BACTERIA_AUTOMATE, Factory: GHGProducingBacteriaAutomate},
+    {cardName: CardName.TARDIGRADES_AUTOMATE, Factory: TardigradesAutomate},
+    {cardName: CardName.FISH_AUTOMATE, Factory: FishAutomate},
+    {cardName: CardName.SMALL_ANIMALS_AUTOMATE, Factory: SmallAnimalsAutomate},
+    {cardName: CardName.BIRDS_AUTOMATE, Factory: BirdsAutomate},
   ],
 
   cardsToRemove: [
