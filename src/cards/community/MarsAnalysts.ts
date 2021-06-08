@@ -17,10 +17,10 @@ export class MarsAnalysts extends Card implements CorporationCard {
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 1 steel production, and 39 M€.',
+        description: 'You start with 1 steel production, and 36 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.production((pb) => pb.steel(1)).nbsp.megacredits(39);
+          b.production((pb) => pb.steel(1)).nbsp.megacredits(36);
           b.corpBox('effect', (ce) => {
             ce.effect('You have +3 influence.', (eb) => {
               eb.startEffect.influence(3);
