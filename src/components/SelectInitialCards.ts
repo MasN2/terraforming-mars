@@ -70,6 +70,7 @@ export const SelectInitialCards = Vue.component('select-initial-cards', {
           result -= 5;
           break;
         case CardName.BUSINESS_EMPIRE:
+        case CardName.HUGE_ASTEROID:
           result -= 6;
           break;
 
