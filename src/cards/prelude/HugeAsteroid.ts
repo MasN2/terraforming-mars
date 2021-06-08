@@ -20,7 +20,8 @@ export class HugeAsteroid extends PreludeCard {
     });
   }
   public play(player: Player) {
-    player.game.increaseTemperature(player, 4);
+    player.game.increaseTemperature(player, 2);
+    player.game.increaseTemperature(player, 2);
     player.game.defer(new SelectHowToPayDeferred(player, 6));
     return undefined;
   }
