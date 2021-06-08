@@ -26,7 +26,7 @@ export class BirdsAutomate extends Card implements IProjectCard, IResourceCard {
         description: 'Requires 13% oxygen. Decrease any plant production 2 steps. Add 1 animal here each production phase. 1 VP per Animal on this card.',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
-            pb.minus().plants(-2).any.animals(1);
+            pb.minus().plants(-2).any.br.animals(1);
           });
         }),
         victoryPoints: CardRenderDynamicVictoryPoints.animals(1, 1),

@@ -25,7 +25,7 @@ export class SmallAnimalsAutomate extends Card implements IProjectCard, IResourc
       metadata: {
         cardNumber: '054',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.minus().plants(1).any.animals(1)).br;
+          b.production((pb) => pb.minus().plants(1).any.br.animals(1)).br;
           b.vpText('1 VP per 2 Animals on this card.');
         }),
         description: {

@@ -25,7 +25,7 @@ export class FishAutomate extends Card implements IProjectCard, IResourceCard {
       metadata: {
         cardNumber: '052',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.minus().plants(1).any.animals(1)).br;
+          b.production((pb) => pb.minus().plants(1).any.br.animals(1)).br;
           b.vpText('1 VP for each Animal on this card.');
         }),
         description: {
