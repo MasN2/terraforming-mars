@@ -17,17 +17,17 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
     super({
       name: CardName.NEW_AMAZON_PROJECT,
       tags: [Tags.PLANT, Tags.PLANT],
-      startingMegaCredits: 35,
+      startingMegaCredits: 32,
       initialActionText: 'Place two greenery tiles and raise the oxygen 2 steps',
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 35 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps. -1 VP for each city tile you have.',
+        description: 'You start with 32 M€. As your first action, place two greenery tiles and raise the oxygen 2 steps. -1 VP for each city tile you have.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(35).nbsp.greenery().greenery();
+          b.megacredits(32).nbsp.greenery().greenery();
           b.corpBox('action', (ce) => {
-            ce.action('Pay 12 MC to place a greenery tile on ANY SPACE ADJACENT TO AT LEAST TWO OTHER GREENERY TILES.', (eb) => {
-              eb.megacredits(12).startAction.greenery().asterix();
+            ce.action('Pay 11 MC to place a greenery tile on ANY SPACE ADJACENT TO AT LEAST TWO OTHER GREENERY TILES.', (eb) => {
+              eb.megacredits(11).startAction.greenery().asterix();
             });
           });
         }),
@@ -51,7 +51,7 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
   }
 
   public canAct(player: Player): boolean {
-    return player.canAfford(12);
+    return player.canAfford(11) && (this.getAvailableSpaces.length >= 1);
   }
 
   private getAvailableSpaces(player: Player): Array<ISpace> {
@@ -60,7 +60,7 @@ export class NewAmazonProject extends Card implements IActionCard, CorporationCa
   }
 
   public action(player: Player) {
-    player.megaCredits -= 12;
+    player.megaCredits -= 11;
     return new SelectSpace('Select space next to at least 2 other greenery tiles', this.getAvailableSpaces(player), (foundSpace: ISpace) => {
       return player.game.addGreenery(player, foundSpace.id);
     });
