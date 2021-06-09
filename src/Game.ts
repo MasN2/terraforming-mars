@@ -301,7 +301,7 @@ export class Game implements ISerializable<SerializedGame> {
     if (players.length === 1) {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
-      game.oxygenLevel = 3;
+      game.oxygenLevel = 2;
       game.temperature = -24;
     }
 
