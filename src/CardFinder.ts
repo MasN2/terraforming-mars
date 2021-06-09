@@ -11,6 +11,7 @@ import {BASE_CARD_MANIFEST, CORP_ERA_CARD_MANIFEST} from './cards/StandardCardMa
 import {TURMOIL_CARD_MANIFEST} from './cards/turmoil/TurmoilCardManifest';
 import {VENUS_CARD_MANIFEST} from './cards/venusNext/VenusCardManifest';
 import {COMMUNITY_CARD_MANIFEST} from './cards/community/CommunityCardManifest';
+import {AUTOMATE_CARD_MANIFEST} from './cards/automate/AutomateCardManifest';
 import {ARES_CARD_MANIFEST} from './cards/ares/AresCardManifest';
 import {MOON_CARD_MANIFEST} from './cards/moon/MoonCardManifest';
 import {Deck} from './Deck';
@@ -29,6 +30,7 @@ export class CardFinder {
           TURMOIL_CARD_MANIFEST,
           ARES_CARD_MANIFEST,
           COMMUNITY_CARD_MANIFEST,
+          AUTOMATE_CARD_MANIFEST,
           MOON_CARD_MANIFEST,
         ];
       }
