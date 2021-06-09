@@ -268,9 +268,6 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      this.oxygenLevel = 3;
-      this.temperature = 24;
-
       players[0].setTerraformRating(20); // Variant: 20 TR, 13 gens
       players[0].terraformRatingAtGenerationStart = 20;
     }
@@ -304,6 +301,8 @@ export class Game implements ISerializable<SerializedGame> {
     if (players.length === 1) {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
+      game.oxygenLevel = 3;
+      game.temperature = 24;
     }
 
     // Setup Ares hazards
