@@ -95,7 +95,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       prelude: false,
       draftVariant: true,
       initialDraft: false,
-      randomMA: RandomMAOptionType.NONE,
+      randomMA: RandomMAOptionType.LIMITED,
       randomFirstPlayer: true,
       showOtherPlayersVP: false,
       beginnerOption: false,
