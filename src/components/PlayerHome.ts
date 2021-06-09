@@ -239,6 +239,10 @@ export const PlayerHome = Vue.component('player-home', {
 
                     <moonboard v-if="player.game.gameOptions.moonExpansion" :model="player.game.moon"></moonboard>
 
+                    <div v-if="player.players.length === 1" class="player_home_block--milestones-and-awards">
+                        <milestone :milestones_list="player.game.milestones" />
+                    </div>
+
                     <div v-if="player.players.length > 1" class="player_home_block--milestones-and-awards">
                         <milestone :milestones_list="player.game.milestones" />
                         <award :awards_list="player.game.awards" />
@@ -355,6 +359,10 @@ export const PlayerHome = Vue.component('player-home', {
                 <waiting-for v-if="player.game.phase !== 'end'" :players="player.players" :player="player" :settings="settings" :waitingfor="player.waitingFor"></waiting-for>
 
                 <dynamic-title title="Game details" :color="player.color"/>
+
+                <div class="player_home_block" v-if="player.players.length === 1">
+                    <milestone :show_scores="false" :milestones_list="player.game.milestones" />
+                </div>
 
                 <div class="player_home_block" v-if="player.players.length > 1">
                     <milestone :show_scores="false" :milestones_list="player.game.milestones" />
