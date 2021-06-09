@@ -16,7 +16,7 @@ export class Thorgate extends Card implements CorporationCard {
       tags: [Tags.ENERGY, Tags.ENERGY],
       startingMegaCredits: 46,
 
-      cardDiscount: {tag: Tags.ENERGY, amount: 4},
+      cardDiscount: {tag: Tags.ENERGY, amount: 5},
       metadata: {
         cardNumber: 'R13',
         description: 'You start with 2 energy production and 46 M€.',
