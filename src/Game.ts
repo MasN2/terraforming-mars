@@ -302,7 +302,7 @@ export class Game implements ISerializable<SerializedGame> {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
       game.oxygenLevel = 3;
-      game.temperature = 24;
+      game.temperature = -24;
     }
 
     // Setup Ares hazards
