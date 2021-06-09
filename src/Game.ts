@@ -268,8 +268,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      players[0].setTerraformRating(20); // Variant: 20 TR, 13 gens
-      players[0].terraformRatingAtGenerationStart = 20;
+      players[0].setTerraformRating(19); // Variant: 19 TR, 8 gens
+      players[0].terraformRatingAtGenerationStart = 19;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
@@ -301,7 +301,7 @@ export class Game implements ISerializable<SerializedGame> {
     if (players.length === 1) {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
-      game.oxygenLevel = 2;
+      game.oxygenLevel = 4;
       game.temperature = -24;
     }
 
@@ -739,7 +739,7 @@ export class Game implements ISerializable<SerializedGame> {
       }
     }
     if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 4);
+      this.players[0].addProduction(Resources.MEGACREDITS, 3);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -3);
