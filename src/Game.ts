@@ -266,7 +266,7 @@ export class Game implements ISerializable<SerializedGame> {
     if (players.length === 1) {
       gameOptions.draftVariant = false;
       gameOptions.initialDraftVariant = false;
-      gameOptions.randomMA = RandomMAOptionType.NONE;
+      gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
       players[0].setTerraformRating(20); // Variant: 20 TR, 13 gens
       players[0].terraformRatingAtGenerationStart = 20;
