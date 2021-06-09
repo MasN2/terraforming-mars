@@ -268,6 +268,9 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
+      this.oxygenLevel = 3;
+      this.temperature = 24;
+
       players[0].setTerraformRating(20); // Variant: 20 TR, 13 gens
       players[0].terraformRatingAtGenerationStart = 20;
     }
@@ -740,7 +743,7 @@ export class Game implements ISerializable<SerializedGame> {
       this.players[0].addProduction(Resources.MEGACREDITS, 4);
     }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -2);
+      this.players[0].addProduction(Resources.MEGACREDITS, -3);
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
@@ -819,8 +822,6 @@ export class Game implements ISerializable<SerializedGame> {
       this.bonus_rate++;
       if (this.bonus_rate > 0) {
         this.pending_wgt += this.bonus_rate;
-      } else {
-        this.temperature += 2; // Unlikely already maxed
       }
     }
     if (this.gameOptions.solarPhaseOption) {
