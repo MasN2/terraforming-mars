@@ -802,15 +802,15 @@ export class Game implements ISerializable<SerializedGame> {
     // solar Phase Option
     // solar Phase neutral milestone claiming
     for (const i of [2, 3, 4, 5, 6]) {
-        if (this.players.length === 1 && this.generation === i) {
-            if (!this.milestoneClaimed(this.milestones[i-2]) && !this.allMilestonesClaimed()){
-                this.claimedMilestones.push({
-                    player: this.players[0],
-                    milestone: this.milestones[i-2],
-                    vp: 0,
-                });
-            }
+      if (this.players.length === 1 && this.generation === i) {
+        if (!this.milestoneClaimed(this.milestones[i-2]) && !this.allMilestonesClaimed()) {
+          this.claimedMilestones.push({
+            player: this.players[0],
+            milestone: this.milestones[i-2],
+            vp: 0,
+          });
         }
+      }
     }
 
     this.phase = Phase.SOLAR;
