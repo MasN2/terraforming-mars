@@ -14,14 +14,14 @@ export class Quantum extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.QUANTUM,
       tags: [Tags.SCIENCE, Tags.ENERGY],
-      startingMegaCredits: 38,
+      startingMegaCredits: 41,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 38 M€.',
+        description: 'You start with 41 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(38);
+          b.megacredits(41);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play a science tag, including this, increase your energy production.', (eb) => {
               eb.science(1).played.startEffect.production((pb) => pb.energy(1));
