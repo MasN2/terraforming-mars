@@ -169,7 +169,7 @@ export const GameEnd = Vue.component('game-end', {
                             <div class="game-end-winer-scorebreak-player-title">
                                 <div :class="'game-end-player ' + getEndGamePlayerRowColorClass(p.color)"><a :href="'/player?id='+p.id+'&noredirect'">{{p.name}}</a></div>
                             </div>
-                            <h5 class="efficiency" v-i18n><a>Efficiency</a>: <span>{{ getEfficiencyScore(p) }}</span></h5>
+                            <h3 v-i18n>Efficiency: <span>{{ getEfficiencyScore(p) }}</span></h3>
                             <div v-for="v in p.victoryPointsBreakdown.detailsCards">
                               <div class="game-end-column-row">
                                 <div class="game-end-column-vp">{{v.victoryPoint}}</div>
