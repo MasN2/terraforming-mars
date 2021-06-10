@@ -64,7 +64,7 @@ export class GameSetup {
       while (oi >= oceanSpaces.length) {
         oi -= oceanSpaces.length;
       }
-      game.simpleAddTile(neutral, oceanSpaces[oi], {tileType: TileType.OCEAN})
+      game.simpleAddTile(neutral, oceanSpaces[oi], {tileType: TileType.OCEAN});
       const citySpace = game.getSpaceByOffset(direction, TileType.CITY);
       game.simpleAddTile(neutral, citySpace, {tileType: TileType.CITY});
       for (let i = 0; i < 2; i++) {
