@@ -58,7 +58,7 @@ export class GameSetup {
     function placeCityAndForest(game: Game, direction: -1 | 1) {
       const board = game.board;
       // Place an ocean as well. (Two, since this is called twice)
-      const oceanSpaces = board.getAvailableSpacesForOcean(game.players[0]);
+      const oceanSpaces = board.getAvailableSpacesForOcean(neutral);
       let oi = game.discardForCost(TileType.OCEAN);
       // Will anyone even notice if I don't do direction?
       while (oi >= oceanSpaces.length) {
