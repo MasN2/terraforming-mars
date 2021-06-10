@@ -57,20 +57,6 @@ export const GameEnd = Vue.component('game-end', {
       return this.player.players.length === 1;
     },
   },
-    getEfficiencyScore: function(player: PublicPlayerModel): string {
-      const startTR : number = 32;
-
-      const dummyPlayerScore : number = startTR * (9.5 / 8.5) ** (player.generation - 1);
-      let value : number = (player.victoryPointsBreakdown.total - 20) / (dummyPlayerScore - 20);
-
-      if (value < 1) {
-        value = value - 1;
-        return value.toFixed(2).toString();
-      }
-
-      value = value - 1;
-      return '+' + value.toFixed(2).toString();
-    },
   template: `
         <div id="game-end" class="game_end_cont">
             <h1>{{ constants.APP_NAME }} - Game finished!</h1>
@@ -169,7 +155,6 @@ export const GameEnd = Vue.component('game-end', {
                             <div class="game-end-winer-scorebreak-player-title">
                                 <div :class="'game-end-player ' + getEndGamePlayerRowColorClass(p.color)"><a :href="'/player?id='+p.id+'&noredirect'">{{p.name}}</a></div>
                             </div>
-                            <h3 v-i18n>Efficiency: <span>{{ getEfficiencyScore(p) }}</span></h3>
                             <div v-for="v in p.victoryPointsBreakdown.detailsCards">
                               <div class="game-end-column-row">
                                 <div class="game-end-column-vp">{{v.victoryPoint}}</div>
