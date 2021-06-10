@@ -818,11 +818,9 @@ export class Game implements ISerializable<SerializedGame> {
     this.pending_wgt = 0;
     if (this.players.length === 1) {
       this.bonus_rate++;
-      if (this.bonus_rate > 1) {
-        this.pending_wgt += this.bonus_rate - 1;
+      if (this.bonus_rate >= 1) {
         this.increaseOxygenLevel(this.players[0], 1);
-      } else {
-        this.pending_wgt += 1;
+        this.pending_wgt += this.bonus_rate - 1;
       }
     }
     if (this.gameOptions.solarPhaseOption) {
