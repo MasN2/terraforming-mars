@@ -57,7 +57,7 @@ export const GameEnd = Vue.component('game-end', {
       return this.player.players.length === 1;
     },
   },
-    getEfficiencyScore: function(player: PlayerModel): string {
+    getEfficiencyScore: function(player: PublicPlayerModel): string {
       const startTR : number = 32;
 
       const dummyPlayerScore : number = startTR * (9.5 / 8.5) ** (player.generation - 1);
