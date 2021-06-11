@@ -16,16 +16,16 @@ export class PolarIndustries extends PreludeCard implements IProjectCard {
       metadata: {
         cardNumber: 'P26',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.heat(3)).megacredits(5).br;
+          b.production((pb) => pb.heat(3)).megacredits(6).br;
           b.oceans(1);
         }),
-        description: 'Increase your heat production 3 steps. Gain 5 MC. Place an Ocean tile.',
+        description: 'Increase your heat production 3 steps. Gain 6 MC. Place an Ocean tile.',
       },
     });
   }
   public play(player: Player) {
     player.addProduction(Resources.HEAT, 3);
-    player.megaCredits += 5;
+    player.megaCredits += 6;
     player.game.defer(new PlaceOceanTile(player));
     return undefined;
   }

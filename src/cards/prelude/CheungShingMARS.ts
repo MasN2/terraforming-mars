@@ -15,19 +15,19 @@ export class CheungShingMARS extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.CHEUNG_SHING_MARS,
       tags: [Tags.BUILDING],
-      startingMegaCredits: 41,
+      startingMegaCredits: 44,
       productionBox: Units.of({megacredits: 3}),
 
-      cardDiscount: {tag: Tags.BUILDING, amount: 3},
+      cardDiscount: {tag: Tags.BUILDING, amount: 2},
       metadata: {
         cardNumber: 'R16',
-        description: 'You start with 3 M€ production and 41 M€.',
+        description: 'You start with 3 M€ production and 44 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.production((pb) => pb.megacredits(3)).nbsp.megacredits(41);
+          b.production((pb) => pb.megacredits(3)).nbsp.megacredits(44);
           b.corpBox('effect', (ce) => {
-            ce.effect('When you play a building tag, you pay 3 M€ less for it.', (eb) => {
-              eb.building().played.startEffect.megacredits(-3);
+            ce.effect('When you play a building tag, you pay 2 M€ less for it.', (eb) => {
+              eb.building().played.startEffect.megacredits(-2);
             });
           });
         }),
@@ -37,7 +37,7 @@ export class CheungShingMARS extends Card implements CorporationCard {
 
 
   public getCardDiscount(_player: Player, card: IProjectCard) {
-    return card.tags.filter((tag) => tag === Tags.BUILDING).length * 3;
+    return card.tags.filter((tag) => tag === Tags.BUILDING).length * 2;
   }
 
   public play(player: Player) {
