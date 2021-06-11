@@ -15,14 +15,14 @@ export class ArcadianCommunities extends Card implements IActionCard, Corporatio
     super({
       cardType: CardType.CORPORATION,
       name: CardName.ARCADIAN_COMMUNITIES,
-      startingMegaCredits: 38,
+      startingMegaCredits: 37,
       initialActionText: 'Place a community (player marker) on a non-reserved area',
 
       metadata: {
         cardNumber: 'R44',
-        description: 'You start with 1 steel production and 38 MC. As your first action, place 4 communities.',
+        description: 'You start with 1 steel production and 37 MC. As your first action, place 4 communities.',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.steel(1)).nbsp.megacredits(38).br;
+          b.production((pb) => pb.steel(1)).nbsp.megacredits(37).br;
           b.community().community().community().community();
           b.corpBox('action', (ce) => {
             ce.action('Place a community adjacent to one of your tiles or communities. When you place a tile there, gain 5 MC.', (eb) => {

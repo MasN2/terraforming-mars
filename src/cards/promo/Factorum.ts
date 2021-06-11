@@ -16,13 +16,13 @@ export class Factorum extends Card implements IActionCard, CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.FACTORUM,
       tags: [Tags.ENERGY, Tags.BUILDING],
-      startingMegaCredits: 38,
+      startingMegaCredits: 37,
 
       metadata: {
         cardNumber: 'R22',
-        description: 'You start with 38 M€. Increase your steel production 1 step.',
+        description: 'You start with 37 M€. Increase your steel production 1 step.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(38).nbsp.production((pb) => pb.steel(1));
+          b.megacredits(37).nbsp.production((pb) => pb.steel(1));
           b.corpBox('action', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.action('Increase your energy production 1 step IF YOU HAVE NO ENERGY RESOURCES, or spend 1 energy to draw a building card.', (eb) => {

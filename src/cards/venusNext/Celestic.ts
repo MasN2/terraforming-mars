@@ -17,16 +17,16 @@ export class Celestic extends Card implements IActionCard, CorporationCard, IRes
     super({
       name: CardName.CELESTIC,
       tags: [Tags.VENUS, Tags.JOVIAN],
-      startingMegaCredits: 42,
+      startingMegaCredits: 41,
       resourceType: ResourceType.FLOATER,
       cardType: CardType.CORPORATION,
       initialActionText: 'Draw 3 cards with a floater icon on it',
 
       metadata: {
         cardNumber: 'R05',
-        description: 'You start with 42 M€. As your first action, reveal cards from the deck until you have revealed 3 cards with a floater icon on it. Take them into hand and discard the rest.',
+        description: 'You start with 41 M€. As your first action, reveal cards from the deck until you have revealed 3 cards with a floater icon on it. Take them into hand and discard the rest.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(42).nbsp.cards(3).secondaryTag(AltSecondaryTag.FLOATER);
+          b.megacredits(41).nbsp.cards(3).secondaryTag(AltSecondaryTag.FLOATER);
           b.corpBox('action', (ce) => {
             ce.action('Add two floaters to ANY card. 1 VP per 3 floaters on this card.', (eb) => {
               eb.empty().startAction.floaters(2).asterix();

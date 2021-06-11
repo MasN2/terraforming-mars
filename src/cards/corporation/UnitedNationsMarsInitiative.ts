@@ -16,11 +16,11 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
       cardType: CardType.CORPORATION,
       name: CardName.UNITED_NATIONS_MARS_INITIATIVE,
       tags: [Tags.EARTH],
-      startingMegaCredits: 43,
+      startingMegaCredits: 42,
 
       metadata: {
         cardNumber: 'R32',
-        description: 'You start with 43 M€.',
+        description: 'You start with 42 M€.',
         renderData: CardRenderer.builder((b) => {
           // TODO(chosta): find a not so hacky solutions to spacing
           b.br.br.br;

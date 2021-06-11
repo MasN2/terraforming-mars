@@ -20,15 +20,15 @@ export class Astrodrill extends Card implements IActionCard, CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.ASTRODRILL,
       tags: [Tags.SPACE],
-      startingMegaCredits: 37,
+      startingMegaCredits: 36,
       resourceType: ResourceType.ASTEROID,
 
       metadata: {
         cardNumber: 'R21',
-        description: 'You start with 37 M€ and 4 asteroid resources.',
+        description: 'You start with 36 M€ and 4 asteroid resources.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(37).nbsp.asteroids(4);
+          b.megacredits(36).nbsp.asteroids(4);
           b.corpBox('action', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.action(undefined, (eb) => {

@@ -12,16 +12,16 @@ export class Aphrodite extends Card implements CorporationCard {
     super({
       name: CardName.APHRODITE,
       tags: [Tags.VENUS, Tags.PLANT],
-      startingMegaCredits: 40,
+      startingMegaCredits: 39,
       cardType: CardType.CORPORATION,
       initialActionText: 'Raise Venus two steps',
 
       metadata: {
         cardNumber: 'R01',
-        description: 'You start with 40 MC. As your first action, raise Venus two steps.',
+        description: 'You start with 39 MC. As your first action, raise Venus two steps.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(40).venus(2);
+          b.megacredits(39).venus(2);
           b.corpBox('effect', (ce) => {
             ce.effect('Whenever Venus is terraformed 1 step, you gain 2 plants.', (eb) => {
               eb.venus(1).any.startEffect.plants(2);

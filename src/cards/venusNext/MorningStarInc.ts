@@ -13,15 +13,15 @@ export class MorningStarInc extends Card implements CorporationCard {
     super({
       name: CardName.MORNING_STAR_INC,
       tags: [Tags.VENUS, Tags.VENUS],
-      startingMegaCredits: 47,
+      startingMegaCredits: 46,
       cardType: CardType.CORPORATION,
       initialActionText: 'Draw 3 cards with a Venus tag',
 
       metadata: {
         cardNumber: 'R06',
-        description: 'You start with 47 M€. As your first action, reveal cards from the deck until you have revealed 3 Venus tags. Take them and discard the rest. 1 VP per two Venus tags you have.',
+        description: 'You start with 46 M€. As your first action, reveal cards from the deck until you have revealed 3 Venus tags. Take them and discard the rest. 1 VP per two Venus tags you have.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(47).nbsp.cards(3).secondaryTag(Tags.VENUS);
+          b.megacredits(46).nbsp.cards(3).secondaryTag(Tags.VENUS);
           b.corpBox('effect', (ce) => {
             ce.effect('Your Venus requirements are +/- 3 steps, your choice in each case.', (eb) => {
               eb.plate('Venus requirements').startEffect.text('+/- 3');

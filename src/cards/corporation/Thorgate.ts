@@ -14,15 +14,15 @@ export class Thorgate extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.THORGATE,
       tags: [Tags.ENERGY, Tags.ENERGY],
-      startingMegaCredits: 46,
+      startingMegaCredits: 45,
 
       cardDiscount: {tag: Tags.ENERGY, amount: 5},
       metadata: {
         cardNumber: 'R13',
-        description: 'You start with 2 energy production and 46 M€.',
+        description: 'You start with 2 energy production and 45 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.energy(2)).nbsp.megacredits(46);
+          b.production((pb) => pb.energy(2)).nbsp.megacredits(45);
           b.corpBox('effect', (ce) => {
             ce.effect('When playing a power card OR THE STANDARD PROJECT POWER PLANT, you pay 5 M€ less for it.', (eb) => {
               // TODO(chosta): energy().played needs to be power() [same for space()]

@@ -16,15 +16,15 @@ export class Arklight extends Card implements CorporationCard, IResourceCard {
     super({
       name: CardName.ARKLIGHT,
       tags: [Tags.ANIMAL, Tags.ANIMAL],
-      startingMegaCredits: 48,
+      startingMegaCredits: 46,
       resourceType: ResourceType.ANIMAL,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: 'R04',
-        description: 'You start with 48 M€. 1 VP per 2 animals on this card.',
+        description: 'You start with 46 M€. 1 VP per 2 animals on this card.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(48);
+          b.megacredits(46);
           b.corpBox('effect', (ce) => {
             ce.effect('When you play an animal or plant tag, including these, gain 1 MC production and add 1 animal to this card.', (eb) => {
               eb.animals(1).played.slash().plants(1).played.startEffect.production((pb) => pb.megacredits(1)).animals(1);
