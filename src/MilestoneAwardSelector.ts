@@ -113,6 +113,7 @@ export namespace MilestoneAwardSelector {
       bind(Gardener, Landlord, 6);
       bind(Mayor, Landlord, 6);
       bind(Mayor, Cultivator, 6);
+      bind(Specialist, Thermalist, 6);
       bind(Gardener, EstateDealer, 5);
       bind(Builder, Magnate, 5);
       bind(Tycoon, Magnate, 5);
@@ -121,7 +122,6 @@ export namespace MilestoneAwardSelector {
       bind(Hoverlord, Venuphile, 5);
       bind(DesertSettler, EstateDealer, 5);
       bind(Builder, Tycoon, 4);
-      bind(Specialist, Energizer, 4);
       bind(Mayor, PolarExplorer, 4);
       bind(Mayor, DesertSettler, 4);
       bind(Mayor, EstateDealer, 4);
@@ -129,6 +129,7 @@ export namespace MilestoneAwardSelector {
       bind(Gardener, DesertSettler, 4);
       bind(Ecologist, Excentric, 4);
       bind(PolarExplorer, Landlord, 4);
+      bind(Specialist, Energizer, 3);
       bind(Mayor, Gardener, 3);
       bind(Tycoon, Excentric, 3);
       bind(PolarExplorer, Cultivator, 3);
@@ -137,7 +138,6 @@ export namespace MilestoneAwardSelector {
       bind(Celebrity, SpaceBaron, 3);
       bind(Benefactor, Cultivator, 3);
       bind(Gardener, Benefactor, 2);
-      bind(Specialist, Banker, 2);
       bind(Ecologist, Tycoon, 2);
       bind(Ecologist, Diversifier, 2);
       bind(Tycoon, Scientist, 2);
@@ -154,9 +154,6 @@ export namespace MilestoneAwardSelector {
       bind(Builder, Industrialist, 1);
       bind(Planner, Scientist, 1);
       bind(Generalist, Miner, 1);
-      bind(Specialist, Thermalist, 1);
-      bind(Specialist, Miner, 1);
-      bind(Specialist, Industrialist, 1);
       bind(Ecologist, Cultivator, 1);
       bind(Ecologist, Magnate, 1);
       bind(Tycoon, Diversifier, 1);
