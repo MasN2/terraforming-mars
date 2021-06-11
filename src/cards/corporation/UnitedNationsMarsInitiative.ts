@@ -24,7 +24,7 @@ export class UnitedNationsMarsInitiative extends Card implements IActionCard, Co
         renderData: CardRenderer.builder((b) => {
           // TODO(chosta): find a not so hacky solutions to spacing
           b.br.br.br;
-          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(43);
+          b.empty().nbsp.nbsp.nbsp.nbsp.megacredits(42);
           b.corpBox('action', (ce) => {
             ce.action('If your Terraform Rating was raised this generation, you may raise it 1 step more.', (eb) => {
               eb.empty().startAction.tr(1).asterix();
