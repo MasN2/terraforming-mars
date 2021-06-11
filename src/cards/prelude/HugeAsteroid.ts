@@ -13,16 +13,19 @@ export class HugeAsteroid extends PreludeCard {
         cardNumber: 'P15',
         renderData: CardRenderer.builder((b) => {
           b.temperature(4).br;
-          b.megacredits(-6);
+          b.megacredits(-5);
         }),
-        description: 'Increase Temperature 4 steps. Pay 6 M€.',
+        description: 'Increase Temperature 4 steps. Pay 5 M€.',
       },
     });
+  }
+  public canPlay(player: Player) {
+    return player.canAfford(5);
   }
   public play(player: Player) {
     player.game.increaseTemperature(player, 2);
     player.game.increaseTemperature(player, 2);
-    player.game.defer(new SelectHowToPayDeferred(player, 6));
+    player.game.defer(new SelectHowToPayDeferred(player, 5));
     return undefined;
   }
 }

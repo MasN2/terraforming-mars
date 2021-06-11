@@ -16,7 +16,7 @@ import {EarlySettlement} from './EarlySettlement';
 import {EcologyExperts} from './EcologyExperts';
 // import {ExperimentalForest} from './ExperimentalForest';
 import {GalileanMining} from './GalileanMining';
-import {GreatAquifer} from './GreatAquifer';
+// import {GreatAquifer} from './GreatAquifer';
 import {HousePrinting} from './HousePrinting';
 import {HugeAsteroid} from './HugeAsteroid';
 import {IoResearchOutpost} from './IoResearchOutpost';
@@ -87,7 +87,7 @@ export const PRELUDE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.SMELTING_PLANT, Factory: SmeltingPlant},
     {cardName: CardName.SUPPLIER, Factory: Supplier},
     {cardName: CardName.SUPPLY_DROP, Factory: SupplyDrop},
-    {cardName: CardName.GREAT_AQUIFER, Factory: GreatAquifer},
+    // {cardName: CardName.GREAT_AQUIFER, Factory: GreatAquifer},
     // {cardName: CardName.BIOLAB, Factory: Biolab},
     {cardName: CardName.MARTIAN_INDUSTRIES, Factory: MartianIndustries},
     {cardName: CardName.IO_RESEARCH_OUTPOST, Factory: IoResearchOutpost},
