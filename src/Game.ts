@@ -268,8 +268,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      players[0].setTerraformRating(18); // Variant: 18 TR, 8 gens
-      players[0].terraformRatingAtGenerationStart = 18;
+      players[0].setTerraformRating(19); // Variant: 19 TR, 8 gens
+      players[0].terraformRatingAtGenerationStart = 19;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
@@ -737,11 +737,8 @@ export class Game implements ISerializable<SerializedGame> {
         player.setWaitingFor(this.pickCorporationCard(player));
       }
     }
-    if (this.players.length === 1) {
-      this.players[0].addProduction(Resources.MEGACREDITS, 3);
-    }
     if (this.players.length === 1 && this.gameOptions.preludeExtension) {
-      this.players[0].addProduction(Resources.MEGACREDITS, -3);
+      this.players[0].decreaseTerraformRatingSteps(2);
       this.bonus_rate += 1;
     }
     if (this.players.length === 1 && this.gameOptions.venusNextExtension) {
@@ -802,6 +799,7 @@ export class Game implements ISerializable<SerializedGame> {
 
     // solar Phase Option
     // solar Phase neutral milestone claiming
+    // TODO: Delay this by 1 if no prelude
     for (const i of [2, 3, 4, 5, 6]) {
       if (this.players.length === 1 && this.generation === i) {
         if (!this.milestoneClaimed(this.milestones[i-2]) && !this.allMilestonesClaimed()) {
