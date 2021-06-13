@@ -15,20 +15,20 @@ export class BusinessEmpire extends PreludeCard {
       metadata: {
         cardNumber: 'P06',
         renderData: CardRenderer.builder((b) => {
-          b.production((pb) => pb.megacredits(6)).br;
-          b.megacredits(-6);
+          b.production((pb) => pb.megacredits(5)).br;
+          b.megacredits(-2);
         }),
-        description: 'Increase your M€ production 6 steps. Pay 6 M€.',
+        description: 'Increase your M€ production 5 steps. Pay 2 M€.',
       },
     });
   }
   public canPlay(player: Player) {
     if (player.isCorporation(CardName.MANUTECH)) return true;
-    return player.canAfford(6);
+    return player.canAfford(2);
   }
   public play(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, 6);
-    player.game.defer(new SelectHowToPayDeferred(player, 6));
+    player.addProduction(Resources.MEGACREDITS, 5);
+    player.game.defer(new SelectHowToPayDeferred(player, 2));
     return undefined;
   }
 }
