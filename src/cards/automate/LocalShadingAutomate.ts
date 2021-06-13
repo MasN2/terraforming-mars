@@ -6,7 +6,7 @@ import {ResourceType} from '../../ResourceType';
 import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
+import {LogHelper} from '../../LogHelper';
 import {Card} from '../Card';
 
 export class LocalShadingAutomate extends Card implements IActionCard, IResourceCard {

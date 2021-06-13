@@ -35,9 +35,9 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.RESTRICTED_AREA_AUTOMATE, Factory: RestrictedAreaAutomate},
     {cardName: CardName.AI_CENTRAL_AUTOMATE, Factory: AICentralAutomate},
     {cardName: CardName.PENGUINS_AUTOMATE, Factory: PenguinsAutomate},
-    {cardName: CardName.DEUTERIUM_EXPORT_AUTOMATE, Factory: DeuteriumExportAutomate, compatability: GameModule.Venus},
-    {cardName: CardName.LOCAL_SHADING_AUTOMATE, Factory: LocalShadingAutomate, compatability: GameModule.Venus},
-    {cardName: CardName.EXTRACTOR_BALLOONS_AUTOMATE, Factory: ExtractorBalloonsAutomate, compatability: GameModule.Venus},
+    {cardName: CardName.DEUTERIUM_EXPORT_AUTOMATE, Factory: DeuteriumExportAutomate, compatibility: GameModule.Venus},
+    {cardName: CardName.LOCAL_SHADING_AUTOMATE, Factory: LocalShadingAutomate, compatibility: GameModule.Venus},
+    {cardName: CardName.EXTRACTOR_BALLOONS_AUTOMATE, Factory: ExtractorBalloonsAutomate, compatibility: GameModule.Venus},
   ],
 
   cardsToRemove: [

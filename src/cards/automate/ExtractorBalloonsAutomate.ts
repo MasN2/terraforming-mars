@@ -6,7 +6,7 @@ import {ResourceType} from '../../ResourceType';
 import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../render/Size';
+import {LogHelper} from '../../LogHelper';
 import {Card} from '../Card';
 import {PartyHooks} from '../../turmoil/parties/PartyHooks';
 import {PartyName} from '../../turmoil/parties/PartyName';
@@ -43,7 +43,7 @@ export class ExtractorBalloonsAutomate extends Card implements IActionCard, IRes
     player.addResourceTo(this, {log: true});
     return undefined;
   }
-  public canAct(): boolean {
+  public canAct(player: Player): boolean {
       if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS) && !player.canAfford(REDS_RULING_POLICY_COST)) {
         return false;
       }
