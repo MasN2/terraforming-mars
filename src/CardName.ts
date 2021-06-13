@@ -482,6 +482,9 @@ export enum CardName {
     RESTRICTED_AREA_AUTOMATE = 'Restricted Area:automate',
     AI_CENTRAL_AUTOMATE = 'AI Central:automate',
     PENGUINS_AUTOMATE = 'Penguins:automate',
+    DEUTERIUM_EXPORT_AUTOMATE = 'Deuterium Export:automate',
+    LOCAL_SHADING_AUTOMATE = 'Local Shading:automate',
+    EXTRACTOR_BALLOONS_AUTOMATE = 'Extractor Balloons:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',
