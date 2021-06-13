@@ -13,14 +13,14 @@ export class Inventrix extends Card implements CorporationCard {
       name: CardName.INVENTRIX,
       tags: [Tags.SCIENCE, Tags.SCIENCE],
       initialActionText: 'Draw 3 cards',
-      startingMegaCredits: 45,
+      startingMegaCredits: 46,
 
       metadata: {
         cardNumber: 'R43',
-        description: 'As your first action in the game, draw 3 cards. Start with 45 M€.',
+        description: 'As your first action in the game, draw 3 cards. Start with 46 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(45).nbsp.cards(3);
+          b.megacredits(46).nbsp.cards(3);
           b.corpBox('effect', (ce) => {
             ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +3 or -3 steps, your choice in each case.', (eb) => {
               eb.plate('Global requirements').startEffect.text('+/- 3');

@@ -268,8 +268,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      players[0].setTerraformRating(19); // Variant: 19 TR, 8 gens
-      players[0].terraformRatingAtGenerationStart = 19;
+      players[0].setTerraformRating(20); // Variant: 20 TR, 8 gens
+      players[0].terraformRatingAtGenerationStart = 20;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
