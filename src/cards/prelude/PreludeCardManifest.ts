@@ -7,7 +7,7 @@ import {AquiferTurbines} from './AquiferTurbines';
 import {Biofuels} from './Biofuels';
 // import {Biolab} from './Biolab';
 import {BiosphereSupport} from './BiosphereSupport';
-import {BusinessEmpire} from './BusinessEmpire';
+// import {BusinessEmpire} from './BusinessEmpire';
 import {CheungShingMARS} from './CheungShingMARS';
 import {DomeFarming} from './DomeFarming';
 import {Donation} from './Donation';
@@ -81,7 +81,7 @@ export const PRELUDE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.MINING_OPERATIONS, Factory: MiningOperations},
     {cardName: CardName.UNMI_CONTRACTOR, Factory: UNMIContractor},
     {cardName: CardName.DOME_FARMING, Factory: DomeFarming},
-    {cardName: CardName.BUSINESS_EMPIRE, Factory: BusinessEmpire},
+    // {cardName: CardName.BUSINESS_EMPIRE, Factory: BusinessEmpire},
     {cardName: CardName.DONATION, Factory: Donation},
     {cardName: CardName.NITROGEN_SHIPMENT, Factory: NitrogenDelivery},
     {cardName: CardName.SMELTING_PLANT, Factory: SmeltingPlant},
