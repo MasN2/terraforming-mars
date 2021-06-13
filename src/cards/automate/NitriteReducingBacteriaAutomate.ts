@@ -11,6 +11,7 @@ import {PartyHooks} from '../../turmoil/parties/PartyHooks';
 import {PartyName} from '../../turmoil/parties/PartyName';
 import {REDS_RULING_POLICY_COST} from '../../constants';
 import {CardRenderer} from '../render/CardRenderer';
+import {DeferredAction} from '../../deferredActions/DeferredAction';
 
 export class NitriteReducingBacteriaAutomate extends Card implements IActionCard, IProjectCard, IResourceCard {
   constructor() {
@@ -37,10 +38,13 @@ export class NitriteReducingBacteriaAutomate extends Card implements IActionCard
     public resourceCount = 0;
 
     public play(player: Player) {
-      player.addResourceTo(this, {log: true});
-      player.addResourceTo(this, {log: true});
-      player.addResourceTo(this, {log: true});
-      player.addResourceTo(this, {log: true});
+      player.game.defer(new DeferredAction(
+        player,
+        () => {
+          player.addResourceTo(this, 4);
+          return undefined;
+        },
+      ));
       return undefined;
     }
     public canAct(player: Player): boolean {

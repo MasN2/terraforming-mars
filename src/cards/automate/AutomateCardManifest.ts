@@ -9,7 +9,7 @@ import {TardigradesAutomate} from './TardigradesAutomate';
 import {FishAutomate} from './FishAutomate';
 import {SmallAnimalsAutomate} from './SmallAnimalsAutomate';
 import {BirdsAutomate} from './BirdsAutomate';
-// import {NitriteReducingBacteriaAutomate} from './NitriteReducingBacteriaAutomate';
+import {NitriteReducingBacteriaAutomate} from './NitriteReducingBacteriaAutomate';
 import {LivestockAutomate} from './LivestockAutomate';
 import {RestrictedAreaAutomate} from './RestrictedAreaAutomate';
 import {AICentralAutomate} from './AICentralAutomate';
@@ -27,7 +27,7 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.FISH_AUTOMATE, Factory: FishAutomate},
     {cardName: CardName.SMALL_ANIMALS_AUTOMATE, Factory: SmallAnimalsAutomate},
     {cardName: CardName.BIRDS_AUTOMATE, Factory: BirdsAutomate},
-    // {cardName: CardName.NITRITE_REDUCING_BACTERIA_AUTOMATE, Factory: NitriteReducingBacteriaAutomate},
+    {cardName: CardName.NITRITE_REDUCING_BACTERIA_AUTOMATE, Factory: NitriteReducingBacteriaAutomate},
     {cardName: CardName.LIVESTOCK_AUTOMATE, Factory: LivestockAutomate},
     {cardName: CardName.RESTRICTED_AREA_AUTOMATE, Factory: RestrictedAreaAutomate},
     {cardName: CardName.AI_CENTRAL_AUTOMATE, Factory: AICentralAutomate},
@@ -43,7 +43,7 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     CardName.FISH,
     CardName.SMALL_ANIMALS,
     CardName.BIRDS,
-    // CardName.NITRITE_REDUCING_BACTERIA,
+    CardName.NITRITE_REDUCING_BACTERIA,
     CardName.LIVESTOCK,
     CardName.RESTRICTED_AREA,
     CardName.AI_CENTRAL,
@@ -53,6 +53,7 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     // CardName.LOCAL_SHADING,
     // CardName.STRATOSPHERIC_BIRDS,
     // CardName.SULPHUR_EATING_BACTERIA,
+    // CardName.VENUSIAN_INSECTS,
     // CardName.PSYCHROPHILES,
     // CardName.ATMO_COLLECTORS,
     // CardName.JOVIAN_LANTERNS,
