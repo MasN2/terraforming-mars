@@ -26,8 +26,8 @@ export class ExtractorBalloonsAutomate extends Card implements IActionCard, IRes
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 3 Floaters here to raise Venus 1 step.', (be) => {
             be.floaters(3).startAction.venus(1);
+          }).br;
           b.floaters(4).production((pb) => pb.floaters(1));
-          });
         }),
       },
     });
@@ -43,9 +43,9 @@ export class ExtractorBalloonsAutomate extends Card implements IActionCard, IRes
     return undefined;
   }
   public canAct(player: Player): boolean {
-      if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS) && !player.canAfford(REDS_RULING_POLICY_COST)) {
-        return false;
-      }
+    if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS) && !player.canAfford(REDS_RULING_POLICY_COST)) {
+      return false;
+    }
     return this.resourceCount >= 3;
   }
   public action(player: Player) {

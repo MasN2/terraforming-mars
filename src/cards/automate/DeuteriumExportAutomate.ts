@@ -24,8 +24,8 @@ export class DeuteriumExportAutomate extends Card implements IActionCard, IResou
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 2 Floaters here to increase your energy production 1 step.', (be) => {
             be.floaters(2).startAction.production((pb) => pb.energy(1));
+          }).br;
           b.floaters(1).production((pb) => pb.floaters(1));
-          });
         }),
       },
     });

@@ -24,8 +24,8 @@ export class LocalShadingAutomate extends Card implements IActionCard, IResource
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 2 Floaters here to increase your megacredit production 1 step.', (be) => {
             be.floaters(2).startAction.production((pb) => pb.megacredits(1));
+          }).br;
           b.floaters(1).production((pb) => pb.floaters(1));
-          });
         }),
       },
     });
