@@ -22,7 +22,7 @@ import {HugeAsteroid} from './HugeAsteroid';
 import {IoResearchOutpost} from './IoResearchOutpost';
 import {LavaTubeSettlement} from './LavaTubeSettlement';
 // import {Loan} from './Loan';
-import {MartianIndustries} from './MartianIndustries';
+// import {MartianIndustries} from './MartianIndustries';
 import {MartianSurvey} from './MartianSurvey';
 import {MetalRichAsteroid} from './MetalRichAsteroid';
 import {MetalsCompany} from './MetalsCompany';
@@ -89,7 +89,7 @@ export const PRELUDE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.SUPPLY_DROP, Factory: SupplyDrop},
     // {cardName: CardName.GREAT_AQUIFER, Factory: GreatAquifer},
     // {cardName: CardName.BIOLAB, Factory: Biolab},
-    {cardName: CardName.MARTIAN_INDUSTRIES, Factory: MartianIndustries},
+    // {cardName: CardName.MARTIAN_INDUSTRIES, Factory: MartianIndustries},
     {cardName: CardName.IO_RESEARCH_OUTPOST, Factory: IoResearchOutpost},
     {cardName: CardName.POLAR_INDUSTRIES, Factory: PolarIndustries},
     {cardName: CardName.SOCIETY_SUPPORT, Factory: SocietySupport},
