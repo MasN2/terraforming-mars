@@ -43,7 +43,7 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
   cardsToRemove: [
     CardName.BUSINESS_NETWORK,
     CardName.INVENTORS_GUILD,
-    CardName.REGOLITH_EATERS_AUTOMATE,
+    CardName.REGOLITH_EATERS,
     CardName.GHG_PRODUCING_BACTERIA,
     CardName.TARDIGRADES,
     CardName.FISH,
