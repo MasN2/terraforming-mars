@@ -163,7 +163,7 @@ export class Game implements ISerializable<SerializedGame> {
   public undoCount: number = 0; // Each undo increases it
 
   public generation: number = 1;
-  public bonus_rate: number = -3;
+  public bonus_rate: number = -4;
   public pending_wgt: number = 0;
   public phase: Phase = Phase.RESEARCH;
   public dealer: Dealer;
@@ -302,6 +302,7 @@ export class Game implements ISerializable<SerializedGame> {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
       game.temperature = -24;
+      game.oxygenLevel = 1;
     }
 
     // Setup Ares hazards
@@ -819,6 +820,9 @@ export class Game implements ISerializable<SerializedGame> {
       if (this.bonus_rate >= 1) {
         this.increaseOxygenLevel(this.players[0], 1);
         this.pending_wgt += this.bonus_rate - 1;
+      }
+      if (this.bonus_rate >= 4) {
+        this.pending_wgt += this.bonus_rate - 3;
       }
     }
     if (this.gameOptions.solarPhaseOption) {
