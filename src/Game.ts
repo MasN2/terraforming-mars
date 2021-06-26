@@ -822,7 +822,7 @@ export class Game implements ISerializable<SerializedGame> {
         while (oi >= oceanSpaces.length) {
           oi -= oceanSpaces.length;
         }
-        this.addOceanTile(this.players[0], oceanSpaces[oi], SpaceType.OCEAN);
+        this.addOceanTile(this.players[0], oceanSpaces[oi].id, SpaceType.OCEAN);
       } else {
         this.increaseOxygenLevel(this.players[0], 1);
       }
