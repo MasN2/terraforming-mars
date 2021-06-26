@@ -816,7 +816,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
     if (this.players.length === 1) {
-      if (this.board.getOceansOnBoard() >= constants.MAX_OCEAN_TILES) {
+      if (this.board.getOceansOnBoard() < constants.MAX_OCEAN_TILES) {
         const oceanSpaces = this.board.getAvailableSpacesForOcean(this.players[0]);
         let oi = this.discardForCost(TileType.OCEAN);
         while (oi >= oceanSpaces.length) {
