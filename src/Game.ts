@@ -268,8 +268,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      players[0].setTerraformRating(22); // Variant: 20 TR, 8 gens
-      players[0].terraformRatingAtGenerationStart = 22;
+      players[0].setTerraformRating(23); // Variant: 20 TR, 8 gens
+      players[0].terraformRatingAtGenerationStart = 23;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
@@ -302,7 +302,7 @@ export class Game implements ISerializable<SerializedGame> {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
       game.temperature = -24;
-      game.oxygenLevel = 1;
+      game.oxygenLevel = 2;
     }
 
     // Setup Ares hazards
@@ -816,13 +816,19 @@ export class Game implements ISerializable<SerializedGame> {
     this.phase = Phase.SOLAR;
     this.pending_wgt = 0;
     if (this.players.length === 1) {
-      this.bonus_rate++;
-      if (this.bonus_rate >= 1) {
+      if (this.getOceansOnBoard() >= constants.MAX_OCEAN_TILES) {
+        const oceanSpaces = this.board.getAvailableSpacesForOcean(this.players[0]);
+        let oi = this.discardForCost(TileType.OCEAN);
+        while (oi >= oceanSpaces.length) {
+          oi -= oceanSpaces.length;
+        }
+        this.addOceanTile(this.players[0], oi, SpaceType.OCEAN);
+      } else {
         this.increaseOxygenLevel(this.players[0], 1);
-        this.pending_wgt += this.bonus_rate - 1;
       }
-      if (this.bonus_rate >= 4) {
-        this.pending_wgt += this.bonus_rate - 3;
+      this.bonus_rate++;
+      if (this.bonus_rate >= 0) {
+        this.increaseTemperature(this.players[0], 1);
       }
     }
     if (this.gameOptions.solarPhaseOption) {

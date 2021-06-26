@@ -82,8 +82,6 @@ export class GameSetup {
     }
 
     placeOcean(game);
-    placeOcean(game);
-    placeOcean(game);
     placeCityAndForest(game, 1);
     placeCityAndForest(game, -1);
   }
