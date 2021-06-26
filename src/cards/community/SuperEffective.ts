@@ -40,9 +40,9 @@ export class SuperEffective extends Card implements CorporationCard {
 
   public play(player: Player) {
     if (player.game.getPlayers().length === 1) {
-      // Get bonus for 4 neutral greeneries and 2 oceans
+      // Get bonus for 4 neutral greeneries and 3 oceans
       player.heat += 12;
-      player.plants += 4;
+      player.plants += 6;
     }
     return undefined;
   }

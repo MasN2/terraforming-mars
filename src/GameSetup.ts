@@ -55,16 +55,18 @@ export class GameSetup {
     // Puts two greeneries per city, since that seems to be the average ratio in #game-results
     const neutral = this.neutralPlayerFor(game.id);
 
-    function placeCityAndForest(game: Game, direction: -1 | 1) {
+    function placeOcean(game: Game) {
       const board = game.board;
-      // Place an ocean as well. (Two, since this is called twice)
       const oceanSpaces = board.getAvailableSpacesForOcean(neutral);
       let oi = game.discardForCost(TileType.OCEAN);
-      // Will anyone even notice if I don't do direction?
       while (oi >= oceanSpaces.length) {
         oi -= oceanSpaces.length;
       }
       game.simpleAddTile(neutral, oceanSpaces[oi], {tileType: TileType.OCEAN});
+    }
+
+    function placeCityAndForest(game: Game, direction: -1 | 1) {
+      const board = game.board;
       const citySpace = game.getSpaceByOffset(direction, TileType.CITY);
       game.simpleAddTile(neutral, citySpace, {tileType: TileType.CITY});
       for (let i = 0; i < 2; i++) {
@@ -79,6 +81,9 @@ export class GameSetup {
       }
     }
 
+    placeOcean(game);
+    placeOcean(game);
+    placeOcean(game);
     placeCityAndForest(game, 1);
     placeCityAndForest(game, -1);
   }

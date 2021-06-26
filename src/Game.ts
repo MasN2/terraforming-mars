@@ -268,8 +268,8 @@ export class Game implements ISerializable<SerializedGame> {
       gameOptions.initialDraftVariant = false;
       gameOptions.randomMA = RandomMAOptionType.LIMITED;
 
-      players[0].setTerraformRating(20); // Variant: 20 TR, 8 gens
-      players[0].terraformRatingAtGenerationStart = 20;
+      players[0].setTerraformRating(22); // Variant: 20 TR, 8 gens
+      players[0].terraformRatingAtGenerationStart = 22;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
@@ -761,7 +761,7 @@ export class Game implements ISerializable<SerializedGame> {
     this.researchedPlayers.clear();
     this.save();
     this.players.forEach((player) => {
-      player.runResearchPhase(this.gameOptions.draftVariant, this.players.length === 1);
+      player.runResearchPhase(this.gameOptions.draftVariant, false);
     });
   }
 
