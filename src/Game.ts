@@ -302,7 +302,7 @@ export class Game implements ISerializable<SerializedGame> {
       //  Setup solo player's starting tiles
       GameSetup.setupNeutralPlayer(game);
       game.temperature = -24;
-      game.oxygenLevel = 3;
+      game.oxygenLevel = 4;
     }
 
     // Setup Ares hazards
@@ -825,6 +825,9 @@ export class Game implements ISerializable<SerializedGame> {
       }
       this.bonus_rate++;
       if (this.bonus_rate >= 1) {
+        this.increaseTemperature(this.players[0], 1);
+      }
+      if (this.bonus_rate >= 4) {
         this.increaseTemperature(this.players[0], 1);
       }
     }
