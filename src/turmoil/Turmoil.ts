@@ -274,6 +274,9 @@ export class Turmoil implements ISerializable<SerializedTurmoil> {
       if (this.currentGlobalEvent) {
         this.sendDelegateToParty('NEUTRAL', this.currentGlobalEvent.currentDelegate, game);
       }
+      if (game.isSoloMode() && this.currentGlobalEvent) {
+        this.sendDelegateToParty('NEUTRAL', this.currentGlobalEvent.currentDelegate, game);
+      }
       // 4.b - Distant Event is now Coming Event
       this.comingGlobalEvent = this.distantGlobalEvent;
       // 4.c - Draw the new distant event and add neutral delegate
