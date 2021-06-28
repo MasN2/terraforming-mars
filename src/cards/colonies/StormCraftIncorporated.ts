@@ -20,15 +20,15 @@ export class StormCraftIncorporated extends Card implements IActionCard, Corpora
     super({
       name: CardName.STORMCRAFT_INCORPORATED,
       tags: [Tags.JOVIAN],
-      startingMegaCredits: 44,
+      startingMegaCredits: 45,
       resourceType: ResourceType.FLOATER,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: 'R29',
-        description: 'You start with 44 M€. 1 VP per Jovian tag you have.',
+        description: 'You start with 45 M€. 1 VP per Jovian tag you have.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(44);
+          b.megacredits(45);
           b.corpBox('action', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.action('Add a floater to ANY card.', (eb) => {

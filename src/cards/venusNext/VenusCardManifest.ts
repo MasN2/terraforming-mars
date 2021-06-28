@@ -54,7 +54,7 @@ import {VenusianPlants} from './VenusianPlants';
 import {VenusMagnetizer} from './VenusMagnetizer';
 import {VenusSoils} from './VenusSoils';
 import {VenusWaystation} from './VenusWaystation';
-import {Viron} from './Viron';
+// import {Viron} from './Viron';
 import {WaterToVenus} from './WaterToVenus';
 
 export const VENUS_CARD_MANIFEST = new CardManifest({
@@ -119,5 +119,5 @@ export const VENUS_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.CELESTIC, Factory: Celestic},
     {cardName: CardName.MANUTECH, Factory: Manutech},
     {cardName: CardName.MORNING_STAR_INC, Factory: MorningStarInc},
-    {cardName: CardName.VIRON, Factory: Viron},
+    // {cardName: CardName.VIRON, Factory: Viron},
   ]});
