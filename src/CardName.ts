@@ -485,6 +485,8 @@ export enum CardName {
     DEUTERIUM_EXPORT_AUTOMATE = 'Deuterium Export:automate',
     LOCAL_SHADING_AUTOMATE = 'Local Shading:automate',
     EXTRACTOR_BALLOONS_AUTOMATE = 'Extractor Balloons:automate',
+    STRATOSPHERIC_BIRDS_AUTOMATE = 'Stratospheric Birds:automate',
+    VENUSIAN_INSECTS_AUTOMATE = 'Venusian Insects:automate',
 
     // Community corps
     AGRICOLA_INC = 'Agricola Inc',

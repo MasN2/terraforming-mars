@@ -17,6 +17,8 @@ import {PenguinsAutomate} from './PenguinsAutomate';
 import {DeuteriumExportAutomate} from './DeuteriumExportAutomate';
 import {LocalShadingAutomate} from './LocalShadingAutomate';
 import {ExtractorBalloonsAutomate} from './ExtractorBalloonsAutomate';
+import {StratosphericBirdsAutomate} from './StratosphericBirdsAutomate';
+import {VenusianInsectsAutomate} from './VenusianInsectsAutomate';
 
 export const AUTOMATE_CARD_MANIFEST = new CardManifest({
   module: GameModule.Automate,
@@ -38,6 +40,8 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.DEUTERIUM_EXPORT_AUTOMATE, Factory: DeuteriumExportAutomate, compatibility: GameModule.Venus},
     {cardName: CardName.LOCAL_SHADING_AUTOMATE, Factory: LocalShadingAutomate, compatibility: GameModule.Venus},
     {cardName: CardName.EXTRACTOR_BALLOONS_AUTOMATE, Factory: ExtractorBalloonsAutomate, compatibility: GameModule.Venus},
+    {cardName: CardName.STRATOSPHERIC_BIRDS_AUTOMATE, Factory: StratosphericBirdsAutomate, compatibility: GameModule.Venus},
+    {cardName: CardName.VENUSIAN_INSECTS_AUTOMATE, Factory: VenusianInsectsAutomate, compatibility: GameModule.Venus},
   ],
 
   cardsToRemove: [
@@ -57,9 +61,8 @@ export const AUTOMATE_CARD_MANIFEST = new CardManifest({
     CardName.DEUTERIUM_EXPORT,
     CardName.EXTRACTOR_BALLOONS,
     CardName.LOCAL_SHADING,
-    // CardName.STRATOSPHERIC_BIRDS,
-    // CardName.SULPHUR_EATING_BACTERIA,
-    // CardName.VENUSIAN_INSECTS,
+    CardName.STRATOSPHERIC_BIRDS,
+    CardName.VENUSIAN_INSECTS,
     // CardName.PSYCHROPHILES,
     // CardName.ATMO_COLLECTORS,
     // CardName.JOVIAN_LANTERNS,
