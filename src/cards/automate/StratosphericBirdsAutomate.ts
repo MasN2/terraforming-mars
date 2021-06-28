@@ -51,7 +51,7 @@ export class StratosphericBirdsAutomate extends Card implements IProjectCard, IR
       const floaterCard = cardsWithFloater[0];
       if (floaterCard.name !== CardName.DIRIGIBLES) return meetsGlobalRequirements;
 
-      const canPayForFloater = ((floaterCard.resourceCount! - 1) * 3 + player.megaCredits) >= 12;
+      const canPayForFloater = ((floaterCard.resourceCount! - 1) * 3 + player.megaCredits) >= 10;
       return canPayForFloater && meetsGlobalRequirements;
     }
   }
