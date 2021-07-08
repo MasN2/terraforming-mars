@@ -34,7 +34,7 @@ export class Redwing extends Card implements CorporationCard, IResourceCard {
 
   public resourceCount = 0;
 
-  public getCardDiscount(_player: Player, card: IProjectCard) {
+  public getCardDiscount(_player: Player, _card: IProjectCard) {
     return Math.floor(this.resourceCount / 3);
   }
 
@@ -43,7 +43,7 @@ export class Redwing extends Card implements CorporationCard, IResourceCard {
     return undefined;
   }
 
-  public onProductionPhase(player: Player) {
+  public onProductionPhase(_player: Player) {
     this.resourceCount += 1;
     return undefined;
   }
