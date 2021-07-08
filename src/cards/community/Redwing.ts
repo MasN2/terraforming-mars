@@ -14,6 +14,7 @@ export class Redwing extends Card implements CorporationCard, IResourceCard {
       cardType: CardType.CORPORATION,
       name: CardName.REDWING,
       tags: [Tags.EARTH, Tags.ANIMAL],
+      resourceType: ResourceType.ANIMAL,
       startingMegaCredits: 35,
 
       metadata: {
