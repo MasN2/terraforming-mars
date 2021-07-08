@@ -506,6 +506,7 @@ export enum CardName {
     NON_IPSE_POTEST_IUPPITER = 'Non ipse potest Iuppiter',
     OUTER_PLANET_ALLIANCE = 'Outer Planet Alliance',
     MARS_ANALYSTS = 'Mars Analysts',
+    REDWING = 'Redwing',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
