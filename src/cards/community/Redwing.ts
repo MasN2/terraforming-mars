@@ -24,7 +24,7 @@ export class Redwing extends Card implements CorporationCard, IResourceCard {
           b.megacredits(35).animals(2).production((pb) => pb.animals(1));
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a card, you pay 1 M€ less for it for each three animals on this card.', (eb) => {
-              eb.empty().played.startEffect.megacredits(-1).slash().animals(3);
+              eb.empty().startEffect.megacredits(-1).slash().animals(3);
             });
           });
         }),
