@@ -1,4 +1,5 @@
 import {Tags} from '../Tags';
+import {ResourceType} from '../../ResourceType';
 import {Player} from '../../Player';
 import {CorporationCard} from './../corporation/CorporationCard';
 import {IProjectCard} from '../IProjectCard';
