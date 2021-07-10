@@ -20,7 +20,7 @@ export class LTConglomerateMars extends Card implements CorporationCard {
         description: 'You start with 32 MC and 13 MC production.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(34).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
+          b.megacredits(32).production((pb) => pb.megacredits(13));
           b.corpBox('effect', (ce) => {
             ce.action('After production on generation 5 only, -39 MC.', (eb) => {
               eb.text('generation 5', Size.SMALL, true).startEffect.production((pb) => pb.megacredits(-39));
