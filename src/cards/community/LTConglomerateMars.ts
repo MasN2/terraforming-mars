@@ -23,7 +23,7 @@ export class LTConglomerateMars extends Card implements CorporationCard {
           b.megacredits(32).production((pb) => pb.megacredits(13));
           b.corpBox('effect', (ce) => {
             ce.action('After production on generation 5 only, -39 MC.', (eb) => {
-              eb.text('generation 5', Size.SMALL, true).startEffect.production((pb) => pb.megacredits(-39));
+              eb.production((pb) => pb.text('generation 5', Size.SMALL, true)).startEffect.megacredits(-39);
             });
           });
         }),
