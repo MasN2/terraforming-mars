@@ -37,7 +37,7 @@ export class LTConglomerateMars extends Card implements CorporationCard {
   }
 
   public onProductionPhase(player: Player) {
-    if (player.game.generation == 5) {
+    if (player.game.generation === 5) {
       player.megaCredits -= 39;
     }
     if (player.megaCredits < 0) {
