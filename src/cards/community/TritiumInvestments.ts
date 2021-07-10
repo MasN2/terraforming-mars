@@ -14,14 +14,14 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
     super({
       name: CardName.TRITIUM_INVESTMENTS,
       tags: [Tags.EARTH, Tags.EARTH],
-      startingMegaCredits: 34,
+      startingMegaCredits: 40,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 34 M€ and 1 MC production per OTHER player. Decrease your TR 1 step.',
+        description: 'You start with 40 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(34).production((pb) => pb.megacredits(1).slash().delegates(1).asterix()).nbsp.minus().tr(1, Size.SMALL);
+          b.megacredits(40);
           b.corpBox('action', (ce) => {
             ce.action('Increase your MC production by the current generation number.', (eb) => {
               eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('generation', Size.SMALL, true));
@@ -32,12 +32,7 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
     });
   }
 
-  public play(player: Player) {
-    player.addProduction(Resources.MEGACREDITS, player.game.getPlayers().length - 1);
-    player.decreaseTerraformRatingSteps(1);
-    if (player.game.getPlayers().length === 1) {
-      player.addProduction(Resources.MEGACREDITS, 3);
-    }
+  public play() {
     return undefined;
   }
 
