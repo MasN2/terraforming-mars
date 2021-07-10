@@ -507,6 +507,7 @@ export enum CardName {
     OUTER_PLANET_ALLIANCE = 'Outer Planet Alliance',
     MARS_ANALYSTS = 'Mars Analysts',
     REDWING = 'Redwing',
+    LT_CONGLOMERATE_MARS = 'LT Conglomerate Mars',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',
