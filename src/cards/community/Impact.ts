@@ -1,7 +1,6 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
-import {Tags} from '../Tags';
-import {IActionCard, IResourceCard} from '../ICard';
+import {IActionCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {Card} from '../Card';
@@ -26,7 +25,7 @@ export class Impact extends Card implements IActionCard, CorporationCard {
           b.megacredits(35);
           b.corpBox('action', (ce) => {
             ce.action('Raise temperature 7 steps, remove up to 14 plants from any player, and put this card face-down in your EVENTS pile. Activate only during generation 4 or later.', (eb) => {
-              eb.empty().startAction.temperature(7).minus.plants(-14).any;
+              eb.empty().startAction.temperature(7).minus.plant(-14).any;
             });
           });
         }),
