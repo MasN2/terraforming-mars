@@ -576,7 +576,7 @@ export class Player implements ISerializable<SerializedPlayer> {
   public getPlayedEventsCount(): number {
     let count = this.playedCards.filter((card) => card.cardType === CardType.EVENT).length;
     if (this.isCorporation(CardName.PHARMACY_UNION) && this.corporationCard?.isDisabled) count++;
-
+    if (this.isCorporation(CardName.IMPACT) && this.corporationCard?.isDisabled) count++;
     return count;
   }
 
