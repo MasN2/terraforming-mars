@@ -20,7 +20,7 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
         cardNumber: '',
         description: 'You start with 40 M€.',
         renderData: CardRenderer.builder((b) => {
-          b.br;
+          b.br.br;
           b.megacredits(40);
           b.corpBox('action', (ce) => {
             ce.action('Increase your MC production by the current generation number.', (eb) => {

@@ -16,14 +16,14 @@ export class Redwing extends Card implements CorporationCard, IResourceCard {
       name: CardName.REDWING,
       tags: [Tags.EARTH, Tags.ANIMAL],
       resourceType: ResourceType.ANIMAL,
-      startingMegaCredits: 41,
+      startingMegaCredits: 38,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 41 M€ and four animals. Add one more animal here each production phase.',
+        description: 'You start with 38 M€ and four animals. Add one more animal here each production phase.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(41).animals(4).production((pb) => pb.animals(1));
+          b.megacredits(38).animals(4).production((pb) => pb.animals(1));
           b.corpBox('effect', (ce) => {
             ce.effect('When you play a card, you pay 1 M€ less for it for each four animals on this card.', (eb) => {
               eb.empty().startEffect.megacredits(-1).slash().animals(4);

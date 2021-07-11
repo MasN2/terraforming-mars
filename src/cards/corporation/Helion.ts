@@ -13,14 +13,14 @@ export class Helion extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.HELION,
       tags: [Tags.SPACE],
-      startingMegaCredits: 42,
+      startingMegaCredits: 40,
 
       metadata: {
         cardNumber: 'R18',
-        description: 'You start with 5 heat production and 42 M€.',
+        description: 'You start with 5 heat production and 40 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.heat(5).digit).nbsp.megacredits(42);
+          b.production((pb) => pb.heat(5).digit).nbsp.megacredits(40);
           b.corpBox('effect', (ce) => {
             ce.effect('You may use heat as MC. You may not use M€ as heat.', (eb) => {
               eb.startEffect.text('x').heat(1).equals().megacredits(0).multiplier;
