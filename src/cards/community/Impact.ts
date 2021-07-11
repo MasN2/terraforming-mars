@@ -32,7 +32,7 @@ export class Impact extends Card implements IActionCard, CorporationCard {
       },
     });
   }
-  
+
   public isDisabled = false;
 
   public play() {
