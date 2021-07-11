@@ -22,6 +22,7 @@ import {OuterPlanetAlliance} from './OuterPlanetAlliance';
 import {MarsAnalysts} from './MarsAnalysts';
 import {Redwing} from './Redwing';
 import {LTConglomerateMars} from './LTConglomerateMars';
+import {Impact} from './Impact';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -46,6 +47,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.MARS_ANALYSTS, Factory: MarsAnalysts, compatibility: GameModule.Turmoil},
     {cardName: CardName.REDWING, Factory: Redwing},
     {cardName: CardName.LT_CONGLOMERATE_MARS, Factory: LTConglomerateMars},
+    {cardName: CardName.IMPACT, Factory: Impact},
   ],
   preludeCards: [
     {
