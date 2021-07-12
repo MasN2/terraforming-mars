@@ -13,23 +13,23 @@ export class Pristar extends Card implements CorporationCard, IResourceCard {
   constructor() {
     super({
       name: CardName.PRISTAR,
-      startingMegaCredits: 53,
+      startingMegaCredits: 46,
       resourceType: ResourceType.PRESERVATION,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: 'R07',
-        description: 'You start with 53 M€. Decrease your TR 2 steps. 1 VP per preservation resource here.',
+        description: 'You start with 46 M€. Decrease your TR 1 step. 2 VP per preservation resource here.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(53).nbsp.nbsp.minus().tr(2, Size.SMALL);
+          b.megacredits(45).nbsp.nbsp.minus().tr();
           b.corpBox('effect', (ce) => {
-            ce.effect('During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 6 M€.', (eb) => {
-              eb.production((pb) => pb.tr(1, Size.SMALL, true)).startEffect.preservation(1).megacredits(6);
+            ce.effect('During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 4 M€.', (eb) => {
+              eb.production((pb) => pb.tr(1, Size.SMALL, true)).startEffect.preservation(1).megacredits(4);
             });
           });
         }),
-        victoryPoints: CardRenderDynamicVictoryPoints.preservation(1, 1),
+        victoryPoints: CardRenderDynamicVictoryPoints.preservation(2, 1),
       },
     });
   }
@@ -37,17 +37,17 @@ export class Pristar extends Card implements CorporationCard, IResourceCard {
     public resourceCount = 0;
 
     public play(player: Player) {
-      player.decreaseTerraformRatingSteps(2);
+      player.decreaseTerraformRatingSteps(1);
       return undefined;
     }
 
     public getVictoryPoints(): number {
-      return Math.floor(this.resourceCount);
+      return 2 * this.resourceCount;
     }
 
     public onProductionPhase(player: Player) {
       if (!(player.hasIncreasedTerraformRatingThisGeneration)) {
-        player.megaCredits += 6;
+        player.megaCredits += 4;
         player.addResourceTo(this, 1);
       }
       return undefined;
