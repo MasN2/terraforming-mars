@@ -36,6 +36,10 @@ export class UnitedNationsMagnetizerProject extends Card implements IActionCard,
     });
   }
 
+  public getVictoryPoints(player: Player) {
+    return Math.floor(player.getTerraformRating() / 3);
+  }
+
   public play(player: Player) {
     player.addProduction(Resources.ENERGY, 1);
     return undefined;
