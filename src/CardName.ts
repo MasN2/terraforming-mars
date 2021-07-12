@@ -509,6 +509,7 @@ export enum CardName {
     REDWING = 'Redwing',
     LT_CONGLOMERATE_MARS = 'LT Conglomerate Mars',
     IMPACT = 'Impact',
+    UNITED_NATIONS_MAGNETIZER_PROJECT = 'United Nations Magnetizer Project',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',

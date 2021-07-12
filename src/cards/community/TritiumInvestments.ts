@@ -1,7 +1,7 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Player} from '../../Player';
 import {Tags} from '../Tags';
-import {IActionCard, IResourceCard} from '../ICard';
+import {IActionCard} from '../ICard';
 import {CardName} from '../../CardName';
 import {CardType} from '../CardType';
 import {Card} from '../Card';
@@ -9,7 +9,7 @@ import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../render/Size';
 import {Resources} from '../../Resources';
 
-export class TritiumInvestments extends Card implements IActionCard, CorporationCard, IResourceCard {
+export class TritiumInvestments extends Card implements IActionCard, CorporationCard {
   constructor() {
     super({
       name: CardName.TRITIUM_INVESTMENTS,

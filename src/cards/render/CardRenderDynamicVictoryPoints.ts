@@ -22,6 +22,11 @@ export class CardRenderDynamicVictoryPoints {
   public static animals(points: number, target: number): CardRenderDynamicVictoryPoints {
     return new CardRenderDynamicVictoryPoints(new CardRenderItem(CardRenderItemType.ANIMALS), points, target);
   }
+  public static tr(points: number, target: number): CardRenderDynamicVictoryPoints {
+    const item = new CardRenderItem(CardRenderItemType.TR);
+    item.size = Size.SMALL;
+    return new CardRenderDynamicVictoryPoints(item, points, target);
+  }
   public static oceans(points: number, target: number): CardRenderDynamicVictoryPoints {
     const item = new CardRenderItem(CardRenderItemType.OCEANS);
     item.size = Size.SMALL;
