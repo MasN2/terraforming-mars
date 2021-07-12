@@ -8,11 +8,11 @@ import {ISpace} from '../../boards/ISpace';
 import {Resources} from '../../Resources';
 import {CardName} from '../../CardName';
 import {Priority} from '../../deferredActions/DeferredAction';
-import {GainResources} from '../../deferredActions/GainResources';
 import {GainProduction} from '../../deferredActions/GainProduction';
 import {Board} from '../../boards/Board';
 import {CardType} from '../CardType';
 import {CardRenderer} from '../render/CardRenderer';
+import {CardRenderDynamicVictoryPoints} from '../render/CardRenderDynamicVictoryPoints';
 import {Size} from '../render/Size';
 
 export class TharsisRepublic extends Card implements CorporationCard {
@@ -22,24 +22,27 @@ export class TharsisRepublic extends Card implements CorporationCard {
       name: CardName.THARSIS_REPUBLIC,
       tags: [Tags.CITY, Tags.BUILDING],
       initialActionText: 'Place a city tile',
-      startingMegaCredits: 40,
+      startingMegaCredits: 46,
 
       metadata: {
         cardNumber: 'R31',
-        description: 'You start with 40 M€. As your first action in the game, place a city tile.',
+        description: 'You start with 46 M€. As your first action in the game, place a city tile.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(40).nbsp.city();
+          b.megacredits(46).nbsp.city();
           b.corpBox('effect', (ce) => {
-            ce.effect('When any city tile is placed ON MARS, increase your M€ production 1 step. When you place a city tile, gain 3 M€.', (eb) => {
-              eb.city(Size.SMALL).any.asterix().colon();
-              eb.production((pb) => pb.megacredits(1)).nbsp;
-              eb.city(Size.SMALL).startEffect.megacredits(3);
+            ce.effect('When any city tile is placed ON MARS, increase your M€ production 1 step. 1 VP per two city tiles you have.', (eb) => {
+              eb.city(Size.MEDIUM).any.asterix().startEffect.production((pb) => pb.megacredits(1));
             });
           });
         }),
+        victoryPoints: CardRenderDynamicVictoryPoints.cities(1, 2),
       },
     });
+  }
+
+  public getVictoryPoints(player: Player) {
+    return Math.floor(player.game.board.spaces.filter((space) => Board.isCitySpace(space) && space.player !== undefined && space.player === player).length / 2);
   }
 
   public initialAction(player: Player) {
@@ -52,9 +55,6 @@ export class TharsisRepublic extends Card implements CorporationCard {
 
   public onTilePlaced(cardOwner: Player, activePlayer: Player, space: ISpace) {
     if (Board.isCitySpace(space)) {
-      if (cardOwner.id === activePlayer.id) {
-        cardOwner.game.defer(new GainResources(cardOwner, Resources.MEGACREDITS, {count: 3}));
-      }
       if (space.spaceType !== SpaceType.COLONY) {
         cardOwner.game.defer(
           new GainProduction(cardOwner, Resources.MEGACREDITS),
