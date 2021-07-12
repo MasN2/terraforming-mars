@@ -31,7 +31,7 @@ export class UnitedNationsMagnetizerProject extends Card implements IActionCard,
             });
           });
         }),
-      victoryPoints: CardRenderDynamicVictoryPoints.tr(1, 3),
+        victoryPoints: CardRenderDynamicVictoryPoints.tr(1, 3),
       },
     });
   }
