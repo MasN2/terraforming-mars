@@ -16,7 +16,7 @@ export class UnitedNationsMagnetizerProject extends Card implements IActionCard,
   constructor() {
     super({
       name: CardName.UNITED_NATIONS_MAGNETIZER_PROJECT,
-      tags: [Tags.EARTH, Tags.Building],
+      tags: [Tags.EARTH, Tags.BUILDING],
       startingMegaCredits: 35,
       cardType: CardType.CORPORATION,
       metadata: {
