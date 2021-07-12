@@ -15,17 +15,17 @@ export class Impact extends Card implements IActionCard, CorporationCard {
     super({
       name: CardName.IMPACT,
       tags: [],
-      startingMegaCredits: 34,
+      startingMegaCredits: 39,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 34 M€.',
+        description: 'You start with 39 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(34);
+          b.megacredits(39);
           b.corpBox('action', (ce) => {
-            ce.action('Raise temperature 8 steps, remove up to 16 plants from any player, and put this card face-down in your EVENTS pile. Activate only during generation 4 or later.', (eb) => {
-              eb.empty().startAction.temperature(8).minus().plants(-16).any.event().played;
+            ce.action('Raise temperature 7 steps, remove up to 14 plants from any player, and put this card face-down in your EVENTS pile. Activate only during generation 4 or later.', (eb) => {
+              eb.empty().startAction.temperature(7).minus().plants(-14).any.event().played;
             });
           });
         }),
@@ -43,7 +43,7 @@ export class Impact extends Card implements IActionCard, CorporationCard {
     if (this.isDisabled) return false;
     if (player.game.generation < 4) return false;
     const remainingTemperatureSteps = (MAX_TEMPERATURE - player.game.getTemperature()) / 2;
-    const stepsRaised = Math.min(remainingTemperatureSteps, 8);
+    const stepsRaised = Math.min(remainingTemperatureSteps, 7);
 
     if (PartyHooks.shouldApplyPolicy(player.game, PartyName.REDS)) {
       return player.canAfford(REDS_RULING_POLICY_COST * stepsRaised);
@@ -54,8 +54,8 @@ export class Impact extends Card implements IActionCard, CorporationCard {
   public action(player: Player) {
     player.game.increaseTemperature(player, 3);
     player.game.increaseTemperature(player, 3);
-    player.game.increaseTemperature(player, 2);
-    player.game.defer(new RemoveAnyPlants(player, 16));
+    player.game.increaseTemperature(player, 1);
+    player.game.defer(new RemoveAnyPlants(player, 14));
     this.isDisabled = true;
     return undefined;
   }
