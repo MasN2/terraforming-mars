@@ -796,13 +796,6 @@ export class Game implements ISerializable<SerializedGame> {
     });
 
     if (this.gameIsOver()) {
-      if (this.generation === this.lastSoloGeneration() + 1) {
-        this.claimedMilestones.push({
-          player: this.players[0],
-          milestone: this.milestones[0],
-          vp: -20,
-        });
-      }
       this.gotoFinalGreeneryPlacement();
       return;
     }

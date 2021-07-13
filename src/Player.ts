@@ -1612,7 +1612,10 @@ export class Player implements ISerializable<SerializedPlayer> {
   private giveAwards(): void {
     this.game.fundedAwards.forEach((fundedAward) => {
       // Awards are disabled for 1 player games
-      if (this.game.isSoloMode()) return;
+      if (this.game.isSoloMode()) {
+        if (this.game.generation === 9) this.victoryPointsBreakdown.setVictoryPoints('awards', -20, 'Engine Builder');
+        return;
+      }
 
       const players: Array<Player> = this.game.getPlayers().slice();
       players.sort(
