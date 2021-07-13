@@ -270,6 +270,7 @@ export class Game implements ISerializable<SerializedGame> {
 
       players[0].setTerraformRating(22); // Variant: 20 TR, 8 gens
       players[0].terraformRatingAtGenerationStart = 22;
+      gameOptions.preludeExtension = true;
     }
 
     const game = new Game(id, players, firstPlayer, activePlayer, gameOptions, seed, board, dealer);
