@@ -561,6 +561,9 @@ export class Game implements ISerializable<SerializedGame> {
   }
 
   public isSoloModeWin(): boolean {
+    // Failing to terraform mars by gen 8 causes an extra gen and -20 VP
+    if (this.players.length === 1) return true;
+
     // Solo TR victory condition
     if (this.gameOptions.soloTR) {
       return this.players[0].getTerraformRating() >= 63;
@@ -771,8 +774,9 @@ export class Game implements ISerializable<SerializedGame> {
 
   public gameIsOver(): boolean {
     if (this.isSoloMode()) {
-      // Solo games continue until the designated generation end even if Mars is already terraformed
-      return this.generation === this.lastSoloGeneration();
+      if (this.generation === this.lastSoloGeneration() && this.marsIsTerraformed()) return true;
+      // Solo games go an extra generation with -20 VP if mars isn't terraformed
+      return this.generation === this.lastSoloGeneration() + 1;
     }
     return this.marsIsTerraformed();
   }
@@ -791,6 +795,13 @@ export class Game implements ISerializable<SerializedGame> {
     });
 
     if (this.gameIsOver()) {
+      if (this.generation === this.lastSoloGeneration() + 1) {
+        this.claimedMilestones.push({
+          player: this.players[0],
+          milestone: this.milestones[0],
+          vp: -20,
+        });
+      }
       this.gotoFinalGreeneryPlacement();
       return;
     }
