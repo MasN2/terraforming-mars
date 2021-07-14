@@ -17,14 +17,14 @@ export class UnitedNationsMagnetizerProject extends Card implements IActionCard,
     super({
       name: CardName.UNITED_NATIONS_MAGNETIZER_PROJECT,
       tags: [Tags.EARTH, Tags.BUILDING],
-      startingMegaCredits: 35,
+      startingMegaCredits: 33,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 35 M€ and 1 energy production. 1 additional VP per three TR you have.',
+        description: 'You start with 33 M€ and 1 energy production. 1 additional VP per three TR you have.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(35).production((pb) => pb.energy(1));
+          b.megacredits(33).production((pb) => pb.energy(1));
           b.corpBox('action', (ce) => {
             ce.action('Decrease your Energy production 1 step to increase your terraform rating 1 step.', (eb) => {
               eb.production((pb) => pb.energy(1)).startAction.tr(1);
