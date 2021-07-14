@@ -20,15 +20,15 @@ export class PharmacyUnion extends Card implements CorporationCard {
     super({
       cardType: CardType.CORPORATION,
       name: CardName.PHARMACY_UNION,
-      startingMegaCredits: 47, // 51 minus 4 for the diesease
+      startingMegaCredits: 49, // 53 minus 4 for the diesease
       resourceType: ResourceType.DISEASE,
 
       metadata: {
         cardNumber: 'R39',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(51).disease();
+          b.megacredits(53).disease();
           // blank space after MC is on purpose
-          b.text('(You start with 51 M€ . Add a disease here.)', Size.TINY, false, false);
+          b.text('(You start with 53 M€ . Add a disease here.)', Size.TINY, false, false);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {

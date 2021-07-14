@@ -18,7 +18,7 @@ import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {BigOxide} from './BigOxide';
 import {SuperEffective} from './SuperEffective';
 import {NonIpsePotestIuppiter} from './NonIpsePotestIuppiter';
-import {OuterPlanetAlliance} from './OuterPlanetAlliance';
+// import {OuterPlanetAlliance} from './OuterPlanetAlliance';
 import {MarsAnalysts} from './MarsAnalysts';
 import {Redwing} from './Redwing';
 import {LTConglomerateMars} from './LTConglomerateMars';
@@ -44,7 +44,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.BIG_OXIDE, Factory: BigOxide, compatibility: GameModule.Venus},
     {cardName: CardName.SUPER_EFFECTIVE, Factory: SuperEffective},
     {cardName: CardName.NON_IPSE_POTEST_IUPPITER, Factory: NonIpsePotestIuppiter},
-    {cardName: CardName.OUTER_PLANET_ALLIANCE, Factory: OuterPlanetAlliance},
+    // {cardName: CardName.OUTER_PLANET_ALLIANCE, Factory: OuterPlanetAlliance},
     {cardName: CardName.MARS_ANALYSTS, Factory: MarsAnalysts, compatibility: GameModule.Turmoil},
     {cardName: CardName.REDWING, Factory: Redwing},
     {cardName: CardName.LT_CONGLOMERATE_MARS, Factory: LTConglomerateMars},

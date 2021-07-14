@@ -13,14 +13,14 @@ export class LTConglomerateMars extends Card implements CorporationCard {
     super({
       name: CardName.LT_CONGLOMERATE_MARS,
       tags: [Tags.EARTH],
-      startingMegaCredits: 34,
+      startingMegaCredits: 33,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 34 MC and 13 MC production.',
+        description: 'You start with 33 MC and 13 MC production.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(34).nbsp.production((pb) => pb.megacredits(13));
+          b.megacredits(33).nbsp.production((pb) => pb.megacredits(13));
           b.corpBox('effect', (ce) => {
             ce.action('After production on generation 5 only, -39 MC.', (eb) => {
               eb.production((pb) => pb.text('generation 5', Size.SMALL, true)).startEffect.megacredits(-39);

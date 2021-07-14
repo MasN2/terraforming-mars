@@ -15,14 +15,14 @@ export class FuelGreen extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.FUEL_GREEN,
       tags: [Tags.PLANT, Tags.ENERGY],
-      startingMegaCredits: 35,
+      startingMegaCredits: 34,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 4 plant produciton and 35 M€.',
+        description: 'You start with 4 plant produciton and 34 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.production((pb) => pb.plants(4)).megacredits(35);
+          b.production((pb) => pb.plants(4)).megacredits(34);
           b.corpBox('action', (ce) => {
             ce.action('Spend any amount of Plants and gain that amount of Energy.', (eb) => {
               eb.text('x').plants(1).startAction.text('x').energy(1);

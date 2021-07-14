@@ -15,14 +15,14 @@ export class SuperEffective extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.SUPER_EFFECTIVE,
       tags: [Tags.WILDCARD],
-      startingMegaCredits: 40,
+      startingMegaCredits: 39,
 
       metadata: {
         cardNumber: 'R38',
-        description: 'You start with 40 M€.',
+        description: 'You start with 39 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(40);
+          b.megacredits(39);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {

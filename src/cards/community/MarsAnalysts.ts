@@ -12,15 +12,15 @@ export class MarsAnalysts extends Card implements CorporationCard {
     super({
       name: CardName.MARS_ANALYSTS,
       tags: [Tags.BUILDING, Tags.SCIENCE],
-      startingMegaCredits: 36,
+      startingMegaCredits: 34,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 1 steel production, and 36 M€.',
+        description: 'You start with 1 steel production, and 34 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.production((pb) => pb.steel(1)).nbsp.megacredits(36);
+          b.production((pb) => pb.steel(1)).nbsp.megacredits(34);
           b.corpBox('effect', (ce) => {
             ce.effect('You have +3 influence.', (eb) => {
               eb.startEffect.influence(3);

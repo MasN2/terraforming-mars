@@ -18,15 +18,15 @@ export class RobinsonIndustries extends Card implements IActionCard, Corporation
       cardType: CardType.CORPORATION,
       name: CardName.ROBINSON_INDUSTRIES,
       tags: [Tags.WILDCARD],
-      startingMegaCredits: 43,
+      startingMegaCredits: 41,
       productionBox: Units.of({megacredits: 2}),
 
       metadata: {
         cardNumber: 'R27',
-        description: 'You start with 43 M€ and 2 MC production.',
+        description: 'You start with 41 M€ and 2 MC production.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.production((pb) => pb.megacredits(2)).megacredits(43);
+          b.production((pb) => pb.megacredits(2)).megacredits(41);
           b.corpBox('action', (ce) => {
             ce.action('Spend 4 M€ to increase (one of) your LOWEST production 1 step.', (eb) => {
               eb.megacredits(4).startAction.production((pb) => pb.wild(1).asterix());

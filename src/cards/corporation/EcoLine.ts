@@ -17,14 +17,14 @@ export class EcoLine extends Card implements CorporationCard {
       cardType: CardType.CORPORATION,
       name: CardName.ECOLINE,
       tags: [Tags.PLANT, Tags.MICROBE],
-      startingMegaCredits: 39,
+      startingMegaCredits: 35,
 
       metadata: {
         cardNumber: 'R17',
-        description: 'You start with 3 plant production, and 39 M€.',
+        description: 'You start with 3 plant production, and 35 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.production((pb) => pb.plants(3)).nbsp.megacredits(39);
+          b.production((pb) => pb.plants(3)).nbsp.megacredits(35);
           b.corpBox('effect', (ce) => {
             ce.effect('Each time you play a plant or microbe tag, including these, gain 2 MC or 1 plant.', (eb) => {
               eb.plants(1).played.slash().microbes(1).played.startEffect.megacredits(2).slash().plants(1);
