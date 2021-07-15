@@ -240,10 +240,10 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getEnceladus()" class="colony-grid-container2">
+      <div>1</div>
       <div>2</div>
       <div>2</div>
       <div>3</div>
-      <div>4</div>
       <div>4</div>
       <div>5</div>
       <div>6</div>
@@ -598,9 +598,9 @@ export const Colony = Vue.component('colony', {
     <div>2</div>
     <div>2</div>
     <div>3</div>
-    <div>3</div>
     <div>4</div>
     <div>5</div>
+    <div>6</div>
   </div>
 
   </div>

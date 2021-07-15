@@ -11,6 +11,6 @@ export class Enceladus extends Colony {
     public buildType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
     public buildQuantity = [4, 4, 4];
     public tradeType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
-    public tradeQuantity = [2, 2, 3, 4, 4, 5, 6];
+    public tradeQuantity = [1, 2, 2, 3, 4, 5, 6];
     public colonyBonusType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
 }
