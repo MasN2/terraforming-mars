@@ -14,14 +14,14 @@ export class TritiumInvestments extends Card implements IActionCard, Corporation
     super({
       name: CardName.TRITIUM_INVESTMENTS,
       tags: [Tags.EARTH, Tags.EARTH],
-      startingMegaCredits: 35,
+      startingMegaCredits: 33,
       cardType: CardType.CORPORATION,
       metadata: {
         cardNumber: '',
-        description: 'You start with 35 M€.',
+        description: 'You start with 33 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(35);
+          b.megacredits(33);
           b.corpBox('action', (ce) => {
             ce.action('Increase your MC production by the current generation number.', (eb) => {
               eb.empty().startAction.production((pb) => pb.megacredits(1).slash().text('generation', Size.SMALL, true));
