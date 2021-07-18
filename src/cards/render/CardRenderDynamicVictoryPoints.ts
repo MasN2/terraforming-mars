@@ -27,6 +27,12 @@ export class CardRenderDynamicVictoryPoints {
     item.size = Size.SMALL;
     return new CardRenderDynamicVictoryPoints(item, points, target);
   }
+  public static cards(points: number, target: number, any: boolean = false): CardRenderDynamicVictoryPoints {
+    const item = new CardRenderItem(CardRenderItemType.CARDS);
+    item.size = Size.SMALL;
+    item.anyPlayer = any;
+    return new CardRenderDynamicVictoryPoints(item, points, target);
+  }
   public static oceans(points: number, target: number): CardRenderDynamicVictoryPoints {
     const item = new CardRenderItem(CardRenderItemType.OCEANS);
     item.size = Size.SMALL;
