@@ -1,6 +1,7 @@
 import {CorporationCard} from '../corporation/CorporationCard';
 import {Tags} from '../Tags';
 import {Player} from '../../Player';
+import {Resources} from '../../Resources';
 import {ISpace} from '../../boards/ISpace';
 import {TileType} from '../../TileType';
 import {Card} from '../Card';
