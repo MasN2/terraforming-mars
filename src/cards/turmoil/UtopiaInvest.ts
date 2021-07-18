@@ -14,7 +14,7 @@ export class UtopiaInvest extends Card implements IActionCard, CorporationCard {
   constructor() {
     super({
       name: CardName.UTOPIA_INVEST,
-      tags: [Tags.BUILDING],
+      tags: [Tags.BUILDING, Tags.SPACE],
       startingMegaCredits: 40,
       cardType: CardType.CORPORATION,
 

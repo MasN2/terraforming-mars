@@ -46,8 +46,8 @@ export class LakefrontResorts extends Card implements CorporationCard {
 
   public play(player: Player) {
     if (player.game.getPlayers().length === 1) {
-      // Get bonus for 3 starting oceans
-      player.addProduction(Resources.MEGACREDITS, 3);
+      // Get bonus for 1 starting ocean
+      player.addProduction(Resources.MEGACREDITS, 1);
     }
     return undefined;
   }
