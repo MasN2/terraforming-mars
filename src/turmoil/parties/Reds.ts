@@ -32,8 +32,8 @@ class RedsBonus01 implements Bonus {
     const min = players[0].getTerraformRating();
 
     while (players.length > 0 && players[0].getTerraformRating() === min) {
-	  players[0].increaseTerraformRating();
-	  players.shift();
+      players[0].increaseTerraformRating();
+      players.shift();
     }
   }
 }

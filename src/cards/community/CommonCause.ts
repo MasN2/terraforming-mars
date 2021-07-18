@@ -24,7 +24,7 @@ export class CommonCause extends Card implements CorporationCard {
           b.br;
           b.megacredits(45).production((pb) => pb.plants(2));
           b.corpBox('effect', (ce) => {
-            ce.effect('When any player places a greenery, they draw a card. 1 VP per 2 cards in any player's hand.', (eb) => {
+            ce.effect('When any player places a greenery, they draw a card. 1 VP per 2 cards in any players hand.', (eb) => {
               eb.greenery().any.startEffect.cards(1).any;
             });
           });
