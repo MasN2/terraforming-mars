@@ -13,7 +13,7 @@ import {Card} from '../Card';
 export class VenusianInsectsAutomate extends Card implements IProjectCard, IResourceCard {
   constructor() {
     super({
-      name: CardName.VENUSIAN_INSECTS,
+      name: CardName.VENUSIAN_INSECTS_AUTOMATE,
       cardType: CardType.ACTIVE,
       tags: [Tags.VENUS, Tags.MICROBE],
       cost: 3,
