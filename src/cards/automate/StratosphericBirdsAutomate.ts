@@ -14,7 +14,7 @@ import {Card} from '../Card';
 export class StratosphericBirdsAutomate extends Card implements IProjectCard, IResourceCard {
   constructor() {
     super({
-      name: CardName.STRATOSPHERIC_BIRDS,
+      name: CardName.STRATOSPHERIC_BIRDS_AUTOMATE,
       cardType: CardType.ACTIVE,
       tags: [Tags.VENUS, Tags.ANIMAL],
       cost: 10,
