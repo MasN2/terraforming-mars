@@ -1,3 +1,4 @@
+import {Tags} from '../Tags';
 import {Player} from '../../Player';
 import {PreludeCard} from './PreludeCard';
 import {CardName} from '../../CardName';
@@ -7,6 +8,7 @@ export class Donation extends PreludeCard {
   constructor() {
     super({
       name: CardName.DONATION,
+      tags: [Tags.EARTH],
 
       metadata: {
         cardNumber: 'P08',
