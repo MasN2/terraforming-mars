@@ -6,11 +6,11 @@ import {Europa} from '../../colonies/Europa';
 import {Ganymede} from '../../colonies/Ganymede';
 import {Io} from '../../colonies/Io';
 import {Luna} from '../../colonies/Luna';
-import {Miranda} from '../../colonies/Miranda';
+// import {Miranda} from '../../colonies/Miranda';
 import {Pluto} from '../../colonies/Pluto';
-import {Titan} from '../../colonies/Titan';
+// import {Titan} from '../../colonies/Titan';
 import {Triton} from '../../colonies/Triton';
-import {Enceladus} from '../../colonies/Enceladus';
+// import {Enceladus} from '../../colonies/Enceladus';
 import {ColonyName} from '../../colonies/ColonyName';
 import {Iapetus} from '../../cards/community/Iapetus';
 import {Mercury} from '../../cards/community/Mercury';
@@ -23,14 +23,14 @@ import {Pallas} from '../../cards/community/Pallas';
 const officialColonies: Array<Colony> = [
   new Callisto(),
   new Ceres(),
-  new Enceladus(),
+  // new Enceladus(),
   new Europa(),
   new Ganymede(),
   new Io(),
   new Luna(),
-  new Miranda(),
+  // new Miranda(),
   new Pluto(),
-  new Titan(),
+  // new Titan(),
   new Triton(),
 ];
 
