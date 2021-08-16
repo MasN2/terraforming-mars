@@ -40,7 +40,7 @@ import {DeferredActionsQueue} from './deferredActions/DeferredActionsQueue';
 import {SelectHowToPayDeferred} from './deferredActions/SelectHowToPayDeferred';
 import {SelectInitialCards} from './inputs/SelectInitialCards';
 import {PlaceOceanTile} from './deferredActions/PlaceOceanTile';
-import {RemoveColonyFromGame} from './deferredActions/RemoveColonyFromGame';
+// import {RemoveColonyFromGame} from './deferredActions/RemoveColonyFromGame';
 import {GainResources} from './deferredActions/GainResources';
 import {SelectSpace} from './inputs/SelectSpace';
 import {SerializedGame} from './SerializedGame';

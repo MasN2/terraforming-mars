@@ -1,6 +1,7 @@
 import {Colony} from './Colony';
 import {ColonyName} from './ColonyName';
 import {ColonyBenefit} from './ColonyBenefit';
+import {ResourceType} from '../ResourceType';
 
 export class Pluto extends Colony {
     public name = ColonyName.PLUTO;

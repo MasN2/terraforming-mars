@@ -2,6 +2,7 @@ import {Colony} from './Colony';
 import {Resources} from '../Resources';
 import {ColonyName} from './ColonyName';
 import {ColonyBenefit} from './ColonyBenefit';
+import {ResourceType} from '../ResourceType';
 
 export class Ganymede extends Colony {
     public name = ColonyName.GANYMEDE;
