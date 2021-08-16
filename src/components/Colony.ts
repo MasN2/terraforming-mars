@@ -163,9 +163,6 @@ export const Colony = Vue.component('colony', {
       <span v-if="colony.name === getLeavitt()"><br></span>
       <span v-if="colony.name === getLeavitt()" style="font-size: 14px; margin-left: 10px;">BUY OR DISCARD IT.</span>
 
-      <span v-if="colony.name === getPluto()" class="white-char" style="margin-left:5px;">+</span>
-      <div v-if="colony.name === getPluto()" class="resource card card-with-border" style="transform: scale(0.8);margin-left:-2px;"></div>
-      <span v-if="colony.name === getPluto()" class="white-char">-</span>
       <div v-if="colony.name === getPluto()" class="resource card card-with-border" style="transform: scale(0.8);margin-left:-2px;"></div>
 
       <span v-if="colony.name !== getTitania()" class="colony-background-color">
@@ -250,18 +247,9 @@ export const Colony = Vue.component('colony', {
     </div>
 
     <div v-if="colony.name === getPluto()" class="colony-grid-container">
-      <div>
-        <div class="resource card card-with-border" style="margin-top: 0px; margin-left: -5px; transform: scale(0.8);"></div>
-        <div class="resource card card-with-border" style="position absolute; margin: 0 0 0 -30px; transform: scale(0.8);"></div>
-      </div>
-      <div>
-        <div class="resource card card-with-border" style="margin-top: 0px; margin-left: -5px; transform: scale(0.8);"></div>
-        <div class="resource card card-with-border" style="position absolute; margin: 0 0 0 -30px; transform: scale(0.8);"></div>
-      </div>
-      <div>
-        <div class="resource card card-with-border" style="margin-top: 0px; margin-left: -5px; transform: scale(0.8);"></div>
-        <div class="resource card card-with-border" style="position absolute; margin: 0 0 0 -30px; transform: scale(0.8);"></div>
-      </div>
+      <div><div class="resource animal" style="margin-top:11px;"></div></div>
+      <div><div class="resource animal" style="margin-top:11px;"></div></div>
+      <div><div class="resource animal" style="margin-top:11px;"></div></div>
       <div></div>
       <div></div>
       <div></div>
@@ -374,16 +362,17 @@ export const Colony = Vue.component('colony', {
 
     <div v-if="colony.name === getTriton()" class="colony-grid-container">
       <div>
-        <div class="colony-placement-bonus resource triple-res titanium white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
       </div>
 
       <div>
-        <div class="colony-placement-bonus resource triple-res titanium white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
       </div>
 
       <div>
-        <div class="colony-placement-bonus resource triple-res titanium white-x white-x--3"></div>
+        <div class="colony-placement-bonus triple-res resource floater white-x white-x--4"></div>
       </div>
+
       <div></div>
       <div></div>
       <div></div>
@@ -400,9 +389,18 @@ export const Colony = Vue.component('colony', {
     </div>
 
     <div v-if="colony.name === getGanymede()" class="colony-grid-container">
-      <div><div class="production-box"><div class="production plant"></div></div></div>
-      <div><div class="production-box"><div class="production plant"></div></div></div>
-      <div><div class="production-box"><div class="production plant"></div></div></div>
+      <div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+      </div>
+
+      <div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+      </div>
+
+      <div>
+        <div class="colony-placement-bonus triple-res resource microbe white-x white-x--3"></div>
+      </div>
+
       <div></div>
       <div></div>
       <div></div>

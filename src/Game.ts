@@ -751,7 +751,6 @@ export class Game implements ISerializable<SerializedGame> {
     }
     if (this.players.length === 1 && this.gameOptions.coloniesExtension) {
       this.players[0].addProduction(Resources.MEGACREDITS, -2);
-      this.defer(new RemoveColonyFromGame(this.players[0]));
     }
     if (this.players.length === 1 && this.gameOptions.turmoilExtension) {
       this.players[0].decreaseTerraformRatingSteps(3);

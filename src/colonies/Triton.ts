@@ -5,10 +5,10 @@ import {Resources} from '../Resources';
 
 export class Triton extends Colony {
     public name = ColonyName.TRITON;
-    public description = 'Titanium';
-    public buildType = ColonyBenefit.GAIN_RESOURCES;
-    public buildQuantity = [3, 3, 3];
-    public buildResource = Resources.TITANIUM;
+    public description = 'Floaters/Titanium';
+    public resourceType = ResourceType.FLOATER;
+    public buildType = ColonyBenefit.ADD_RESOURCES_TO_CARD;
+    public buildQuantity = [4, 4, 4];
     public tradeType = ColonyBenefit.GAIN_RESOURCES;
     public tradeQuantity = [1, 1, 2, 2, 3, 4, 5];
     public tradeResource = Resources.TITANIUM;

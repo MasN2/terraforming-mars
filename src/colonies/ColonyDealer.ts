@@ -1,15 +1,15 @@
 import {Colony} from './Colony';
 import {Europa} from './Europa';
 import {Ganymede} from './Ganymede';
-import {Titan} from './Titan';
+//import {Titan} from './Titan';
 import {Callisto} from './Callisto';
 import {Triton} from './Triton';
 import {Ceres} from './Ceres';
 import {Luna} from './Luna';
 import {Io} from './Io';
-import {Miranda} from './Miranda';
+//import {Miranda} from './Miranda';
 import {Pluto} from './Pluto';
-import {Enceladus} from './Enceladus';
+//import {Enceladus} from './Enceladus';
 import {Iapetus} from '../cards/community/Iapetus';
 import {Mercury} from '../cards/community/Mercury';
 import {ColonyName} from './ColonyName';
@@ -28,13 +28,13 @@ export interface IColonyFactory<T> {
 // ALL COLONIES TILES is now a const not and attribute of Colony Dealer
 export const ALL_COLONIES_TILES: Array<IColonyFactory<Colony>> = [
   {colonyName: ColonyName.CERES, Factory: Ceres},
-  {colonyName: ColonyName.ENCELADUS, Factory: Enceladus},
+  //{colonyName: ColonyName.ENCELADUS, Factory: Enceladus},
   {colonyName: ColonyName.EUROPA, Factory: Europa},
   {colonyName: ColonyName.GANYMEDE, Factory: Ganymede},
   {colonyName: ColonyName.IO, Factory: Io},
   {colonyName: ColonyName.LUNA, Factory: Luna},
-  {colonyName: ColonyName.MIRANDA, Factory: Miranda},
-  {colonyName: ColonyName.TITAN, Factory: Titan},
+  //{colonyName: ColonyName.MIRANDA, Factory: Miranda},
+  //{colonyName: ColonyName.TITAN, Factory: Titan},
   {colonyName: ColonyName.CALLISTO, Factory: Callisto},
   {colonyName: ColonyName.PLUTO, Factory: Pluto},
   {colonyName: ColonyName.TRITON, Factory: Triton},
@@ -102,11 +102,6 @@ export class ColonyDealer {
 
       if (allowList.length === 0) {
         colonyTiles.forEach((e) => allowList.push(e.colonyName));
-      }
-      if (players === 1) {
-        count = 4;
-      } else if (players === 2) {
-        count = 5;
       }
 
       const tempDeck = this.shuffle(
