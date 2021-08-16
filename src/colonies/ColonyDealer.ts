@@ -1,15 +1,15 @@
 import {Colony} from './Colony';
 import {Europa} from './Europa';
 import {Ganymede} from './Ganymede';
-//import {Titan} from './Titan';
+// import {Titan} from './Titan';
 import {Callisto} from './Callisto';
 import {Triton} from './Triton';
 import {Ceres} from './Ceres';
 import {Luna} from './Luna';
 import {Io} from './Io';
-//import {Miranda} from './Miranda';
+// import {Miranda} from './Miranda';
 import {Pluto} from './Pluto';
-//import {Enceladus} from './Enceladus';
+// import {Enceladus} from './Enceladus';
 import {Iapetus} from '../cards/community/Iapetus';
 import {Mercury} from '../cards/community/Mercury';
 import {ColonyName} from './ColonyName';
@@ -28,13 +28,13 @@ export interface IColonyFactory<T> {
 // ALL COLONIES TILES is now a const not and attribute of Colony Dealer
 export const ALL_COLONIES_TILES: Array<IColonyFactory<Colony>> = [
   {colonyName: ColonyName.CERES, Factory: Ceres},
-  //{colonyName: ColonyName.ENCELADUS, Factory: Enceladus},
+  // {colonyName: ColonyName.ENCELADUS, Factory: Enceladus},
   {colonyName: ColonyName.EUROPA, Factory: Europa},
   {colonyName: ColonyName.GANYMEDE, Factory: Ganymede},
   {colonyName: ColonyName.IO, Factory: Io},
   {colonyName: ColonyName.LUNA, Factory: Luna},
-  //{colonyName: ColonyName.MIRANDA, Factory: Miranda},
-  //{colonyName: ColonyName.TITAN, Factory: Titan},
+  // {colonyName: ColonyName.MIRANDA, Factory: Miranda},
+  // {colonyName: ColonyName.TITAN, Factory: Titan},
   {colonyName: ColonyName.CALLISTO, Factory: Callisto},
   {colonyName: ColonyName.PLUTO, Factory: Pluto},
   {colonyName: ColonyName.TRITON, Factory: Triton},
@@ -94,7 +94,7 @@ export class ColonyDealer {
       this.discardedColonies.push(card);
     }
     public drawColonies(players: number, allowList: Array<ColonyName> = [], venusNextExtension: boolean, turmoilExtension: boolean, addCommunityColonies: boolean = false): Array<Colony> {
-      let count: number = players + 2;
+      const count: number = players + 2;
       let colonyTiles = ALL_COLONIES_TILES;
       if (addCommunityColonies) colonyTiles = colonyTiles.concat(COMMUNITY_COLONIES_TILES);
       if (!venusNextExtension) colonyTiles = colonyTiles.filter((c) => c.colonyName !== ColonyName.VENUS);
