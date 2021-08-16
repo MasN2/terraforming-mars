@@ -92,7 +92,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
         {index: 8, name: '', color: Color.PINK, beginner: false, handicap: 0, first: false},
       ],
       corporateEra: true,
-      prelude: false,
+      prelude: true,
       draftVariant: true,
       initialDraft: false,
       randomMA: RandomMAOptionType.NONE,
@@ -416,12 +416,7 @@ export const CreateGameForm = Vue.component('create-game-form', {
       // Check custom colony count
       if (customColoniesList.length > 0) {
         const playersCount = players.length;
-        let neededColoniesCount = playersCount + 2;
-        if (playersCount === 1) {
-          neededColoniesCount = 4;
-        } else if (playersCount === 2) {
-          neededColoniesCount = 5;
-        }
+        const neededColoniesCount = playersCount + 2;
 
         if (customColoniesList.length < neededColoniesCount) {
           window.alert(translateTextWithParams('Must select at least ${0} colonies', [neededColoniesCount.toString()]));
