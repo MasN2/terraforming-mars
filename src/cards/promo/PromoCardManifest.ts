@@ -123,6 +123,7 @@ export const PROMO_CARD_MANIFEST = new CardManifest({
     CardName.CORPORATE_STRONGHOLD,
     CardName.EARTH_CATAPULT,
     CardName.TOLL_STATION,
+    CardName.ADAPTED_LICHEN,
   ],
 
   corporationCards: [
