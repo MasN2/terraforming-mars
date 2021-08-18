@@ -64,6 +64,7 @@ import {StandardProjectCard} from './cards/StandardProjectCard';
 import {ConvertPlants} from './cards/base/standardActions/ConvertPlants';
 import {ConvertHeat} from './cards/base/standardActions/ConvertHeat';
 import {Manutech} from './cards/venusNext/Manutech';
+import {SolarWind} from './cards/community/SolarWind';
 import {LunaProjectOffice} from './cards/moon/LunaProjectOffice';
 import {UnitedNationsMissionOne} from './cards/community/UnitedNationsMissionOne';
 import {PlaceMoonMineTile} from './moon/PlaceMoonMineTile';
@@ -390,6 +391,11 @@ export class Player implements ISerializable<SerializedPlayer> {
     // Manutech hook
     if (this.isCorporation(CardName.MANUTECH)) {
       Manutech.onProductionGain(this, resource, amount);
+    }
+
+    // Solar Wind hook
+    if (this.isCorporation(CardName.SOLAR_WIND)) {
+      SolarWind.onProductionGain(this, resource, amount);
     }
   };
 
