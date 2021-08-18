@@ -511,6 +511,7 @@ export enum CardName {
     IMPACT = 'Impact',
     UNITED_NATIONS_MAGNETIZER_PROJECT = 'United Nations Magnetizer Project',
     COMMON_CAUSE = 'Common Cause',
+    SOLAR_WIND = 'Solar Wind',
 
     // Community preludes
     VALUABLE_GASES = 'Valuable Gases',

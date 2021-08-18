@@ -25,6 +25,7 @@ import {LTConglomerateMars} from './LTConglomerateMars';
 import {Impact} from './Impact';
 import {UnitedNationsMagnetizerProject} from './UnitedNationsMagnetizerProject';
 import {CommonCause} from './CommonCause';
+import {SolarWind} from './SolarWind';
 
 export const COMMUNITY_CARD_MANIFEST = new CardManifest({
   module: GameModule.Community,
@@ -52,6 +53,7 @@ export const COMMUNITY_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.IMPACT, Factory: Impact},
     {cardName: CardName.UNITED_NATIONS_MAGNETIZER_PROJECT, Factory: UnitedNationsMagnetizerProject},
     {cardName: CardName.COMMON_CAUSE, Factory: CommonCause},
+    {cardName: CardName.SOLAR_WIND, Factory: SolarWind},
   ],
   preludeCards: [
     {
