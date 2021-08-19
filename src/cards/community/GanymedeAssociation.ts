@@ -22,6 +22,7 @@ export class GanymedeAssociation extends Card implements CorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.plants(1)).nbsp.megacredits(44).br;
           b.corpBox('effect', (ce) => {
+            ce.vSpace(Size.LARGE);
             ce.effect(undefined, (eb) => {
               eb.jovian().played.startEffect.megacredits(-1).slash().plants(1).played;
             });
