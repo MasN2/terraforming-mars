@@ -21,8 +21,14 @@ export class GanymedeAssociation extends Card implements CorporationCard {
         cardNumber: '',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.plants(1)).nbsp.megacredits(44).br;
-          b.effect('When you play a Jovian tag, you pay 1 M€ less for each Plant tag you have, and vice versa.', (eb) => {
-            eb.jovian().played.colon().megacredits(-1).slash().plants(1).played.nbsp.plants(1).played.startEffect.megacredits(-1).slash().jovian().played;
+          b.corpBox('effect', (ce) => {
+            ce.effect(undefined, (eb) => {
+              eb.jovian().played.startEffect.megacredits(-1).slash().plants(1).played;
+            });
+            ce.vSpace();
+            ce.effect('When you play a Jovian tag, you pay 1 M€ less for each Plant tag you have, and vice versa.', (eb) => {
+              eb.plants(1).played.startEffect.megacredits(-1).slash().jovian().played;
+            });
           });
         }),
       },
