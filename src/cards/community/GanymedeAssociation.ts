@@ -6,6 +6,7 @@ import {CorporationCard} from '../corporation/CorporationCard';
 import {IProjectCard} from '../IProjectCard';
 import {CardRenderer} from '../render/CardRenderer';
 import {Tags} from '../Tags';
+import {Resources} from '../../Resources';
 
 export class GanymedeAssociation extends Card implements CorporationCard {
   constructor() {
@@ -21,7 +22,7 @@ export class GanymedeAssociation extends Card implements CorporationCard {
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => pb.plants(1)).nbsp.megacredits(44).br;
           b.effect('When you play a Jovian tag, you pay 1 M€ less for each Plant tag you have, and vice versa.', (eb) => {
-            eb.jovian().played.colon().megacredits(-1).slash().plants().played.nbsp.plants().played.startEffect.megacredits(-1).slash().jovian().played;
+            eb.jovian().played.colon().megacredits(-1).slash().plants(1).played.nbsp.plants(1).played.startEffect.megacredits(-1).slash().jovian().played;
           });
         }),
       },
