@@ -7,6 +7,7 @@ import {IProjectCard} from '../IProjectCard';
 import {CardRenderer} from '../render/CardRenderer';
 import {Tags} from '../Tags';
 import {Resources} from '../../Resources';
+import {Size} from '../render/Size';
 
 export class GanymedeAssociation extends Card implements CorporationCard {
   constructor() {
