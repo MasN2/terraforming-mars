@@ -188,7 +188,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.LT_CONGLOMERATE_MARS:
         return '<div class="card-morning-star-logo">LT Conglomerate Mars</div>';
       case CardName.IMPACT:
-        return '<div class="card-pristar-logo">IMPACT</div>';
+        return '<div class="card-impact-logo">IMP⚠CT</div>';
       case CardName.UNITED_NATIONS_MAGNETIZER_PROJECT:
         return '<div class="card-morning-star-logo">UN Magnetizer Project</div>';
       case CardName.COMMON_CAUSE:
