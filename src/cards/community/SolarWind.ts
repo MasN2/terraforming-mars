@@ -12,15 +12,15 @@ export class SolarWind extends Card implements CorporationCard {
     super({
       name: CardName.SOLAR_WIND,
       tags: [Tags.SPACE, Tags.ENERGY],
-      startingMegaCredits: 44,
+      startingMegaCredits: 41,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: '',
-        description: 'You start with 44 M€, and 2 energy production.',
+        description: 'You start with 41 M€, and 2 energy production.',
         renderData: CardRenderer.builder((b) => {
           b.br.br;
-          b.megacredits(44).nbsp.production((pb) => pb.energy(2));
+          b.megacredits(41).nbsp.production((pb) => pb.energy(2));
           b.corpBox('effect', (ce) => {
             ce.effect('Whenever you increase energy production, including this, gain an equal amount of titanium.', (eb) => {
               eb.production((pb) => pb.energy(1)).startEffect.titanium(1);
