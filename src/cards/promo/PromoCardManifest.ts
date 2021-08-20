@@ -124,6 +124,7 @@ export const PROMO_CARD_MANIFEST = new CardManifest({
     CardName.EARTH_CATAPULT,
     CardName.TOLL_STATION,
     CardName.ADAPTED_LICHEN,
+    CardName.SOLETTA,
   ],
 
   corporationCards: [
