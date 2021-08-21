@@ -294,9 +294,9 @@ export const Colony = Vue.component('colony', {
       <div></div>
     </div>
     <div v-if="colony.name === getIo()" class="colony-grid-container2">
+      <div>4</div>
       <div>5</div>
       <div>6</div>
-      <div>7</div>
       <div>8</div>
       <div>10</div>
       <div>12</div>
