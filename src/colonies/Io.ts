@@ -8,7 +8,7 @@ export class Io extends Colony {
     public description = 'Heat';
     public buildType = ColonyBenefit.INCREASE_TEMPERATURE;
     public tradeType = ColonyBenefit.GAIN_RESOURCES;
-    public tradeQuantity = [4, 5, 6, 8, 10, 12, 15];
+    public tradeQuantity = [3, 4, 5, 7, 9, 12, 15];
     public tradeResource = Resources.HEAT;
     public colonyBonusType = ColonyBenefit.GAIN_RESOURCES;
     public colonyBonusQuantity = 3;
