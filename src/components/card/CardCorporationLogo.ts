@@ -56,7 +56,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.PHOBOLOG:
         return '<span class="card-phobolog-logo">PHOBOLOG</span>';
       case CardName.POINT_LUNA:
-        return '<span class="card-luna-logo">POINT LUNA</span>';
+        return '<span class="card-luna-logo">POINT🛪LUNA</span>';
       case CardName.POLYPHEMOS:
         return '<span class="card-polyphemos-logo">POLYPHEMOS</span>';
       case CardName.SEPTUM_TRIBUS:
@@ -184,7 +184,7 @@ export const CardCorporationLogo = Vue.component('CardCorporationLogo', {
       case CardName.MARS_ANALYSTS:
         return '<div class="card-morning-star-logo">MARS ANALYSTS</div>';
       case CardName.REDWING:
-        return '<div class="card-pristar-logo">REDWING</div>';
+        return '<div class="card-redwing-logo">REDWING</div>';
       case CardName.LT_CONGLOMERATE_MARS:
         return '<div class="card-morning-star-logo">LT Conglomerate Mars</div>';
       case CardName.IMPACT:
