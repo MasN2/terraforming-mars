@@ -7,8 +7,8 @@ import {Player} from '../Player';
 import {Random} from '../Random';
 
 export class MiniElysiumBoard extends Board {
-  public static newInstance(shuffle: boolean, rng: Random, includeVenus: boolean): ElysiumBoard {
-    const builder = new BoardBuilder(includeVenus);
+  public static newInstance(shuffle: boolean, rng: Random, includeVenus: boolean): MiniElysiumBoard {
+    const builder = new MiniBoardBuilder(includeVenus);
 
     const PLANT = SpaceBonus.PLANT;
     const STEEL = SpaceBonus.STEEL;
@@ -39,7 +39,7 @@ export class MiniElysiumBoard extends Board {
     return new MiniElysiumBoard(spaces);
   }
 
-  public static deserialize(board: SerializedBoard, players: Array<Player>): ElysiumBoard {
+  public static deserialize(board: SerializedBoard, players: Array<Player>): MiniElysiumBoard {
     return new MiniElysiumBoard(Board.deserializeSpaces(board.spaces, players));
   }
 
