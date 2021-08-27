@@ -27,7 +27,7 @@ export class MiniBoard extends Board {
     builder.land(...TWO_PLANTS).land(...TWO_PLANTS).land(...TWO_PLANTS).ocean(...TWO_PLANTS)
       .ocean(...TWO_PLANTS).land(...TWO_PLANTS).land(...TWO_PLANTS).land(...TWO_PLANTS);
     // y=4
-    builder.land(PLANT).land(...TWO_PLANTS).land(PLANT).land(PLANT).ocean(...TWO_PLANTS).ocean(PLANT).ocean(PLANT);
+    builder.land(PLANT).land(...TWO_PLANTS).land(PLANT).land(PLANT).ocean(PLANT).ocean(PLANT).ocean(PLANT);
     // y=5
     builder.land().land().land().land().land().land(PLANT);
     // y=6
