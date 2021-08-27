@@ -1,6 +1,6 @@
 import {Board} from './boards/Board';
 import {BoardName} from './boards/BoardName';
-import {ElysiumBoard} from './boards/ElysiumBoard';
+import {MiniElysiumBoard} from './boards/MiniElysiumBoard';
 import {Game, GameId, GameOptions} from './Game';
 import {HellasBoard} from './boards/HellasBoard';
 import {MiniBoard} from './boards/MiniBoard';
@@ -15,7 +15,7 @@ export class GameSetup {
   // Function to construct the board and milestones/awards list
   public static newBoard(boardName: BoardName, shuffle: boolean, rng: Random, includeVenus: boolean): Board {
     if (boardName === BoardName.ELYSIUM) {
-      return ElysiumBoard.newInstance(shuffle, rng, includeVenus);
+      return MiniElysiumBoard.newInstance(shuffle, rng, includeVenus);
     } else if (boardName === BoardName.HELLAS) {
       return HellasBoard.newInstance(shuffle, rng, includeVenus);
     } else {
