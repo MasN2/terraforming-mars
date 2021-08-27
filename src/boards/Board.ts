@@ -39,8 +39,8 @@ export abstract class Board {
   }
 
   protected computeAdjacentSpaces(space: ISpace): Array<ISpace> {
-    // Expects an odd number of rows. If a funny shape appears, it can be addressed.
-    const middleRow = this.maxY / 2;
+    // Expects an odd number of rows. If even, then it assumes top is middle. If a funny shape appears, it can be addressed.
+    const middleRow = Math.floor(this.maxY / 2);
     if (space.spaceType !== SpaceType.COLONY) {
       if (space.y < 0 || space.y > this.maxY) {
         throw new Error('Unexpected space y value: ' + space.y);
