@@ -3,7 +3,7 @@ import {BoardName} from './boards/BoardName';
 import {ElysiumBoard} from './boards/ElysiumBoard';
 import {Game, GameId, GameOptions} from './Game';
 import {HellasBoard} from './boards/HellasBoard';
-import {OriginalBoard} from './boards/OriginalBoard';
+import {MiniBoard} from './boards/OriginalBoard';
 import {Player} from './Player';
 import {Resources} from './Resources';
 import {ColonyName} from './colonies/ColonyName';
@@ -19,7 +19,7 @@ export class GameSetup {
     } else if (boardName === BoardName.HELLAS) {
       return HellasBoard.newInstance(shuffle, rng, includeVenus);
     } else {
-      return OriginalBoard.newInstance(shuffle, rng, includeVenus);
+      return MiniBoard.newInstance(shuffle, rng, includeVenus);
     }
   }
 
