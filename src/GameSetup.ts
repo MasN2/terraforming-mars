@@ -3,7 +3,7 @@ import {BoardName} from './boards/BoardName';
 import {ElysiumBoard} from './boards/ElysiumBoard';
 import {Game, GameId, GameOptions} from './Game';
 import {HellasBoard} from './boards/HellasBoard';
-import {MiniBoard} from './boards/OriginalBoard';
+import {MiniBoard} from './boards/MiniBoard';
 import {Player} from './Player';
 import {Resources} from './Resources';
 import {ColonyName} from './colonies/ColonyName';
