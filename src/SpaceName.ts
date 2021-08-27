@@ -1,10 +1,10 @@
 
 export enum SpaceName {
-    ARSIA_MONS = '29',
-    ASCRAEUS_MONS = '14',
+    ARSIA_MONS = '21',
+    ASCRAEUS_MONS = '08',
     GANYMEDE_COLONY = '01',
-    NOCTIS_CITY = '31',
-    PAVONIS_MONS = '21',
+    NOCTIS_CITY = '23',
+    PAVONIS_MONS = '14',
     PHOBOS_SPACE_HAVEN = '02',
     THARSIS_THOLUS = '09',
     LUNA_METROPOLIS = '70',

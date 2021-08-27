@@ -142,7 +142,7 @@ import {MiningArea} from './base/MiningArea';
 import {MiningExpedition} from './base/MiningExpedition';
 import {MiningRights} from './base/MiningRights';
 import {MirandaResort} from './base/MirandaResort';
-import {MoholeArea} from './base/MoholeArea';
+// import {MoholeArea} from './base/MoholeArea';
 import {Moss} from './base/Moss';
 import {NaturalPreserve} from './base/NaturalPreserve';
 import {NitriteReducingBacteria} from './base/NitriteReducingBacteria';
@@ -319,7 +319,7 @@ export const BASE_CARD_MANIFEST = new CardManifest({
     {cardName: CardName.MICRO_MILLS, Factory: MicroMills},
     {cardName: CardName.MINING_EXPEDITION, Factory: MiningExpedition},
     {cardName: CardName.MINING_RIGHTS, Factory: MiningRights},
-    {cardName: CardName.MOHOLE_AREA, Factory: MoholeArea},
+    // {cardName: CardName.MOHOLE_AREA, Factory: MoholeArea},
     {cardName: CardName.MOSS, Factory: Moss},
     {cardName: CardName.NATURAL_PRESERVE, Factory: NaturalPreserve},
     {cardName: CardName.NITRITE_REDUCING_BACTERIA, Factory: NitriteReducingBacteria},
