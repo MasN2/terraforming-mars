@@ -11,7 +11,7 @@ export enum SpaceName {
     DAWN_CITY = '71',
     STRATOPOLIS = '72',
     MAXWELL_BASE = '73',
-    ARSIA_MONS_ELYSIUM = '37',
+    ARSIA_MONS_ELYSIUM = '35',
     HECATES_THOLUS = '08',
     ELYSIUM_MONS = '14',
     OLYMPUS_MONS = '20',
