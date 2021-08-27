@@ -5,8 +5,8 @@ import {Game} from '../../Game';
 import {Tags} from '../../cards/Tags';
 import {Resources} from '../../Resources';
 import {Bonus} from '../Bonus';
-import {SelectHowToPayDeferred} from '../../deferredActions/SelectHowToPayDeferred';
-import {Player} from '../../Player';
+// import {SelectHowToPayDeferred} from '../../deferredActions/SelectHowToPayDeferred';
+// import {Player} from '../../Player';
 import {Policy} from '../Policy';
 import {TurmoilPolicy} from '../TurmoilPolicy';
 
