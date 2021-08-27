@@ -24,9 +24,9 @@ export class MiniElysiumBoard extends Board {
     // y=3
     builder.land(PLANT).land(PLANT).land(PLANT).ocean(PLANT, PLANT).land(PLANT).ocean(PLANT).ocean(PLANT).land(PLANT, STEEL);
     // y=4
-    builder.land(PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT);
+    builder.land(PLANT, PLANT, STEEL).land(PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT, PLANT).land(PLANT, PLANT).land(PLANT, PLANT);
     // y=5
-    builder.land(STEEL, TITANIUM).land(PLANT, STEEL).land(PLANT).land(PLANT).land(PLANT).land(PLANT, TITANIUM);
+    builder.land(TITANIUM).land(PLANT, STEEL).land(PLANT).land(PLANT).land(PLANT).land(PLANT, TITANIUM);
     // y=6
     builder.land(STEEL, STEEL).land().land().land(STEEL).land(STEEL, STEEL);
     // y=7
