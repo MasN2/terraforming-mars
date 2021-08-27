@@ -3,13 +3,13 @@ import {SpaceName} from '../SpaceName';
 import {Board} from './Board';
 import {Player} from '../Player';
 import {ISpace} from './ISpace';
-import {BoardBuilder} from './BoardBuilder';
+import {MiniBoardBuilder} from './MiniBoardBuilder';
 import {SerializedBoard} from './SerializedBoard';
 import {Random} from '../Random';
 
 export class MiniBoard extends Board {
   public static newInstance(shuffle: boolean, rng: Random, includeVenus: boolean): MiniBoard {
-    const builder = new BoardBuilder(includeVenus);
+    const builder = new MiniBoardBuilder(includeVenus);
 
     const PLANT = SpaceBonus.PLANT;
     const STEEL = SpaceBonus.STEEL;
