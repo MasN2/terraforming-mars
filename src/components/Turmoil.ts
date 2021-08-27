@@ -15,7 +15,7 @@ const AGENDA_HTML: Map<BonusId | PolicyId, string> = new Map();
     `<div class="resource money party-resource">1</div> /
     <div class="tile empty-tile-small"></div>ON MARS`);
   AGENDA_HTML.set('sb01',
-    `<div class="resource money party-resource">1</div> /
+    `<div class="resource money party-resource">1</div> / 2
     <div class="resource-tag tag-science party-resource-tag"></div>`);
   AGENDA_HTML.set('sb02',
     `<div class="resource money party-resource">1</div> / 3
@@ -65,10 +65,7 @@ const AGENDA_HTML: Map<BonusId | PolicyId, string> = new Map();
      <span class="red-arrow-3x"></span>
     <div class="resource card card-with-border policy-card-with-tag"><div class="card-icon tag-building"></div></div>`);
   AGENDA_HTML.set('sp01',
-    `<span class="money resource">10</span>
-    <span class="red-arrow"></span>
-    <span class="card card-with-border resource party-resource"></span>
-    <span class="card card-with-border resource party-resource"></span>
+    `<span class="card card-with-border resource party-resource"></span>
     <span class="card card-with-border resource party-resource"></span>`);
   AGENDA_HTML.set('sp02',
     `<span>

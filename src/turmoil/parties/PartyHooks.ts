@@ -29,7 +29,7 @@ export class PartyHooks {
   static shouldApplyPolicy(game: Game, partyName: PartyName, policyId?: PolicyId): boolean {
     if (!game.gameOptions.turmoilExtension) return false;
 
-    if (game.phase !== Phase.ACTION) return false;
+    if (partyName !== PartyName.SCIENTISTS && game.phase !== Phase.ACTION) return false;
 
     const turmoil = game.turmoil!;
     if (!turmoil) return false;

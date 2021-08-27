@@ -11,15 +11,15 @@ export class Polyphemos extends Card implements CorporationCard {
     super({
       name: CardName.POLYPHEMOS,
       tags: [Tags.SPACE],
-      startingMegaCredits: 35,
+      startingMegaCredits: 34,
       cardType: CardType.CORPORATION,
 
       metadata: {
         cardNumber: 'R11',
-        description: 'You start with 35 MC.',
+        description: 'You start with 34 MC.',
         renderData: CardRenderer.builder((b) => {
           b.br;
-          b.megacredits(35);
+          b.megacredits(34);
           b.corpBox('effect', (ce) => {
             ce.effect('When you decline to buy a card, gain 1 titanium, including the starting hand.', (eb) => {
               eb.cards(1, true).startEffect.titanium(1);

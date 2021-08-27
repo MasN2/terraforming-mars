@@ -1207,6 +1207,9 @@ export class Player implements ISerializable<SerializedPlayer> {
         researchPower += 1;
       }
     }
+    if (PartyHooks.shouldApplyPolicy(this.game, PartyName.SCIENTISTS)) {
+      researchPower += 2;
+    }
     if (!draftVariant) {
       this.dealCards(cardDraw + researchPower, dealtCards);
     } else {
