@@ -11,7 +11,7 @@ import {MARS_FIRST_POLICY_2, MARS_FIRST_POLICY_4} from './parties/MarsFirst';
 import {PartyHooks} from './parties/PartyHooks';
 import {PartyName} from './parties/PartyName';
 import {REDS_POLICY_2, REDS_POLICY_3} from './parties/Reds';
-import {SCIENTISTS_POLICY_1} from './parties/Scientists';
+// import {SCIENTISTS_POLICY_1} from './parties/Scientists';
 import {UNITY_POLICY_2, UNITY_POLICY_3} from './parties/Unity';
 import {TurmoilPolicy} from './TurmoilPolicy';
 
@@ -19,7 +19,7 @@ export class TurmoilHandler {
   private constructor() {}
 
   public static addPlayerAction(player: Player, options: PlayerInput[]): void {
-    // Turmoil Scientists action
+    /* Turmoil Scientists action
     if (PartyHooks.shouldApplyPolicy(player.game, PartyName.SCIENTISTS)) {
       const scientistsPolicy = SCIENTISTS_POLICY_1;
 
@@ -32,7 +32,7 @@ export class TurmoilHandler {
           ),
         );
       }
-    }
+    } */
 
     // Turmoil Kelvinists action
     if (PartyHooks.shouldApplyPolicy(player.game, PartyName.KELVINISTS)) {
