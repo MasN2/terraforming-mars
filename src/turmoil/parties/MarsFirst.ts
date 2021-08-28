@@ -19,7 +19,7 @@ export class MarsFirst extends Party implements IParty {
   name = PartyName.MARS;
   description = 'Focused on Martian development and independence.';
   bonuses = [MARS_FIRST_BONUS_1, MARS_FIRST_BONUS_2];
-  policies = [MARS_FIRST_POLICY_1, MARS_FIRST_POLICY_2, MARS_FIRST_POLICY_3, MARS_FIRST_POLICY_4];
+  policies = [MARS_FIRST_POLICY_4, MARS_FIRST_POLICY_1, MARS_FIRST_POLICY_2, MARS_FIRST_POLICY_3];
 }
 
 // TODO(nwai90): Mars First bonus IDs start with 'm' and policies start with 'mp'.
@@ -53,7 +53,7 @@ class MarsFirstBonus02 implements Bonus {
 }
 
 class MarsFirstPolicy01 implements Policy {
-  isDefault = true;
+  isDefault = false;
   id = TurmoilPolicy.MARS_FIRST_DEFAULT_POLICY;
   description: string = 'When you place a tile ON MARS, gain 1 steel';
 
@@ -82,25 +82,25 @@ class MarsFirstPolicy03 implements Policy {
 
 class MarsFirstPolicy04 implements Policy {
   id = TurmoilPolicy.MARS_FIRST_POLICY_4;
-  description: string = 'Spend 4 M€ to draw a Building card (Turmoil Mars First)';
-  isDefault = false;
+  description: string = 'Spend 6 M€ to draw two Building cards (Turmoil Mars First)';
+  isDefault = true;
 
   canAct(player: Player) {
-    return player.canAfford(4) && player.politicalAgendasActionUsedCount < POLITICAL_AGENDAS_MAX_ACTION_USES;
+    return player.canAfford(6) && player.politicalAgendasActionUsedCount < POLITICAL_AGENDAS_MAX_ACTION_USES;
   }
 
   action(player: Player) {
     const game = player.game;
     game.log('${0} used Turmoil Mars First action', (b) => b.player(player));
-    player.politicalAgendasActionUsedCount += 1;
+    player.politicalAgendasActionUsedCount += 3;
 
     game.defer(new SelectHowToPayDeferred(
       player,
-      4,
+      6,
       {
         title: 'Select how to pay for Turmoil Mars First action',
         afterPay: () => {
-          player.drawCard(1, {tag: Tags.BUILDING});
+          player.drawCard(2, {tag: Tags.BUILDING});
         },
       },
     ));

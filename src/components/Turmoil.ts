@@ -61,8 +61,9 @@ const AGENDA_HTML: Map<BonusId | PolicyId, string> = new Map();
   AGENDA_HTML.set('mfp03',
     `<div class="policy-top-margin"><div class="resource steel"></div> : +<div class="resource money">1</div></div>`);
   AGENDA_HTML.set('mfp04',
-    `<span class="money resource">4</span>
-     <span class="red-arrow-3x"></span>
+    `<span class="money resource">6</span>
+     <span class="red-arrow"></span>
+    <div class="resource card card-with-border policy-card-with-tag"><div class="card-icon tag-building"></div></div>
     <div class="resource card card-with-border policy-card-with-tag"><div class="card-icon tag-building"></div></div>`);
   AGENDA_HTML.set('sp01',
     `<span class="card card-with-border resource party-resource"></span>
